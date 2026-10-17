@@ -57,8 +57,11 @@ SERVED_FILES = {"seg.nii.gz", "seg_refined.nii.gz", "t1c.nii.gz", "t2f.nii.gz", 
 DISCLAIMER = "Research and teaching use only. Not for clinical diagnosis or treatment decisions."
 
 app = FastAPI(title="NeuroScope 3D API", description=DISCLAIMER)
-app.add_middleware(CORSMiddleware, allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],
-                   allow_methods=["GET", "POST", "DELETE"], allow_headers=["*"])
+_allowed_origins_env = os.getenv("ALLOWED_ORIGINS", "http://localhost:3000,http://127.0.0.1:3000")
+_allowed_origins = [o.strip() for o in _allowed_origins_env.split(",") if o.strip()]
+app.add_middleware(CORSMiddleware, allow_origins=_allowed_origins,
+                   allow_credentials=True,
+                   allow_methods=["GET", "POST", "DELETE", "OPTIONS"], allow_headers=["*"])
 
 _segmenter = None
 _gpu_lock = threading.Lock()
