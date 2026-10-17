@@ -1,0 +1,2529 @@
+{
+  "generated": "2026-10-16T21:29:41",
+  "mode": "dry_run",
+  "run_ids": [
+    "1788960926",
+    "1788961530",
+    "1788961747",
+    "1788963106",
+    "1788966190",
+    "1788967109",
+    "1788967196",
+    "1788968161",
+    "1788974173",
+    "1789031558",
+    "1789320716",
+    "1789396033",
+    "1789396141",
+    "1789441057",
+    "1790613179",
+    "1790613289",
+    "1792149355"
+  ],
+  "summary": {
+    "retain_ask_owner": {
+      "files": 34,
+      "bytes": 11942781
+    },
+    "delete": {
+      "files": 68,
+      "bytes": 202143576
+    },
+    "retain_not_expired": {
+      "files": 5,
+      "bytes": 12496724
+    }
+  },
+  "files": [
+    {
+      "path": "backend/results/1788960926_baseline.nii.gz",
+      "run_id": "1788960926",
+      "run_time_utc": "2026-09-09T13:35:26+00:00",
+      "bytes": 2220521,
+      "mtime": "2026-09-09T19:05:33",
+      "sha256": "98e72ec3e7c07c01dbb5b6b3f394cd4c21ada3637e44ab9660c6b9127fdb9b25",
+      "category": "generated_mask",
+      "purpose": "old-pipeline baseline mask (labels 1/2/3, min-max preprocessing)",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "labels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "identical_in_data_raw": [],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "retain_ask_owner",
+      "reason": "generated output, not uploaded MRI; derived from the upload - owner decision"
+    },
+    {
+      "path": "backend/results/1788960926_refined.nii.gz",
+      "run_id": "1788960926",
+      "run_time_utc": "2026-09-09T13:35:26+00:00",
+      "bytes": 334971,
+      "mtime": "2026-09-09T19:05:33",
+      "sha256": "18cd8e07c207ffd2dddd46a218954e20ab92b2ed4b9c96a13e9aebd952d76544",
+      "category": "generated_mask",
+      "purpose": "old-pipeline refined mask (labels 1/2/3, min-max preprocessing)",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "labels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "identical_in_data_raw": [],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "retain_ask_owner",
+      "reason": "generated output, not uploaded MRI; derived from the upload - owner decision"
+    },
+    {
+      "path": "backend/results/1788960926_t1c.nii.gz",
+      "run_id": "1788960926",
+      "run_time_utc": "2026-09-09T13:35:26+00:00",
+      "bytes": 2643179,
+      "mtime": "2026-09-09T19:05:33",
+      "sha256": "735c27fd7a17b1702875837bcc843eedc88ced6ac2cb0e73cdf995e3e64ba82f",
+      "category": "uploaded_mri_copy",
+      "purpose": "copy of uploaded T1Gd served to the old viewer",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00000-000/BraTS-GLI-00000-000-t1c.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/results/1788961530_baseline.nii.gz",
+      "run_id": "1788961530",
+      "run_time_utc": "2026-09-09T13:45:30+00:00",
+      "bytes": 2220559,
+      "mtime": "2026-09-09T19:15:35",
+      "sha256": "5d278a403592ff01c7096c01c728f189aa1366b47c3f95cac67ceb341923bbc9",
+      "category": "generated_mask",
+      "purpose": "old-pipeline baseline mask (labels 1/2/3, min-max preprocessing)",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "labels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "identical_in_data_raw": [],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "retain_ask_owner",
+      "reason": "generated output, not uploaded MRI; derived from the upload - owner decision"
+    },
+    {
+      "path": "backend/results/1788961530_refined.nii.gz",
+      "run_id": "1788961530",
+      "run_time_utc": "2026-09-09T13:45:30+00:00",
+      "bytes": 334971,
+      "mtime": "2026-09-09T19:15:35",
+      "sha256": "18cd8e07c207ffd2dddd46a218954e20ab92b2ed4b9c96a13e9aebd952d76544",
+      "category": "generated_mask",
+      "purpose": "old-pipeline refined mask (labels 1/2/3, min-max preprocessing)",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "labels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "identical_in_data_raw": [],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "retain_ask_owner",
+      "reason": "generated output, not uploaded MRI; derived from the upload - owner decision"
+    },
+    {
+      "path": "backend/results/1788961530_t1c.nii.gz",
+      "run_id": "1788961530",
+      "run_time_utc": "2026-09-09T13:45:30+00:00",
+      "bytes": 2643179,
+      "mtime": "2026-09-09T19:15:35",
+      "sha256": "735c27fd7a17b1702875837bcc843eedc88ced6ac2cb0e73cdf995e3e64ba82f",
+      "category": "uploaded_mri_copy",
+      "purpose": "copy of uploaded T1Gd served to the old viewer",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00000-000/BraTS-GLI-00000-000-t1c.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/results/1788961747_baseline.nii.gz",
+      "run_id": "1788961747",
+      "run_time_utc": "2026-09-09T13:49:07+00:00",
+      "bytes": 314751,
+      "mtime": "2026-09-09T19:19:10",
+      "sha256": "5c663949101d7932b990a7c81d7c4f97762daf3560d3ccdea30a6dbed8e1d550",
+      "category": "generated_mask",
+      "purpose": "old-pipeline baseline mask (labels 1/2/3, min-max preprocessing)",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "labels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "identical_in_data_raw": [],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "retain_ask_owner",
+      "reason": "generated output, not uploaded MRI; derived from the upload - owner decision"
+    },
+    {
+      "path": "backend/results/1788961747_refined.nii.gz",
+      "run_id": "1788961747",
+      "run_time_utc": "2026-09-09T13:49:07+00:00",
+      "bytes": 192323,
+      "mtime": "2026-09-09T19:19:10",
+      "sha256": "65536de932d8c6a320f8a57508be3e93755d357f6f6f11219b5794683d0cede1",
+      "category": "generated_mask",
+      "purpose": "old-pipeline refined mask (labels 1/2/3, min-max preprocessing)",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "labels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "identical_in_data_raw": [],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "retain_ask_owner",
+      "reason": "generated output, not uploaded MRI; derived from the upload - owner decision"
+    },
+    {
+      "path": "backend/results/1788961747_t1c.nii.gz",
+      "run_id": "1788961747",
+      "run_time_utc": "2026-09-09T13:49:07+00:00",
+      "bytes": 2643179,
+      "mtime": "2026-09-09T19:19:10",
+      "sha256": "735c27fd7a17b1702875837bcc843eedc88ced6ac2cb0e73cdf995e3e64ba82f",
+      "category": "uploaded_mri_copy",
+      "purpose": "copy of uploaded T1Gd served to the old viewer",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00000-000/BraTS-GLI-00000-000-t1c.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/results/1788963106_baseline.nii.gz",
+      "run_id": "1788963106",
+      "run_time_utc": "2026-09-09T14:11:46+00:00",
+      "bytes": 486152,
+      "mtime": "2026-09-09T19:41:50",
+      "sha256": "5675dd9e96f3a419c06ca7361457c696646ea9375e2723a1933f5705ffe42f89",
+      "category": "generated_mask",
+      "purpose": "old-pipeline baseline mask (labels 1/2/3, min-max preprocessing)",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "labels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "identical_in_data_raw": [],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "retain_ask_owner",
+      "reason": "generated output, not uploaded MRI; derived from the upload - owner decision"
+    },
+    {
+      "path": "backend/results/1788963106_refined.nii.gz",
+      "run_id": "1788963106",
+      "run_time_utc": "2026-09-09T14:11:46+00:00",
+      "bytes": 154074,
+      "mtime": "2026-09-09T19:41:50",
+      "sha256": "8c3e8772d2c5469e47f95ec726a0c1b6e87ff4a5678b64bf0bbcf658626d939f",
+      "category": "generated_mask",
+      "purpose": "old-pipeline refined mask (labels 1/2/3, min-max preprocessing)",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "labels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "identical_in_data_raw": [],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "retain_ask_owner",
+      "reason": "generated output, not uploaded MRI; derived from the upload - owner decision"
+    },
+    {
+      "path": "backend/results/1788963106_t1c.nii.gz",
+      "run_id": "1788963106",
+      "run_time_utc": "2026-09-09T14:11:46+00:00",
+      "bytes": 2643179,
+      "mtime": "2026-09-09T19:41:50",
+      "sha256": "735c27fd7a17b1702875837bcc843eedc88ced6ac2cb0e73cdf995e3e64ba82f",
+      "category": "uploaded_mri_copy",
+      "purpose": "copy of uploaded T1Gd served to the old viewer",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00000-000/BraTS-GLI-00000-000-t1c.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/results/1788966190_baseline.nii.gz",
+      "run_id": "1788966190",
+      "run_time_utc": "2026-09-09T15:03:10+00:00",
+      "bytes": 486152,
+      "mtime": "2026-09-09T20:33:13",
+      "sha256": "5675dd9e96f3a419c06ca7361457c696646ea9375e2723a1933f5705ffe42f89",
+      "category": "generated_mask",
+      "purpose": "old-pipeline baseline mask (labels 1/2/3, min-max preprocessing)",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "labels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "identical_in_data_raw": [],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "retain_ask_owner",
+      "reason": "generated output, not uploaded MRI; derived from the upload - owner decision"
+    },
+    {
+      "path": "backend/results/1788966190_refined.nii.gz",
+      "run_id": "1788966190",
+      "run_time_utc": "2026-09-09T15:03:10+00:00",
+      "bytes": 154074,
+      "mtime": "2026-09-09T20:33:13",
+      "sha256": "8c3e8772d2c5469e47f95ec726a0c1b6e87ff4a5678b64bf0bbcf658626d939f",
+      "category": "generated_mask",
+      "purpose": "old-pipeline refined mask (labels 1/2/3, min-max preprocessing)",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "labels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "identical_in_data_raw": [],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "retain_ask_owner",
+      "reason": "generated output, not uploaded MRI; derived from the upload - owner decision"
+    },
+    {
+      "path": "backend/results/1788966190_t1c.nii.gz",
+      "run_id": "1788966190",
+      "run_time_utc": "2026-09-09T15:03:10+00:00",
+      "bytes": 2643179,
+      "mtime": "2026-09-09T20:33:13",
+      "sha256": "735c27fd7a17b1702875837bcc843eedc88ced6ac2cb0e73cdf995e3e64ba82f",
+      "category": "uploaded_mri_copy",
+      "purpose": "copy of uploaded T1Gd served to the old viewer",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00000-000/BraTS-GLI-00000-000-t1c.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/results/1788967109_baseline.nii.gz",
+      "run_id": "1788967109",
+      "run_time_utc": "2026-09-09T15:18:29+00:00",
+      "bytes": 486152,
+      "mtime": "2026-09-09T20:48:32",
+      "sha256": "5675dd9e96f3a419c06ca7361457c696646ea9375e2723a1933f5705ffe42f89",
+      "category": "generated_mask",
+      "purpose": "old-pipeline baseline mask (labels 1/2/3, min-max preprocessing)",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "labels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "identical_in_data_raw": [],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "retain_ask_owner",
+      "reason": "generated output, not uploaded MRI; derived from the upload - owner decision"
+    },
+    {
+      "path": "backend/results/1788967109_refined.nii.gz",
+      "run_id": "1788967109",
+      "run_time_utc": "2026-09-09T15:18:29+00:00",
+      "bytes": 154074,
+      "mtime": "2026-09-09T20:48:32",
+      "sha256": "8c3e8772d2c5469e47f95ec726a0c1b6e87ff4a5678b64bf0bbcf658626d939f",
+      "category": "generated_mask",
+      "purpose": "old-pipeline refined mask (labels 1/2/3, min-max preprocessing)",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "labels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "identical_in_data_raw": [],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "retain_ask_owner",
+      "reason": "generated output, not uploaded MRI; derived from the upload - owner decision"
+    },
+    {
+      "path": "backend/results/1788967109_t1c.nii.gz",
+      "run_id": "1788967109",
+      "run_time_utc": "2026-09-09T15:18:29+00:00",
+      "bytes": 2643179,
+      "mtime": "2026-09-09T20:48:33",
+      "sha256": "735c27fd7a17b1702875837bcc843eedc88ced6ac2cb0e73cdf995e3e64ba82f",
+      "category": "uploaded_mri_copy",
+      "purpose": "copy of uploaded T1Gd served to the old viewer",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00000-000/BraTS-GLI-00000-000-t1c.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/results/1788967196_baseline.nii.gz",
+      "run_id": "1788967196",
+      "run_time_utc": "2026-09-09T15:19:56+00:00",
+      "bytes": 486152,
+      "mtime": "2026-09-09T20:49:59",
+      "sha256": "5675dd9e96f3a419c06ca7361457c696646ea9375e2723a1933f5705ffe42f89",
+      "category": "generated_mask",
+      "purpose": "old-pipeline baseline mask (labels 1/2/3, min-max preprocessing)",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "labels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "identical_in_data_raw": [],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "retain_ask_owner",
+      "reason": "generated output, not uploaded MRI; derived from the upload - owner decision"
+    },
+    {
+      "path": "backend/results/1788967196_refined.nii.gz",
+      "run_id": "1788967196",
+      "run_time_utc": "2026-09-09T15:19:56+00:00",
+      "bytes": 154074,
+      "mtime": "2026-09-09T20:49:59",
+      "sha256": "8c3e8772d2c5469e47f95ec726a0c1b6e87ff4a5678b64bf0bbcf658626d939f",
+      "category": "generated_mask",
+      "purpose": "old-pipeline refined mask (labels 1/2/3, min-max preprocessing)",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "labels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "identical_in_data_raw": [],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "retain_ask_owner",
+      "reason": "generated output, not uploaded MRI; derived from the upload - owner decision"
+    },
+    {
+      "path": "backend/results/1788967196_t1c.nii.gz",
+      "run_id": "1788967196",
+      "run_time_utc": "2026-09-09T15:19:56+00:00",
+      "bytes": 2643179,
+      "mtime": "2026-09-09T20:49:59",
+      "sha256": "735c27fd7a17b1702875837bcc843eedc88ced6ac2cb0e73cdf995e3e64ba82f",
+      "category": "uploaded_mri_copy",
+      "purpose": "copy of uploaded T1Gd served to the old viewer",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00000-000/BraTS-GLI-00000-000-t1c.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/results/1788968161_baseline.nii.gz",
+      "run_id": "1788968161",
+      "run_time_utc": "2026-09-09T15:36:01+00:00",
+      "bytes": 535555,
+      "mtime": "2026-09-09T21:06:05",
+      "sha256": "f2610c06dc843343b68802f39f2aba42777c7915cab387876f8be65d2b29a7a9",
+      "category": "generated_mask",
+      "purpose": "old-pipeline baseline mask (labels 1/2/3, min-max preprocessing)",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "labels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "identical_in_data_raw": [],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "retain_ask_owner",
+      "reason": "generated output, not uploaded MRI; derived from the upload - owner decision"
+    },
+    {
+      "path": "backend/results/1788968161_refined.nii.gz",
+      "run_id": "1788968161",
+      "run_time_utc": "2026-09-09T15:36:01+00:00",
+      "bytes": 164921,
+      "mtime": "2026-09-09T21:06:05",
+      "sha256": "a46abcbe3fcb19cedddc1733d50747554571b887770f3aea25910e084bf6604a",
+      "category": "generated_mask",
+      "purpose": "old-pipeline refined mask (labels 1/2/3, min-max preprocessing)",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "labels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "identical_in_data_raw": [],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "retain_ask_owner",
+      "reason": "generated output, not uploaded MRI; derived from the upload - owner decision"
+    },
+    {
+      "path": "backend/results/1788968161_t1c.nii.gz",
+      "run_id": "1788968161",
+      "run_time_utc": "2026-09-09T15:36:01+00:00",
+      "bytes": 5158070,
+      "mtime": "2026-09-09T21:06:05",
+      "sha256": "b8a5a9d49ca823854910f60527af978a72df6456ab6958cb2544f35e20af7183",
+      "category": "uploaded_mri_copy",
+      "purpose": "copy of uploaded T1Gd served to the old viewer",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00008-001/BraTS-GLI-00008-001-t1c.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/results/1788974173_baseline.nii.gz",
+      "run_id": "1788974173",
+      "run_time_utc": "2026-09-09T17:16:13+00:00",
+      "bytes": 535555,
+      "mtime": "2026-09-09T22:46:17",
+      "sha256": "f2610c06dc843343b68802f39f2aba42777c7915cab387876f8be65d2b29a7a9",
+      "category": "generated_mask",
+      "purpose": "old-pipeline baseline mask (labels 1/2/3, min-max preprocessing)",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "labels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "identical_in_data_raw": [],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "retain_ask_owner",
+      "reason": "generated output, not uploaded MRI; derived from the upload - owner decision"
+    },
+    {
+      "path": "backend/results/1788974173_refined.nii.gz",
+      "run_id": "1788974173",
+      "run_time_utc": "2026-09-09T17:16:13+00:00",
+      "bytes": 164921,
+      "mtime": "2026-09-09T22:46:17",
+      "sha256": "a46abcbe3fcb19cedddc1733d50747554571b887770f3aea25910e084bf6604a",
+      "category": "generated_mask",
+      "purpose": "old-pipeline refined mask (labels 1/2/3, min-max preprocessing)",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "labels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "identical_in_data_raw": [],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "retain_ask_owner",
+      "reason": "generated output, not uploaded MRI; derived from the upload - owner decision"
+    },
+    {
+      "path": "backend/results/1788974173_t1c.nii.gz",
+      "run_id": "1788974173",
+      "run_time_utc": "2026-09-09T17:16:13+00:00",
+      "bytes": 5158070,
+      "mtime": "2026-09-09T22:46:17",
+      "sha256": "b8a5a9d49ca823854910f60527af978a72df6456ab6958cb2544f35e20af7183",
+      "category": "uploaded_mri_copy",
+      "purpose": "copy of uploaded T1Gd served to the old viewer",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00008-001/BraTS-GLI-00008-001-t1c.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/results/1789031558_baseline.nii.gz",
+      "run_id": "1789031558",
+      "run_time_utc": "2026-09-10T09:12:38+00:00",
+      "bytes": 147695,
+      "mtime": "2026-09-10T14:42:42",
+      "sha256": "5a12a66acce06b4e149f16b7c752debf8872a08b660d6b8722ed99bd71125a76",
+      "category": "generated_mask",
+      "purpose": "old-pipeline baseline mask (labels 1/2/3, min-max preprocessing)",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "labels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "identical_in_data_raw": [],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "retain_ask_owner",
+      "reason": "generated output, not uploaded MRI; derived from the upload - owner decision"
+    },
+    {
+      "path": "backend/results/1789031558_refined.nii.gz",
+      "run_id": "1789031558",
+      "run_time_utc": "2026-09-10T09:12:38+00:00",
+      "bytes": 147434,
+      "mtime": "2026-09-10T14:42:42",
+      "sha256": "2d6a921d870dc1440a78f9760478f2f61eb5db5ec323ab0c23df91ac4df3e697",
+      "category": "generated_mask",
+      "purpose": "old-pipeline refined mask (labels 1/2/3, min-max preprocessing)",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "labels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "identical_in_data_raw": [],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "retain_ask_owner",
+      "reason": "generated output, not uploaded MRI; derived from the upload - owner decision"
+    },
+    {
+      "path": "backend/results/1789031558_t1c.nii.gz",
+      "run_id": "1789031558",
+      "run_time_utc": "2026-09-10T09:12:38+00:00",
+      "bytes": 2044107,
+      "mtime": "2026-09-10T14:42:42",
+      "sha256": "0ee2aa2fdfef2a5337d2241f6cf5f972f19e42bf4b8de5c6b997d91e3cad3ba2",
+      "category": "uploaded_mri_copy",
+      "purpose": "copy of uploaded T1Gd served to the old viewer",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00121-000/BraTS-GLI-00121-000-t1c.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/results/1789320716_baseline.nii.gz",
+      "run_id": "1789320716",
+      "run_time_utc": "2026-09-13T17:31:56+00:00",
+      "bytes": 147695,
+      "mtime": "2026-09-13T23:02:02",
+      "sha256": "5a12a66acce06b4e149f16b7c752debf8872a08b660d6b8722ed99bd71125a76",
+      "category": "generated_mask",
+      "purpose": "old-pipeline baseline mask (labels 1/2/3, min-max preprocessing)",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "labels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "identical_in_data_raw": [],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "retain_ask_owner",
+      "reason": "generated output, not uploaded MRI; derived from the upload - owner decision"
+    },
+    {
+      "path": "backend/results/1789320716_refined.nii.gz",
+      "run_id": "1789320716",
+      "run_time_utc": "2026-09-13T17:31:56+00:00",
+      "bytes": 147434,
+      "mtime": "2026-09-13T23:02:02",
+      "sha256": "2d6a921d870dc1440a78f9760478f2f61eb5db5ec323ab0c23df91ac4df3e697",
+      "category": "generated_mask",
+      "purpose": "old-pipeline refined mask (labels 1/2/3, min-max preprocessing)",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "labels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "identical_in_data_raw": [],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "retain_ask_owner",
+      "reason": "generated output, not uploaded MRI; derived from the upload - owner decision"
+    },
+    {
+      "path": "backend/results/1789320716_t1c.nii.gz",
+      "run_id": "1789320716",
+      "run_time_utc": "2026-09-13T17:31:56+00:00",
+      "bytes": 2044107,
+      "mtime": "2026-09-13T23:02:02",
+      "sha256": "0ee2aa2fdfef2a5337d2241f6cf5f972f19e42bf4b8de5c6b997d91e3cad3ba2",
+      "category": "uploaded_mri_copy",
+      "purpose": "copy of uploaded T1Gd served to the old viewer",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00121-000/BraTS-GLI-00121-000-t1c.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/results/1789396033_baseline.nii.gz",
+      "run_id": "1789396033",
+      "run_time_utc": "2026-09-14T14:27:13+00:00",
+      "bytes": 157377,
+      "mtime": "2026-09-14T19:57:17",
+      "sha256": "c9f0f2b482cd8071cd124bc5d033cafbae2cac50967ebfac960028f204677783",
+      "category": "generated_mask",
+      "purpose": "old-pipeline baseline mask (labels 1/2/3, min-max preprocessing)",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "labels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "identical_in_data_raw": [],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "retain_ask_owner",
+      "reason": "generated output, not uploaded MRI; derived from the upload - owner decision"
+    },
+    {
+      "path": "backend/results/1789396033_refined.nii.gz",
+      "run_id": "1789396033",
+      "run_time_utc": "2026-09-14T14:27:13+00:00",
+      "bytes": 157257,
+      "mtime": "2026-09-14T19:57:17",
+      "sha256": "b69424e887681017e4b9d5866b90beaf02f50e99b470ee317e18ef448977730c",
+      "category": "generated_mask",
+      "purpose": "old-pipeline refined mask (labels 1/2/3, min-max preprocessing)",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "labels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "identical_in_data_raw": [],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "retain_ask_owner",
+      "reason": "generated output, not uploaded MRI; derived from the upload - owner decision"
+    },
+    {
+      "path": "backend/results/1789396033_t1c.nii.gz",
+      "run_id": "1789396033",
+      "run_time_utc": "2026-09-14T14:27:13+00:00",
+      "bytes": 2044107,
+      "mtime": "2026-09-14T19:57:17",
+      "sha256": "0ee2aa2fdfef2a5337d2241f6cf5f972f19e42bf4b8de5c6b997d91e3cad3ba2",
+      "category": "uploaded_mri_copy",
+      "purpose": "copy of uploaded T1Gd served to the old viewer",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00121-000/BraTS-GLI-00121-000-t1c.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/results/1789396141_baseline.nii.gz",
+      "run_id": "1789396141",
+      "run_time_utc": "2026-09-14T14:29:01+00:00",
+      "bytes": 174024,
+      "mtime": "2026-09-14T19:59:04",
+      "sha256": "4cde1c10e887e29663625d3ef5442b59db47e2552079fc458281eb215e670753",
+      "category": "generated_mask",
+      "purpose": "old-pipeline baseline mask (labels 1/2/3, min-max preprocessing)",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "labels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "identical_in_data_raw": [],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "retain_ask_owner",
+      "reason": "generated output, not uploaded MRI; derived from the upload - owner decision"
+    },
+    {
+      "path": "backend/results/1789396141_refined.nii.gz",
+      "run_id": "1789396141",
+      "run_time_utc": "2026-09-14T14:29:01+00:00",
+      "bytes": 173870,
+      "mtime": "2026-09-14T19:59:04",
+      "sha256": "a5ff27b1c5655de7a491f6f794a4eba4d0f63fab58807bf51e23989b92ecc273",
+      "category": "generated_mask",
+      "purpose": "old-pipeline refined mask (labels 1/2/3, min-max preprocessing)",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "labels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "identical_in_data_raw": [],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "retain_ask_owner",
+      "reason": "generated output, not uploaded MRI; derived from the upload - owner decision"
+    },
+    {
+      "path": "backend/results/1789396141_t1c.nii.gz",
+      "run_id": "1789396141",
+      "run_time_utc": "2026-09-14T14:29:01+00:00",
+      "bytes": 2834759,
+      "mtime": "2026-09-14T19:59:04",
+      "sha256": "a211cd8c26dd8d396341399d0a13fb888d5df6252bd9c5aa01156680e97c5577",
+      "category": "uploaded_mri_copy",
+      "purpose": "copy of uploaded T1Gd served to the old viewer",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00003-000/BraTS-GLI-00003-000-t1c.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/results/1789441057_baseline.nii.gz",
+      "run_id": "1789441057",
+      "run_time_utc": "2026-09-15T02:57:37+00:00",
+      "bytes": 137517,
+      "mtime": "2026-09-15T08:27:43",
+      "sha256": "a0bba2cf611f5bc04e9cf9e3a054323bc8d7c113d68c70a52649351d02974781",
+      "category": "generated_mask",
+      "purpose": "old-pipeline baseline mask (labels 1/2/3, min-max preprocessing)",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "labels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "identical_in_data_raw": [],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "retain_ask_owner",
+      "reason": "generated output, not uploaded MRI; derived from the upload - owner decision"
+    },
+    {
+      "path": "backend/results/1789441057_refined.nii.gz",
+      "run_id": "1789441057",
+      "run_time_utc": "2026-09-15T02:57:37+00:00",
+      "bytes": 137275,
+      "mtime": "2026-09-15T08:27:44",
+      "sha256": "3bf7230b9eafbc9e44defc9d80285eff7823f1e2470a7b49ca2cb90dbe23a24f",
+      "category": "generated_mask",
+      "purpose": "old-pipeline refined mask (labels 1/2/3, min-max preprocessing)",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "labels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "identical_in_data_raw": [],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "retain_ask_owner",
+      "reason": "generated output, not uploaded MRI; derived from the upload - owner decision"
+    },
+    {
+      "path": "backend/results/1789441057_t1c.nii.gz",
+      "run_id": "1789441057",
+      "run_time_utc": "2026-09-15T02:57:37+00:00",
+      "bytes": 5730253,
+      "mtime": "2026-09-15T08:27:44",
+      "sha256": "f6205922435b1674585725a2377ba96ea5479d7c2208aa3dbd8feeb1b749241a",
+      "category": "uploaded_mri_copy",
+      "purpose": "copy of uploaded T1Gd served to the old viewer",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00051-000/BraTS-GLI-00051-000-t1c.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/results/1790613179_baseline.nii.gz",
+      "run_id": "1790613179",
+      "run_time_utc": "2026-09-28T16:32:59+00:00",
+      "bytes": 106004,
+      "mtime": "2026-09-28T22:03:03",
+      "sha256": "4b48e8081830fe386755b11a64cce0f82159fd65ddcd1c3bf483f7b5dbf998d7",
+      "category": "generated_mask",
+      "purpose": "old-pipeline baseline mask (labels 1/2/3, min-max preprocessing)",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "labels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "identical_in_data_raw": [],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "retain_ask_owner",
+      "reason": "generated output, not uploaded MRI; derived from the upload - owner decision"
+    },
+    {
+      "path": "backend/results/1790613179_refined.nii.gz",
+      "run_id": "1790613179",
+      "run_time_utc": "2026-09-28T16:32:59+00:00",
+      "bytes": 105879,
+      "mtime": "2026-09-28T22:03:03",
+      "sha256": "44548c7bc34f253f1048671070aab6d8a1ce069dd83f7547e44691218a3f6bea",
+      "category": "generated_mask",
+      "purpose": "old-pipeline refined mask (labels 1/2/3, min-max preprocessing)",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "labels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "identical_in_data_raw": [],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "retain_ask_owner",
+      "reason": "generated output, not uploaded MRI; derived from the upload - owner decision"
+    },
+    {
+      "path": "backend/results/1790613179_t1c.nii.gz",
+      "run_id": "1790613179",
+      "run_time_utc": "2026-09-28T16:32:59+00:00",
+      "bytes": 2428556,
+      "mtime": "2026-09-28T22:03:04",
+      "sha256": "ade0a5c8377daf2401158283de18aa138781b884d2bf6e77aec23aaa0fa08875",
+      "category": "uploaded_mri_copy",
+      "purpose": "copy of uploaded T1Gd served to the old viewer",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00009-000/BraTS-GLI-00009-000-t1c.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/results/1790613289_baseline.nii.gz",
+      "run_id": "1790613289",
+      "run_time_utc": "2026-09-28T16:34:49+00:00",
+      "bytes": 106004,
+      "mtime": "2026-09-28T22:04:53",
+      "sha256": "4b48e8081830fe386755b11a64cce0f82159fd65ddcd1c3bf483f7b5dbf998d7",
+      "category": "generated_mask",
+      "purpose": "old-pipeline baseline mask (labels 1/2/3, min-max preprocessing)",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "labels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "identical_in_data_raw": [],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "retain_ask_owner",
+      "reason": "generated output, not uploaded MRI; derived from the upload - owner decision"
+    },
+    {
+      "path": "backend/results/1790613289_refined.nii.gz",
+      "run_id": "1790613289",
+      "run_time_utc": "2026-09-28T16:34:49+00:00",
+      "bytes": 105879,
+      "mtime": "2026-09-28T22:04:53",
+      "sha256": "44548c7bc34f253f1048671070aab6d8a1ce069dd83f7547e44691218a3f6bea",
+      "category": "generated_mask",
+      "purpose": "old-pipeline refined mask (labels 1/2/3, min-max preprocessing)",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "labels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "identical_in_data_raw": [],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "retain_ask_owner",
+      "reason": "generated output, not uploaded MRI; derived from the upload - owner decision"
+    },
+    {
+      "path": "backend/results/1790613289_t1c.nii.gz",
+      "run_id": "1790613289",
+      "run_time_utc": "2026-09-28T16:34:49+00:00",
+      "bytes": 2428556,
+      "mtime": "2026-09-28T22:04:53",
+      "sha256": "ade0a5c8377daf2401158283de18aa138781b884d2bf6e77aec23aaa0fa08875",
+      "category": "uploaded_mri_copy",
+      "purpose": "copy of uploaded T1Gd served to the old viewer",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00009-000/BraTS-GLI-00009-000-t1c.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/results/1792149355_baseline.nii.gz",
+      "run_id": "1792149355",
+      "run_time_utc": "2026-10-16T11:15:55+00:00",
+      "bytes": 205808,
+      "mtime": "2026-10-16T16:46:01",
+      "sha256": "456bdb2e5d7d450bb60037dc516745b56e1201b9977534b20e59df2b05397f4d",
+      "category": "generated_mask",
+      "purpose": "old-pipeline baseline mask (labels 1/2/3, min-max preprocessing)",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "labels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "identical_in_data_raw": [],
+      "in_verified_backup": true,
+      "older_than_24h": false,
+      "action": "retain_ask_owner",
+      "reason": "generated output, not uploaded MRI; derived from the upload - owner decision"
+    },
+    {
+      "path": "backend/results/1792149355_refined.nii.gz",
+      "run_id": "1792149355",
+      "run_time_utc": "2026-10-16T11:15:55+00:00",
+      "bytes": 205677,
+      "mtime": "2026-10-16T16:46:02",
+      "sha256": "bb347ea7403bbe104e27893282050fe71bafaf75ec4150edff59c49832912013",
+      "category": "generated_mask",
+      "purpose": "old-pipeline refined mask (labels 1/2/3, min-max preprocessing)",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "labels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "identical_in_data_raw": [],
+      "in_verified_backup": true,
+      "older_than_24h": false,
+      "action": "retain_ask_owner",
+      "reason": "generated output, not uploaded MRI; derived from the upload - owner decision"
+    },
+    {
+      "path": "backend/results/1792149355_t1c.nii.gz",
+      "run_id": "1792149355",
+      "run_time_utc": "2026-10-16T11:15:55+00:00",
+      "bytes": 2639147,
+      "mtime": "2026-10-16T16:46:02",
+      "sha256": "3b92f907a585a13ae99b0c79f315d396a3dd4524f1a35001212509957e264abf",
+      "category": "uploaded_mri_copy",
+      "purpose": "copy of uploaded T1Gd served to the old viewer",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00008-000/BraTS-GLI-00008-000-t1c.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": false,
+      "action": "retain_not_expired",
+      "reason": "upload copy younger than 24 h; retention does not yet require removal"
+    },
+    {
+      "path": "backend/temp/1788963106/t1c.nii.gz",
+      "run_id": "1788963106",
+      "run_time_utc": "2026-09-09T14:11:46+00:00",
+      "bytes": 2643179,
+      "mtime": "2026-09-09T19:41:46",
+      "sha256": "735c27fd7a17b1702875837bcc843eedc88ced6ac2cb0e73cdf995e3e64ba82f",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t1c saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00000-000/BraTS-GLI-00000-000-t1c.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1788963106/t1n.nii.gz",
+      "run_id": "1788963106",
+      "run_time_utc": "2026-09-09T14:11:46+00:00",
+      "bytes": 2332393,
+      "mtime": "2026-09-09T19:41:46",
+      "sha256": "e92b72ee221624c36cf89ac826deceeee7097f46dd66a5d218d18b7916ebd67d",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t1n saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00000-000/BraTS-GLI-00000-000-t1n.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1788963106/t2f.nii.gz",
+      "run_id": "1788963106",
+      "run_time_utc": "2026-09-09T14:11:46+00:00",
+      "bytes": 2532638,
+      "mtime": "2026-09-09T19:41:46",
+      "sha256": "bb899a83627591e55cada00b2c6d5402199832b717c8b9f90bb550fe35d971ff",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t2f saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00000-000/BraTS-GLI-00000-000-t2f.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1788963106/t2w.nii.gz",
+      "run_id": "1788963106",
+      "run_time_utc": "2026-09-09T14:11:46+00:00",
+      "bytes": 2432699,
+      "mtime": "2026-09-09T19:41:46",
+      "sha256": "955ff59d053e87153bb7c809235743ec904817727ec02c630f3141e191d6f452",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t2w saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00000-000/BraTS-GLI-00000-000-t2w.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1788966190/t1c.nii.gz",
+      "run_id": "1788966190",
+      "run_time_utc": "2026-09-09T15:03:10+00:00",
+      "bytes": 2643179,
+      "mtime": "2026-09-09T20:33:10",
+      "sha256": "735c27fd7a17b1702875837bcc843eedc88ced6ac2cb0e73cdf995e3e64ba82f",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t1c saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00000-000/BraTS-GLI-00000-000-t1c.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1788966190/t1n.nii.gz",
+      "run_id": "1788966190",
+      "run_time_utc": "2026-09-09T15:03:10+00:00",
+      "bytes": 2332393,
+      "mtime": "2026-09-09T20:33:10",
+      "sha256": "e92b72ee221624c36cf89ac826deceeee7097f46dd66a5d218d18b7916ebd67d",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t1n saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00000-000/BraTS-GLI-00000-000-t1n.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1788966190/t2f.nii.gz",
+      "run_id": "1788966190",
+      "run_time_utc": "2026-09-09T15:03:10+00:00",
+      "bytes": 2532638,
+      "mtime": "2026-09-09T20:33:10",
+      "sha256": "bb899a83627591e55cada00b2c6d5402199832b717c8b9f90bb550fe35d971ff",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t2f saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00000-000/BraTS-GLI-00000-000-t2f.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1788966190/t2w.nii.gz",
+      "run_id": "1788966190",
+      "run_time_utc": "2026-09-09T15:03:10+00:00",
+      "bytes": 2432699,
+      "mtime": "2026-09-09T20:33:10",
+      "sha256": "955ff59d053e87153bb7c809235743ec904817727ec02c630f3141e191d6f452",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t2w saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00000-000/BraTS-GLI-00000-000-t2w.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1788967109/t1c.nii.gz",
+      "run_id": "1788967109",
+      "run_time_utc": "2026-09-09T15:18:29+00:00",
+      "bytes": 2643179,
+      "mtime": "2026-09-09T20:48:29",
+      "sha256": "735c27fd7a17b1702875837bcc843eedc88ced6ac2cb0e73cdf995e3e64ba82f",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t1c saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00000-000/BraTS-GLI-00000-000-t1c.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1788967109/t1n.nii.gz",
+      "run_id": "1788967109",
+      "run_time_utc": "2026-09-09T15:18:29+00:00",
+      "bytes": 2332393,
+      "mtime": "2026-09-09T20:48:29",
+      "sha256": "e92b72ee221624c36cf89ac826deceeee7097f46dd66a5d218d18b7916ebd67d",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t1n saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00000-000/BraTS-GLI-00000-000-t1n.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1788967109/t2f.nii.gz",
+      "run_id": "1788967109",
+      "run_time_utc": "2026-09-09T15:18:29+00:00",
+      "bytes": 2532638,
+      "mtime": "2026-09-09T20:48:29",
+      "sha256": "bb899a83627591e55cada00b2c6d5402199832b717c8b9f90bb550fe35d971ff",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t2f saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00000-000/BraTS-GLI-00000-000-t2f.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1788967109/t2w.nii.gz",
+      "run_id": "1788967109",
+      "run_time_utc": "2026-09-09T15:18:29+00:00",
+      "bytes": 2432699,
+      "mtime": "2026-09-09T20:48:29",
+      "sha256": "955ff59d053e87153bb7c809235743ec904817727ec02c630f3141e191d6f452",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t2w saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00000-000/BraTS-GLI-00000-000-t2w.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1788967196/t1c.nii.gz",
+      "run_id": "1788967196",
+      "run_time_utc": "2026-09-09T15:19:56+00:00",
+      "bytes": 2643179,
+      "mtime": "2026-09-09T20:49:56",
+      "sha256": "735c27fd7a17b1702875837bcc843eedc88ced6ac2cb0e73cdf995e3e64ba82f",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t1c saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00000-000/BraTS-GLI-00000-000-t1c.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1788967196/t1n.nii.gz",
+      "run_id": "1788967196",
+      "run_time_utc": "2026-09-09T15:19:56+00:00",
+      "bytes": 2332393,
+      "mtime": "2026-09-09T20:49:56",
+      "sha256": "e92b72ee221624c36cf89ac826deceeee7097f46dd66a5d218d18b7916ebd67d",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t1n saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00000-000/BraTS-GLI-00000-000-t1n.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1788967196/t2f.nii.gz",
+      "run_id": "1788967196",
+      "run_time_utc": "2026-09-09T15:19:56+00:00",
+      "bytes": 2532638,
+      "mtime": "2026-09-09T20:49:56",
+      "sha256": "bb899a83627591e55cada00b2c6d5402199832b717c8b9f90bb550fe35d971ff",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t2f saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00000-000/BraTS-GLI-00000-000-t2f.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1788967196/t2w.nii.gz",
+      "run_id": "1788967196",
+      "run_time_utc": "2026-09-09T15:19:56+00:00",
+      "bytes": 2432699,
+      "mtime": "2026-09-09T20:49:56",
+      "sha256": "955ff59d053e87153bb7c809235743ec904817727ec02c630f3141e191d6f452",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t2w saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00000-000/BraTS-GLI-00000-000-t2w.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1788968161/t1c.nii.gz",
+      "run_id": "1788968161",
+      "run_time_utc": "2026-09-09T15:36:01+00:00",
+      "bytes": 5158070,
+      "mtime": "2026-09-09T21:06:01",
+      "sha256": "b8a5a9d49ca823854910f60527af978a72df6456ab6958cb2544f35e20af7183",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t1c saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00008-001/BraTS-GLI-00008-001-t1c.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1788968161/t1n.nii.gz",
+      "run_id": "1788968161",
+      "run_time_utc": "2026-09-09T15:36:01+00:00",
+      "bytes": 5046006,
+      "mtime": "2026-09-09T21:06:01",
+      "sha256": "4efa5686fc365b9f2913b5bb8482421afec57f5dcc15707af780b24133c1fc6f",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t1n saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00008-001/BraTS-GLI-00008-001-t1n.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1788968161/t2f.nii.gz",
+      "run_id": "1788968161",
+      "run_time_utc": "2026-09-09T15:36:01+00:00",
+      "bytes": 5231583,
+      "mtime": "2026-09-09T21:06:01",
+      "sha256": "c79374be3a1098ccd7d42e074f1655bc440895314d47c8373945c2409682dc83",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t2f saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00008-001/BraTS-GLI-00008-001-t2f.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1788968161/t2w.nii.gz",
+      "run_id": "1788968161",
+      "run_time_utc": "2026-09-09T15:36:01+00:00",
+      "bytes": 5216407,
+      "mtime": "2026-09-09T21:06:01",
+      "sha256": "8a3f06023eb79e87f267f02e4381922c14533e0c3740727b1bd7dc4d8953290d",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t2w saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00008-001/BraTS-GLI-00008-001-t2w.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1788974173/t1c.nii.gz",
+      "run_id": "1788974173",
+      "run_time_utc": "2026-09-09T17:16:13+00:00",
+      "bytes": 5158070,
+      "mtime": "2026-09-09T22:46:13",
+      "sha256": "b8a5a9d49ca823854910f60527af978a72df6456ab6958cb2544f35e20af7183",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t1c saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00008-001/BraTS-GLI-00008-001-t1c.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1788974173/t1n.nii.gz",
+      "run_id": "1788974173",
+      "run_time_utc": "2026-09-09T17:16:13+00:00",
+      "bytes": 5046006,
+      "mtime": "2026-09-09T22:46:13",
+      "sha256": "4efa5686fc365b9f2913b5bb8482421afec57f5dcc15707af780b24133c1fc6f",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t1n saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00008-001/BraTS-GLI-00008-001-t1n.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1788974173/t2f.nii.gz",
+      "run_id": "1788974173",
+      "run_time_utc": "2026-09-09T17:16:13+00:00",
+      "bytes": 5231583,
+      "mtime": "2026-09-09T22:46:13",
+      "sha256": "c79374be3a1098ccd7d42e074f1655bc440895314d47c8373945c2409682dc83",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t2f saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00008-001/BraTS-GLI-00008-001-t2f.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1788974173/t2w.nii.gz",
+      "run_id": "1788974173",
+      "run_time_utc": "2026-09-09T17:16:13+00:00",
+      "bytes": 5216407,
+      "mtime": "2026-09-09T22:46:13",
+      "sha256": "8a3f06023eb79e87f267f02e4381922c14533e0c3740727b1bd7dc4d8953290d",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t2w saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00008-001/BraTS-GLI-00008-001-t2w.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1789031558/t1c.nii.gz",
+      "run_id": "1789031558",
+      "run_time_utc": "2026-09-10T09:12:38+00:00",
+      "bytes": 2044107,
+      "mtime": "2026-09-10T14:42:38",
+      "sha256": "0ee2aa2fdfef2a5337d2241f6cf5f972f19e42bf4b8de5c6b997d91e3cad3ba2",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t1c saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00121-000/BraTS-GLI-00121-000-t1c.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1789031558/t1n.nii.gz",
+      "run_id": "1789031558",
+      "run_time_utc": "2026-09-10T09:12:38+00:00",
+      "bytes": 1996007,
+      "mtime": "2026-09-10T14:42:38",
+      "sha256": "5180a5299691c753342dbc71e6752ad8b893ba4625cf84e320f01b8ece0dd3da",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t1n saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00121-000/BraTS-GLI-00121-000-t1n.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1789031558/t2f.nii.gz",
+      "run_id": "1789031558",
+      "run_time_utc": "2026-09-10T09:12:38+00:00",
+      "bytes": 1907355,
+      "mtime": "2026-09-10T14:42:38",
+      "sha256": "d6c833aee8cfb6d4c40477c592d85d4076841cf8cd42cbfb75515461c1980ec0",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t2f saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00121-000/BraTS-GLI-00121-000-t2f.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1789031558/t2w.nii.gz",
+      "run_id": "1789031558",
+      "run_time_utc": "2026-09-10T09:12:38+00:00",
+      "bytes": 2043410,
+      "mtime": "2026-09-10T14:42:38",
+      "sha256": "f0cdc72a52ed86c91986442895f7fc71065326505806711d057e8549627a1783",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t2w saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00121-000/BraTS-GLI-00121-000-t2w.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1789320716/t1c.nii.gz",
+      "run_id": "1789320716",
+      "run_time_utc": "2026-09-13T17:31:56+00:00",
+      "bytes": 2044107,
+      "mtime": "2026-09-13T23:01:56",
+      "sha256": "0ee2aa2fdfef2a5337d2241f6cf5f972f19e42bf4b8de5c6b997d91e3cad3ba2",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t1c saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00121-000/BraTS-GLI-00121-000-t1c.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1789320716/t1n.nii.gz",
+      "run_id": "1789320716",
+      "run_time_utc": "2026-09-13T17:31:56+00:00",
+      "bytes": 1996007,
+      "mtime": "2026-09-13T23:01:56",
+      "sha256": "5180a5299691c753342dbc71e6752ad8b893ba4625cf84e320f01b8ece0dd3da",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t1n saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00121-000/BraTS-GLI-00121-000-t1n.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1789320716/t2f.nii.gz",
+      "run_id": "1789320716",
+      "run_time_utc": "2026-09-13T17:31:56+00:00",
+      "bytes": 1907355,
+      "mtime": "2026-09-13T23:01:56",
+      "sha256": "d6c833aee8cfb6d4c40477c592d85d4076841cf8cd42cbfb75515461c1980ec0",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t2f saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00121-000/BraTS-GLI-00121-000-t2f.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1789320716/t2w.nii.gz",
+      "run_id": "1789320716",
+      "run_time_utc": "2026-09-13T17:31:56+00:00",
+      "bytes": 2043410,
+      "mtime": "2026-09-13T23:01:56",
+      "sha256": "f0cdc72a52ed86c91986442895f7fc71065326505806711d057e8549627a1783",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t2w saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00121-000/BraTS-GLI-00121-000-t2w.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1789396033/t1c.nii.gz",
+      "run_id": "1789396033",
+      "run_time_utc": "2026-09-14T14:27:13+00:00",
+      "bytes": 2044107,
+      "mtime": "2026-09-14T19:57:13",
+      "sha256": "0ee2aa2fdfef2a5337d2241f6cf5f972f19e42bf4b8de5c6b997d91e3cad3ba2",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t1c saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00121-000/BraTS-GLI-00121-000-t1c.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1789396033/t1n.nii.gz",
+      "run_id": "1789396033",
+      "run_time_utc": "2026-09-14T14:27:13+00:00",
+      "bytes": 1996007,
+      "mtime": "2026-09-14T19:57:13",
+      "sha256": "5180a5299691c753342dbc71e6752ad8b893ba4625cf84e320f01b8ece0dd3da",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t1n saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00121-000/BraTS-GLI-00121-000-t1n.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1789396033/t2f.nii.gz",
+      "run_id": "1789396033",
+      "run_time_utc": "2026-09-14T14:27:13+00:00",
+      "bytes": 1907355,
+      "mtime": "2026-09-14T19:57:13",
+      "sha256": "d6c833aee8cfb6d4c40477c592d85d4076841cf8cd42cbfb75515461c1980ec0",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t2f saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00121-000/BraTS-GLI-00121-000-t2f.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1789396033/t2w.nii.gz",
+      "run_id": "1789396033",
+      "run_time_utc": "2026-09-14T14:27:13+00:00",
+      "bytes": 2043410,
+      "mtime": "2026-09-14T19:57:13",
+      "sha256": "f0cdc72a52ed86c91986442895f7fc71065326505806711d057e8549627a1783",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t2w saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00121-000/BraTS-GLI-00121-000-t2w.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1789396141/t1c.nii.gz",
+      "run_id": "1789396141",
+      "run_time_utc": "2026-09-14T14:29:01+00:00",
+      "bytes": 2834759,
+      "mtime": "2026-09-14T19:59:01",
+      "sha256": "a211cd8c26dd8d396341399d0a13fb888d5df6252bd9c5aa01156680e97c5577",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t1c saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00003-000/BraTS-GLI-00003-000-t1c.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1789396141/t1n.nii.gz",
+      "run_id": "1789396141",
+      "run_time_utc": "2026-09-14T14:29:01+00:00",
+      "bytes": 2488450,
+      "mtime": "2026-09-14T19:59:01",
+      "sha256": "90997c21753a6d49bdb8629f5b2c6ddb61ef7c2f86f977b18001ce6c5e3161ed",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t1n saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00003-000/BraTS-GLI-00003-000-t1n.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1789396141/t2f.nii.gz",
+      "run_id": "1789396141",
+      "run_time_utc": "2026-09-14T14:29:01+00:00",
+      "bytes": 2719582,
+      "mtime": "2026-09-14T19:59:01",
+      "sha256": "8f68b6d8026f2c6ac097ea26a4dd727571025e26b69b485f9a1a84e244222721",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t2f saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00003-000/BraTS-GLI-00003-000-t2f.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1789396141/t2w.nii.gz",
+      "run_id": "1789396141",
+      "run_time_utc": "2026-09-14T14:29:01+00:00",
+      "bytes": 2635293,
+      "mtime": "2026-09-14T19:59:01",
+      "sha256": "5c440a9ef1ef3b494d74e647fab9e41eb48f1fc40c8eabffd55863f46779ed5d",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t2w saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00003-000/BraTS-GLI-00003-000-t2w.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1789441057/t1c.nii.gz",
+      "run_id": "1789441057",
+      "run_time_utc": "2026-09-15T02:57:37+00:00",
+      "bytes": 5730253,
+      "mtime": "2026-09-15T08:27:37",
+      "sha256": "f6205922435b1674585725a2377ba96ea5479d7c2208aa3dbd8feeb1b749241a",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t1c saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00051-000/BraTS-GLI-00051-000-t1c.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1789441057/t1n.nii.gz",
+      "run_id": "1789441057",
+      "run_time_utc": "2026-09-15T02:57:37+00:00",
+      "bytes": 4879471,
+      "mtime": "2026-09-15T08:27:37",
+      "sha256": "a1751776bb82853152ea0b4e814bb239a602f9d0771dab947021a1dadee882bf",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t1n saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00051-000/BraTS-GLI-00051-000-t1n.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1789441057/t2f.nii.gz",
+      "run_id": "1789441057",
+      "run_time_utc": "2026-09-15T02:57:37+00:00",
+      "bytes": 4967161,
+      "mtime": "2026-09-15T08:27:37",
+      "sha256": "4c241e0c4a4b73fe2e9b5befca1ac9a105afaec6d41ecc544020c923ffa54a54",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t2f saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00051-000/BraTS-GLI-00051-000-t2f.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1789441057/t2w.nii.gz",
+      "run_id": "1789441057",
+      "run_time_utc": "2026-09-15T02:57:37+00:00",
+      "bytes": 5066370,
+      "mtime": "2026-09-15T08:27:37",
+      "sha256": "798f62a04fdd590508bd7fba1007cc6c487989b28249cb18c3be2660240357e0",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t2w saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00051-000/BraTS-GLI-00051-000-t2w.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1790613179/t1c.nii.gz",
+      "run_id": "1790613179",
+      "run_time_utc": "2026-09-28T16:32:59+00:00",
+      "bytes": 2428556,
+      "mtime": "2026-09-28T22:02:59",
+      "sha256": "ade0a5c8377daf2401158283de18aa138781b884d2bf6e77aec23aaa0fa08875",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t1c saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00009-000/BraTS-GLI-00009-000-t1c.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1790613179/t1n.nii.gz",
+      "run_id": "1790613179",
+      "run_time_utc": "2026-09-28T16:32:59+00:00",
+      "bytes": 1964489,
+      "mtime": "2026-09-28T22:02:59",
+      "sha256": "9a9d159b56acc6c1d14228078f2215c9ac89e2d4224a0fe72978b66d9870e873",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t1n saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00009-000/BraTS-GLI-00009-000-t1n.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1790613179/t2f.nii.gz",
+      "run_id": "1790613179",
+      "run_time_utc": "2026-09-28T16:32:59+00:00",
+      "bytes": 2233856,
+      "mtime": "2026-09-28T22:02:59",
+      "sha256": "0f407ffd3d48d678b63de7158fa566626a0ad917e3d523d7d6a3cdd6f7e99789",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t2f saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00009-000/BraTS-GLI-00009-000-t2f.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1790613179/t2w.nii.gz",
+      "run_id": "1790613179",
+      "run_time_utc": "2026-09-28T16:32:59+00:00",
+      "bytes": 2077596,
+      "mtime": "2026-09-28T22:02:59",
+      "sha256": "8269c4b3b35f6fe966a699b9c1d0c5afe9e73fe2f2936ca612c0d3294ea147df",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t2w saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00009-000/BraTS-GLI-00009-000-t2w.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1790613289/t1c.nii.gz",
+      "run_id": "1790613289",
+      "run_time_utc": "2026-09-28T16:34:49+00:00",
+      "bytes": 2428556,
+      "mtime": "2026-09-28T22:04:49",
+      "sha256": "ade0a5c8377daf2401158283de18aa138781b884d2bf6e77aec23aaa0fa08875",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t1c saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00009-000/BraTS-GLI-00009-000-t1c.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1790613289/t1n.nii.gz",
+      "run_id": "1790613289",
+      "run_time_utc": "2026-09-28T16:34:49+00:00",
+      "bytes": 1964489,
+      "mtime": "2026-09-28T22:04:49",
+      "sha256": "9a9d159b56acc6c1d14228078f2215c9ac89e2d4224a0fe72978b66d9870e873",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t1n saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00009-000/BraTS-GLI-00009-000-t1n.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1790613289/t2f.nii.gz",
+      "run_id": "1790613289",
+      "run_time_utc": "2026-09-28T16:34:49+00:00",
+      "bytes": 2233856,
+      "mtime": "2026-09-28T22:04:49",
+      "sha256": "0f407ffd3d48d678b63de7158fa566626a0ad917e3d523d7d6a3cdd6f7e99789",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t2f saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00009-000/BraTS-GLI-00009-000-t2f.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1790613289/t2w.nii.gz",
+      "run_id": "1790613289",
+      "run_time_utc": "2026-09-28T16:34:49+00:00",
+      "bytes": 2077596,
+      "mtime": "2026-09-28T22:04:49",
+      "sha256": "8269c4b3b35f6fe966a699b9c1d0c5afe9e73fe2f2936ca612c0d3294ea147df",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t2w saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00009-000/BraTS-GLI-00009-000-t2w.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": true,
+      "action": "delete",
+      "reason": "obsolete upload copy; byte-identical original in data/raw; verified copy in backup; violates 24 h retention"
+    },
+    {
+      "path": "backend/temp/1792149355/t1c.nii.gz",
+      "run_id": "1792149355",
+      "run_time_utc": "2026-10-16T11:15:55+00:00",
+      "bytes": 2639147,
+      "mtime": "2026-10-16T16:45:55",
+      "sha256": "3b92f907a585a13ae99b0c79f315d396a3dd4524f1a35001212509957e264abf",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t1c saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00008-000/BraTS-GLI-00008-000-t1c.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": false,
+      "action": "retain_not_expired",
+      "reason": "upload copy younger than 24 h; retention does not yet require removal"
+    },
+    {
+      "path": "backend/temp/1792149355/t1n.nii.gz",
+      "run_id": "1792149355",
+      "run_time_utc": "2026-10-16T11:15:55+00:00",
+      "bytes": 2397406,
+      "mtime": "2026-10-16T16:45:55",
+      "sha256": "f46e84f3f81a10b11b994fca26ae7f2bf537a6dfc0cb60853c097243924e39e8",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t1n saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00008-000/BraTS-GLI-00008-000-t1n.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": false,
+      "action": "retain_not_expired",
+      "reason": "upload copy younger than 24 h; retention does not yet require removal"
+    },
+    {
+      "path": "backend/temp/1792149355/t2f.nii.gz",
+      "run_id": "1792149355",
+      "run_time_utc": "2026-10-16T11:15:55+00:00",
+      "bytes": 2452120,
+      "mtime": "2026-10-16T16:45:55",
+      "sha256": "c5dbec780a624127d829b4b7165ff6afe6258e9224a529abf8ddaf25474888c5",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t2f saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00008-000/BraTS-GLI-00008-000-t2f.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": false,
+      "action": "retain_not_expired",
+      "reason": "upload copy younger than 24 h; retention does not yet require removal"
+    },
+    {
+      "path": "backend/temp/1792149355/t2w.nii.gz",
+      "run_id": "1792149355",
+      "run_time_utc": "2026-10-16T11:15:55+00:00",
+      "bytes": 2368904,
+      "mtime": "2026-10-16T16:45:55",
+      "sha256": "545a1519ae217731184caad17d6474e3d62736efbad11326b5c21e63124ace12",
+      "category": "uploaded_mri_copy",
+      "purpose": "uploaded t2w saved by old /api/predict",
+      "shape": [
+        240,
+        240,
+        155
+      ],
+      "identical_in_data_raw": [
+        "data/raw/BraTS-GLI-00008-000/BraTS-GLI-00008-000-t2w.nii.gz"
+      ],
+      "in_verified_backup": true,
+      "older_than_24h": false,
+      "action": "retain_not_expired",
+      "reason": "upload copy younger than 24 h; retention does not yet require removal"
+    }
+  ]
+}

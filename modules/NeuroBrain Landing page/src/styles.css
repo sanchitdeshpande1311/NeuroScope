@@ -1,0 +1,223 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* NeuroScope palette */
+  --color-cola: var(--cola);
+  --color-cola-deep: var(--cola-deep);
+  --color-cola-light: var(--cola-light);
+  --color-cream: var(--cream);
+  --color-blush: var(--blush);
+  --color-rose: var(--rose);
+  --color-rose-deep: var(--rose-deep);
+  --color-rose-glow: var(--rose-glow);
+  --color-gold: var(--gold);
+  --color-cyan: var(--cyan);
+  --color-ink: var(--ink);
+  --color-ivory: var(--ivory);
+  --color-mist: var(--mist);
+  --color-dusk: var(--dusk);
+}
+
+:root {
+  --radius: 0.875rem;
+  --cola-deep: oklch(0.17 0.045 12);
+  --cola: oklch(0.21 0.065 12);
+  --cola-light: oklch(0.29 0.095 12);
+  --cream: oklch(0.965 0.02 50);
+  --blush: oklch(0.89 0.045 25);
+  --rose: oklch(0.69 0.16 10);
+  --rose-deep: oklch(0.6 0.18 8);
+  --rose-glow: oklch(0.79 0.12 10);
+  --gold: oklch(0.83 0.12 75);
+  --cyan: oklch(0.82 0.1 220);
+  --ink: oklch(0.2 0.04 15);
+  --ivory: oklch(0.975 0.012 40);
+  --mist: oklch(0.8 0.04 20);
+  --dusk: oklch(0.48 0.06 15);
+
+  --background: var(--cream);
+  --foreground: var(--ink);
+  --card: var(--cola);
+  --card-foreground: var(--ivory);
+  --popover: var(--cola);
+  --popover-foreground: var(--ivory);
+  --primary: var(--rose);
+  --primary-foreground: var(--ivory);
+  --secondary: var(--blush);
+  --secondary-foreground: var(--ink);
+  --muted: var(--blush);
+  --muted-foreground: var(--dusk);
+  --accent: var(--rose-glow);
+  --accent-foreground: var(--ink);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: var(--ivory);
+  --border: oklch(0.69 0.16 10 / 25%);
+  --input: oklch(0.69 0.16 10 / 25%);
+  --ring: var(--rose);
+
+  --gradient-cola: radial-gradient(
+    ellipse at 72% 40%,
+    var(--cola-light) 0%,
+    var(--cola) 40%,
+    var(--cola-deep) 100%
+  );
+  --gradient-cream: radial-gradient(
+    ellipse at 50% 0%,
+    var(--ivory) 0%,
+    var(--cream) 55%,
+    var(--blush) 130%
+  );
+  --gradient-rose-text: linear-gradient(
+    100deg,
+    var(--rose-glow),
+    var(--rose) 50%,
+    var(--rose-deep)
+  );
+  --shadow-glow: 0 0 0 1px oklch(0.79 0.12 10 / 60%), 0 20px 60px -10px oklch(0.69 0.16 10 / 55%);
+  --shadow-soft: 0 18px 40px -18px oklch(0.2 0.04 15 / 45%);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-cola-deep);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+  :focus-visible {
+    outline: 2px solid var(--rose);
+    outline-offset: 3px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@utility bg-cola-gradient {
+  background: var(--gradient-cola);
+}
+@utility bg-cream-gradient {
+  background: var(--gradient-cream);
+}
+@utility text-rose-gradient {
+  background: var(--gradient-rose-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+@utility glow-3d {
+  text-shadow: 0 0 28px oklch(0.79 0.12 10 / 55%);
+}
+@utility shadow-glow {
+  box-shadow: var(--shadow-glow);
+}
+@utility shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+@utility ease-premium {
+  transition-timing-function: var(--ease-out);
+}
+
+@utility reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.7s var(--ease-out),
+    transform 0.7s var(--ease-out);
+  &.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes travel {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(46px);
+  }
+}
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+@utility animate-travel {
+  animation: travel 3.5s ease-in-out infinite;
+}
+@utility animate-bob {
+  animation: bob 1.8s ease-in-out infinite;
+}
+@utility animate-twinkle {
+  animation: twinkle 4s ease-in-out infinite;
+}
+
+@utility font-hero-serif {
+  font-family: "Cormorant Garamond", Garamond, Georgia, "Times New Roman", serif;
+  font-feature-settings:
+    "liga" 1,
+    "kern" 1,
+    "lnum" 1,
+    "pnum" 1;
+}

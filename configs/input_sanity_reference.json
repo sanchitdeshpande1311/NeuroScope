@@ -1,0 +1,128 @@
+{
+  "description": "Reference ranges from training cases (min/max +/- 25% of range). Heuristic, not a validated brain detector.",
+  "n_cases": 40,
+  "case_ids": [
+    "BraTS-GLI-00000-000",
+    "BraTS-GLI-00005-000",
+    "BraTS-GLI-00006-000",
+    "BraTS-GLI-00008-000",
+    "BraTS-GLI-00009-000",
+    "BraTS-GLI-00012-000",
+    "BraTS-GLI-00014-000",
+    "BraTS-GLI-00014-001",
+    "BraTS-GLI-00017-001",
+    "BraTS-GLI-00018-000",
+    "BraTS-GLI-00019-000",
+    "BraTS-GLI-00020-000",
+    "BraTS-GLI-00020-001",
+    "BraTS-GLI-00021-000",
+    "BraTS-GLI-00021-001",
+    "BraTS-GLI-00022-001",
+    "BraTS-GLI-00024-000",
+    "BraTS-GLI-00024-001",
+    "BraTS-GLI-00025-000",
+    "BraTS-GLI-00026-000",
+    "BraTS-GLI-00028-000",
+    "BraTS-GLI-00030-000",
+    "BraTS-GLI-00031-000",
+    "BraTS-GLI-00031-001",
+    "BraTS-GLI-00032-000",
+    "BraTS-GLI-00032-001",
+    "BraTS-GLI-00033-000",
+    "BraTS-GLI-00035-000",
+    "BraTS-GLI-00036-000",
+    "BraTS-GLI-00036-001",
+    "BraTS-GLI-00045-000",
+    "BraTS-GLI-00045-001",
+    "BraTS-GLI-00048-000",
+    "BraTS-GLI-00048-001",
+    "BraTS-GLI-00049-000",
+    "BraTS-GLI-00051-000",
+    "BraTS-GLI-00052-000",
+    "BraTS-GLI-00053-000",
+    "BraTS-GLI-00053-001",
+    "BraTS-GLI-00056-000"
+  ],
+  "ranges": {
+    "foreground_volume_ml": [
+      1115.1492500000002,
+      2186.66975
+    ],
+    "extent_mm_min": [
+      119.0,
+      149.0
+    ],
+    "extent_mm_mid": [
+      129.5,
+      156.5
+    ],
+    "extent_mm_max": [
+      146.75,
+      220.25
+    ],
+    "ellipsoid_fill": [
+      0.6989431074400105,
+      1.0294615799239222
+    ],
+    "corr_t1_t2": [
+      -1.1125035732984543,
+      0.8763725608587265
+    ],
+    "corr_t2_flair": [
+      -0.7328402101993561,
+      0.9766111671924591
+    ],
+    "corr_t1_t1gd": [
+      -0.09731497801840305,
+      1.0940343905240297
+    ]
+  },
+  "hard_features": [
+    "foreground_volume_ml",
+    "extent_mm_max",
+    "extent_mm_min",
+    "ellipsoid_fill"
+  ],
+  "observed": {
+    "foreground_volume_ml": {
+      "min": 1293.736,
+      "max": 2008.083,
+      "mean": 1555.0692
+    },
+    "extent_mm_min": {
+      "min": 124.0,
+      "max": 144.0,
+      "mean": 136.325
+    },
+    "extent_mm_mid": {
+      "min": 134.0,
+      "max": 152.0,
+      "mean": 141.85
+    },
+    "extent_mm_max": {
+      "min": 159.0,
+      "max": 208.0,
+      "mean": 177.425
+    },
+    "ellipsoid_fill": {
+      "min": 0.7540295195206624,
+      "max": 0.9743751678432702,
+      "mean": 0.8639893402004324
+    },
+    "corr_t1_t2": {
+      "min": -0.7810242176055908,
+      "max": 0.544893205165863,
+      "mean": -0.30451289964839817
+    },
+    "corr_t2_flair": {
+      "min": -0.4479316473007202,
+      "max": 0.6917026042938232,
+      "mean": -0.02415583294350654
+    },
+    "corr_t1_t1gd": {
+      "min": 0.10124325007200241,
+      "max": 0.8954761624336243,
+      "mean": 0.33992653228342534
+    }
+  }
+}

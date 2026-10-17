@@ -1,0 +1,2513 @@
+{
+ "created": "2026-10-17T08:14:16",
+ "project_root": "C:\\Users\\hp\\OneDrive\\Desktop\\DM PROJECT BRAIN TUMUR",
+ "modules_dir": "C:\\Users\\hp\\NeuroScope3D_modules",
+ "file_count": 490,
+ "module_file_counts": {
+  "NeuroBrain Landing page": 52,
+  "location": 48,
+  "screenshot-perfect-project-39": 118,
+  "tumor-tracker-nifti": 123,
+  "_integration_patches": 1
+ },
+ "excluded": {
+  "(project)/.claude/": "excluded path",
+  "(project)/.git/": "dependency/build/cache folder",
+  "(project)/.tmp/": "excluded path",
+  "(project)/skill-creator/": "excluded path",
+  "(project)/venv/": "dependency/build/cache folder",
+  "(project)/.env": "real .env file (may contain secrets)",
+  "(project)/BACKUP_MANIFEST.json": "excluded file",
+  "(project)/backend/results/": "excluded path",
+  "(project)/backend/runs/": "excluded path",
+  "(project)/backend/temp/": "excluded path",
+  "(project)/backend/__pycache__/": "dependency/build/cache folder",
+  "(project)/data/raw/": "excluded path",
+  "(project)/frontend/.git/": "dependency/build/cache folder",
+  "(project)/frontend/.next/": "dependency/build/cache folder",
+  "(project)/frontend/node_modules/": "dependency/build/cache folder",
+  "(project)/frontend/tsconfig.tsbuildinfo": "excluded file",
+  "(project)/ml/__pycache__/": "dependency/build/cache folder",
+  "(project)/scripts/__pycache__/": "dependency/build/cache folder",
+  "modules/NeuroBrain Landing page/.output/": "dependency/build/cache folder",
+  "modules/NeuroBrain Landing page/.tanstack/": "dependency/build/cache folder",
+  "modules/NeuroBrain Landing page/.wrangler/": "dependency/build/cache folder",
+  "modules/NeuroBrain Landing page/node_modules/": "dependency/build/cache folder",
+  "modules/location/dist/": "excluded path",
+  "modules/location/node_modules/": "dependency/build/cache folder",
+  "modules/location/.env": "real .env file (may contain secrets)",
+  "modules/screenshot-perfect-project-39/.git/": "dependency/build/cache folder",
+  "modules/screenshot-perfect-project-39/.output/": "dependency/build/cache folder",
+  "modules/screenshot-perfect-project-39/.tanstack/": "dependency/build/cache folder",
+  "modules/screenshot-perfect-project-39/node_modules/": "dependency/build/cache folder",
+  "modules/tumor-tracker-nifti/.git/": "dependency/build/cache folder",
+  "modules/tumor-tracker-nifti/.output/": "dependency/build/cache folder",
+  "modules/tumor-tracker-nifti/.pytest_cache/": "dependency/build/cache folder",
+  "modules/tumor-tracker-nifti/.tanstack/": "dependency/build/cache folder",
+  "modules/tumor-tracker-nifti/node_modules/": "dependency/build/cache folder",
+  "modules/tumor-tracker-nifti/.env": "real .env file (may contain secrets)",
+  "modules/tumor-tracker-nifti/backend_err.log": "cache/log file",
+  "modules/tumor-tracker-nifti/backend_out.log": "cache/log file",
+  "modules/tumor-tracker-nifti/backend/storage/": "excluded path",
+  "modules/tumor-tracker-nifti/backend/app/__pycache__/": "dependency/build/cache folder",
+  "modules/tumor-tracker-nifti/backend/tests/__pycache__/": "dependency/build/cache folder"
+ },
+ "secret_scan_hits": [
+  {
+   "file": "modules/location/GOOGLE_LIVE_INTEGRATION_REPORT.md",
+   "pattern": "filled_api_key_assignment"
+  }
+ ],
+ "files": [
+  {
+   "path": ".gitignore",
+   "bytes": 619,
+   "sha256": "0de5702fb9f43eb0df99002872a7c1d15bd3ec6813141d134b0f213e944c92b5"
+  },
+  {
+   "path": "AGENTS.md",
+   "bytes": 4013,
+   "sha256": "cd2e20c24ba7beb63fcb055a882176a36a8f1c820398feb6a0fe5db1e53dbf80"
+  },
+  {
+   "path": "ARCHITECTURE.md",
+   "bytes": 26067,
+   "sha256": "738c194894bb2349b96ef5633e967de1167dca24157c6969f9accfc828e7375a"
+  },
+  {
+   "path": "CLAUDE_PROGRESS_HANDOFF.txt",
+   "bytes": 11704,
+   "sha256": "30b751e7daafbd6f8804f2a755dbeeef3216a1e6c2bc5f3dddf0969f3f51d6b5"
+  },
+  {
+   "path": "FINAL_IMPLEMENTATION_REPORT.txt",
+   "bytes": 26843,
+   "sha256": "1f431224fce463ac76fc8801cd3be6a8701a89a6e4d5d2018e44f0d5a046aae3"
+  },
+  {
+   "path": "GRAPH_ANALYSIS_IMPLEMENTATION_REPORT.txt",
+   "bytes": 14265,
+   "sha256": "3ef616e2724bfe3efec802895be41425a462050b739d0e36b8dd5332928a4a14"
+  },
+  {
+   "path": "INTEGRATION_REPORT.md",
+   "bytes": 12114,
+   "sha256": "5599a267ad8d5d7f7ee97c1791cde59282503423792402c1287fea310b7ab3c3"
+  },
+  {
+   "path": "README.md",
+   "bytes": 6728,
+   "sha256": "b341ed62c053e99b9832753546e74e1eeb138322c76ad1bb555964154bc2c06b"
+  },
+  {
+   "path": "SETUP_FROM_ZIP.md",
+   "bytes": 3849,
+   "sha256": "90bd16fe70a58a3e79c57d9d9e642dc781be84d0763eae218d9cee41d3c7d08b"
+  },
+  {
+   "path": "UI_UX_IMPLEMENTATION_REPORT.md",
+   "bytes": 17873,
+   "sha256": "2a091cf433a46e60136c5908232a20f41fd80638bea715f25d5b079fd3a95508"
+  },
+  {
+   "path": "requirements.txt",
+   "bytes": 168,
+   "sha256": "bed990aef0f42c733788d1eafc22fd165f66288ef583e1e975fc014122237940"
+  },
+  {
+   "path": "start.ps1",
+   "bytes": 1656,
+   "sha256": "973997acfaf056daf1d9fd5c93953faf959234e4f185540723e4c758e34b4b15"
+  },
+  {
+   "path": "backend/main.py",
+   "bytes": 26773,
+   "sha256": "26ceae325f5a97f7faaae4c17098c6c62905604024eab9af0ad31eb6ced0068e"
+  },
+  {
+   "path": "configs/heldout_cases.json",
+   "bytes": 77015,
+   "sha256": "b417f5666a81da9ad691105de9423b2b1473ea68dfd2219d99698fe2394ac02b"
+  },
+  {
+   "path": "configs/input_sanity_reference.json",
+   "bytes": 3003,
+   "sha256": "cef10768ca30ba390b9f93affae8eb0e0380019382d42e0f4ed1a22b6f33a74d"
+  },
+  {
+   "path": "data/processed/graphs/BraTS-GLI-00000-000_graph.json",
+   "bytes": 3620,
+   "sha256": "8a67f19d8df775bd0779058b0058dd8cbab1140896e25ad9e12da4ba8a133cff"
+  },
+  {
+   "path": "data/processed/graphs/BraTS-GLI-00002-000_graph.json",
+   "bytes": 2975,
+   "sha256": "5c11003e27723991841df2bf43289940a43ed91239a5ec529a18a23fbec0709c"
+  },
+  {
+   "path": "data/processed/graphs/BraTS-GLI-00003-000_graph.json",
+   "bytes": 2054,
+   "sha256": "9a62af0a18ad6802d23e6124e7ecb0f19033362a9571e1d79aa07cc811f5b42f"
+  },
+  {
+   "path": "data/processed/graphs/BraTS-GLI-00005-000_graph.json",
+   "bytes": 2051,
+   "sha256": "c3b138574bba1d020ad17dfe4b7dd11a214b8d57f6c14aa8339b064fb9e8d10c"
+  },
+  {
+   "path": "data/processed/graphs/BraTS-GLI-00006-000_graph.json",
+   "bytes": 2042,
+   "sha256": "e9d1afca7e861feb9a1ac33d40186a20d484a2e6fbd3b28bec49d044591f65e5"
+  },
+  {
+   "path": "data/processed/graphs/DEPRECATED.txt",
+   "bytes": 415,
+   "sha256": "13449f362eaf94721b3058da6bc6dea9efa351a75c5156052a728a5548a9e08a"
+  },
+  {
+   "path": "data/processed/graphs_v2/BraTS-GLI-00000-000_graph.json",
+   "bytes": 3620,
+   "sha256": "2de8983a3ab541d72427ca7daebd1bff4f3cba31372ff6d2eb273611407ea233"
+  },
+  {
+   "path": "data/processed/graphs_v2/BraTS-GLI-00002-000_graph.json",
+   "bytes": 2980,
+   "sha256": "f1da0689e90fdc5180b94fdcf012d40ec3bcb51a4737bd0bfc270a3de10de209"
+  },
+  {
+   "path": "data/processed/graphs_v2/BraTS-GLI-00003-000_graph.json",
+   "bytes": 2055,
+   "sha256": "f1bbb16c02c293e6df2ede31fe0021102edb584cabf665f92ee38ea65c92d478"
+  },
+  {
+   "path": "data/processed/graphs_v2/BraTS-GLI-00005-000_graph.json",
+   "bytes": 4067,
+   "sha256": "df373c6e168e76706998f44f97bb2ec27eeec92869a806aa1530aa9a8ae4b3d9"
+  },
+  {
+   "path": "data/processed/graphs_v2/BraTS-GLI-00006-000_graph.json",
+   "bytes": 2044,
+   "sha256": "0f0ff1600dfd6837a76e01ad48f465515811f71ec7bf70a33b46619c98637292"
+  },
+  {
+   "path": "data/splits/test.json",
+   "bytes": 92802,
+   "sha256": "d926a165b18bac7286c73b4f8dd0c620cd3c1a42ea139702d799267bcc503338"
+  },
+  {
+   "path": "data/splits/train.json",
+   "bytes": 429628,
+   "sha256": "aee655d09e4c95b58d888cbec8769538c6fc451717eb5c31a7a1a2d0200a41c1"
+  },
+  {
+   "path": "data/splits/val.json",
+   "bytes": 91820,
+   "sha256": "44376301ff704add0c5bd99b99878c87fdab1dfd04024a5d4a408cb1dbd006a3"
+  },
+  {
+   "path": "docs/COMMIT_PLAN.md",
+   "bytes": 3398,
+   "sha256": "23e731efb4bb8af475f6f43c08ad5cff5117dfe80b144ddc70af7fe86ef941a2"
+  },
+  {
+   "path": "docs/DATA_AND_LICENCES.md",
+   "bytes": 2384,
+   "sha256": "565ebae01e8ddd0564a46265a1e21e3be1eeb60a008ebc445639aa8b123c7f39"
+  },
+  {
+   "path": "docs/MODEL_CARD.md",
+   "bytes": 4931,
+   "sha256": "be6dd137892b9ad7b218921cd159e835e03cbb45004361884d351e126175b38a"
+  },
+  {
+   "path": "docs/ORGANISER_QUESTIONS.md",
+   "bytes": 1571,
+   "sha256": "c0bef356d382b15d529f92024ddf3399510b5e6001ccc5b7b2140cec2d590064"
+  },
+  {
+   "path": "docs/TEST_RESULTS.md",
+   "bytes": 20864,
+   "sha256": "c83ff4fc45b6c6501f9a4f004514a4075dece589baa8406de46e47c52b4dcbe7"
+  },
+  {
+   "path": "execution/audit_old_uploads.py",
+   "bytes": 6570,
+   "sha256": "9c839b961800e76198a3348643485a2d6afabecfeadb91d2552becf1fa5a78fe"
+  },
+  {
+   "path": "execution/backup_project.py",
+   "bytes": 3725,
+   "sha256": "bb0d72aa6cb5adc1bae7ecd9248789b6956ec930059ebfbc04b79b37cdb159f9"
+  },
+  {
+   "path": "execution/calibrate_input_sanity.py",
+   "bytes": 2216,
+   "sha256": "4ffefa8c49635d3f49057610b323a375a5c8126af7c50c7eee730f2b38f58123"
+  },
+  {
+   "path": "execution/evaluate_dataset.py",
+   "bytes": 4930,
+   "sha256": "c05b2022fd26dbf68f6776eeaf4f03df151e7bbe39a283e3fa683f5819fbcf01"
+  },
+  {
+   "path": "execution/evaluate_heldout.py",
+   "bytes": 4469,
+   "sha256": "35288e23de2a2f0b097ad6fd6b4fad1f6075423ae8dfa7359d345abfee3f82eb"
+  },
+  {
+   "path": "execution/make_heldout_list.py",
+   "bytes": 1806,
+   "sha256": "e812c6c11650721ed7ac251785a00bcd3cad4494d07dc7f7b2c5482111aedd74"
+  },
+  {
+   "path": "execution/make_marker_case.py",
+   "bytes": 2351,
+   "sha256": "9d229f10b033de4209cb07c3b209f07da6bc53e34cbd28574546b075fc17282d"
+  },
+  {
+   "path": "execution/package_project.py",
+   "bytes": 8310,
+   "sha256": "fbda7844508a5553ee57c149ca6225c8450297197b931251bd22185380d33af5"
+  },
+  {
+   "path": "execution/run_inference.py",
+   "bytes": 1859,
+   "sha256": "c0cca8a4d2b0bfcc4548830ce3c0af6a3d977f3d9f057607e75b409c075b8a02"
+  },
+  {
+   "path": "execution/summarize_refinement_eval.py",
+   "bytes": 3072,
+   "sha256": "baf5c31d848cda9d8787970765895f6051e25176f5a048f04693c7de61fb4a59"
+  },
+  {
+   "path": "frontend/.gitignore",
+   "bytes": 480,
+   "sha256": "207e265ff4901f9ad9f96d8ce08530e04f9fc600815472a66d0a446096d654cd"
+  },
+  {
+   "path": "frontend/AGENTS.md",
+   "bytes": 678,
+   "sha256": "63f2c50380ed6303237cce215ce27af1d620d094c215e28d1b1538a3c070e3bb"
+  },
+  {
+   "path": "frontend/CLAUDE.md",
+   "bytes": 11,
+   "sha256": "336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49"
+  },
+  {
+   "path": "frontend/README.md",
+   "bytes": 1450,
+   "sha256": "60b55ff7df79af72590f9524208e46642bc32bdc175cdad41349681c0e2f958f"
+  },
+  {
+   "path": "frontend/eslint.config.mjs",
+   "bytes": 465,
+   "sha256": "870f1adccecf3051cbcd9fd307cef51d7633cf510979c181a81f4b1797273493"
+  },
+  {
+   "path": "frontend/next-env.d.ts",
+   "bytes": 296,
+   "sha256": "0f70629890b72a0a82e91972cc032c04b658b26c265373cb711cf576bfbf8fcc"
+  },
+  {
+   "path": "frontend/next.config.ts",
+   "bytes": 1958,
+   "sha256": "d4e1dea20042426232ff6cfbe369e6729a07a9c9d41888f316dc08b6eb85d1f0"
+  },
+  {
+   "path": "frontend/package-lock.json",
+   "bytes": 242835,
+   "sha256": "145ee9a9df13eaf14fea3001546f6a88fa337f16b674e752acbde3c948f5784d"
+  },
+  {
+   "path": "frontend/package.json",
+   "bytes": 594,
+   "sha256": "25edc3860bcfcd623301e49d877718d2aa07a18dbb6329db98189c6ec3d2c72d"
+  },
+  {
+   "path": "frontend/postcss.config.mjs",
+   "bytes": 94,
+   "sha256": "dfac7ac2d86d326a0e5adb024e7943c181393ed17a5fcb8f0315b24c7da6ddde"
+  },
+  {
+   "path": "frontend/tsconfig.json",
+   "bytes": 670,
+   "sha256": "5c51df4c59f4510d8c7dadf07a5c32132228826a3b331da5e286207b4df7ef9c"
+  },
+  {
+   "path": "frontend/public/file.svg",
+   "bytes": 391,
+   "sha256": "2b67812c325c199a02536cdbeea0c593a72f707d323b72ee3e08dbab06753bd4"
+  },
+  {
+   "path": "frontend/public/globe.svg",
+   "bytes": 1035,
+   "sha256": "b614b9bf183925957661ac851498fe1d8029fd43a62fbfed86f9e2624a57e7cf"
+  },
+  {
+   "path": "frontend/public/next.svg",
+   "bytes": 1375,
+   "sha256": "55995dfad6ecb4945a1e856ddca03c5e16aa5bf13fd21b4df6a74ae79357bcfc"
+  },
+  {
+   "path": "frontend/public/vercel.svg",
+   "bytes": 128,
+   "sha256": "f081337b2fee635b455b63275406a3e7f39d6a014e25ad90dab5a67e62a12ac4"
+  },
+  {
+   "path": "frontend/public/window.svg",
+   "bytes": 385,
+   "sha256": "644768c4aaeb4767bce293344eeb0c125fb804a94d801440424072202d85e3a1"
+  },
+  {
+   "path": "frontend/src/app/favicon.ico",
+   "bytes": 25931,
+   "sha256": "2b8ad2d33455a8f736fc3a8ebf8f0bdea8848ad4c0db48a2833bd0f9cd775932"
+  },
+  {
+   "path": "frontend/src/app/globals.css",
+   "bytes": 43415,
+   "sha256": "5eec32af696b6713328f60ccd2d36f847843d4f33a5cb9c2f752e1efc4499a0d"
+  },
+  {
+   "path": "frontend/src/app/layout.tsx",
+   "bytes": 582,
+   "sha256": "a9bb55c06d2aa61239718d529178c975beaa2a66f0c7a27af8bd43d15b9984f9"
+  },
+  {
+   "path": "frontend/src/app/page.tsx",
+   "bytes": 553,
+   "sha256": "d1ca6cf7212a0bfdb63d02bd73f1c6290648725a5ece15f3673cc71c6ca6d49a"
+  },
+  {
+   "path": "frontend/src/app/locate/page.tsx",
+   "bytes": 521,
+   "sha256": "9e30e106fc5b6c82b08c2b37770992bd418addfaab9a5d08a13dd82e8c82c75d"
+  },
+  {
+   "path": "frontend/src/app/runs/[id]/layout.tsx",
+   "bytes": 6321,
+   "sha256": "ca034d5fdf053eac5505dbc4d5fa6160fa180a7cbc35420b3cd5c47599594c7e"
+  },
+  {
+   "path": "frontend/src/app/runs/[id]/page.tsx",
+   "bytes": 5886,
+   "sha256": "2981d6accf94f65206a61e266b95af287be4f62e3de558474a239920008ae516"
+  },
+  {
+   "path": "frontend/src/app/runs/[id]/expert/page.tsx",
+   "bytes": 4036,
+   "sha256": "93fbbe50dc141970d06d9910162000ce636e3c39232b6059679e2c94598f59be"
+  },
+  {
+   "path": "frontend/src/app/runs/[id]/graph/page.tsx",
+   "bytes": 22172,
+   "sha256": "0163623da962d60c4d454e70a10af5b12f68fbb7a223e40a49659820b45e51fc"
+  },
+  {
+   "path": "frontend/src/app/runs/[id]/refinement/page.tsx",
+   "bytes": 7222,
+   "sha256": "5d8c8c636b0a5bc9e0d6f430918026f90baeb2da0e93bc887b0859a8ea8370fd"
+  },
+  {
+   "path": "frontend/src/app/runs/[id]/report/page.tsx",
+   "bytes": 2213,
+   "sha256": "52927299f590e1242fab6bfad67e89bafb8304a4d43d5e97715f0cf055974c7a"
+  },
+  {
+   "path": "frontend/src/app/runs/[id]/viewer/page.tsx",
+   "bytes": 1169,
+   "sha256": "58703f58d4fa09b34bf04840976f5a90c1bab5ba95519d39e3ef025b66e63690"
+  },
+  {
+   "path": "frontend/src/app/tracker/page.tsx",
+   "bytes": 637,
+   "sha256": "9146196bf14fb7c6295dd89208fadde4e1005dcda319c55bc584c293a7abf474"
+  },
+  {
+   "path": "frontend/src/app/upload/page.tsx",
+   "bytes": 12911,
+   "sha256": "a44c31e532a6ad80714894ef29cfc30291d460abeef42f4f26d3a94da2f451d5"
+  },
+  {
+   "path": "frontend/src/components/AppShell.tsx",
+   "bytes": 8150,
+   "sha256": "a849a527c3757802188b3049926da46ad58d230c7fad342533d54da693bfbffd"
+  },
+  {
+   "path": "frontend/src/components/BrandMark.tsx",
+   "bytes": 295,
+   "sha256": "976b929b30b1505f2b4fe155e31b191e7a781bd37415ac7bce39a3ea2406005b"
+  },
+  {
+   "path": "frontend/src/components/ChatAssistant.tsx",
+   "bytes": 4265,
+   "sha256": "1304f8a5779bfc134e29b31193a6b2ba85e839133dffa5bb121d653cf77635bb"
+  },
+  {
+   "path": "frontend/src/components/LayersMenu.tsx",
+   "bytes": 4955,
+   "sha256": "2d73dc20c3f0ace510d33298aaa2903f9ba58850a54d2a60d042cf33114243c4"
+  },
+  {
+   "path": "frontend/src/components/ModuleFrame.tsx",
+   "bytes": 3448,
+   "sha256": "60942b2a3c0796f09e280f4946aa08fcfaecfa8505d33d4c98e0a99cb1edc72a"
+  },
+  {
+   "path": "frontend/src/components/NiiVueViewer.tsx",
+   "bytes": 23862,
+   "sha256": "59322da6e38e2450b2549e7bf5afc6864c2488e30ec61531fa39b0563ffe42cb"
+  },
+  {
+   "path": "frontend/src/components/RunContext.tsx",
+   "bytes": 1823,
+   "sha256": "26808ba7adf53214870aabc6d6a0dd339a5dd2e359825c453fbf157537a741fc"
+  },
+  {
+   "path": "frontend/src/components/ui.tsx",
+   "bytes": 4346,
+   "sha256": "ef6349d4c68c8d670945c3109860eb47aa73abc554aa61cb54e963a5a7ea6f14"
+  },
+  {
+   "path": "frontend/src/lib/api.ts",
+   "bytes": 4528,
+   "sha256": "723894b58272de1a320f7fa15fc52bf00d0526b23d9031de833488edb6e886a3"
+  },
+  {
+   "path": "frontend/src/lib/cursor.ts",
+   "bytes": 599,
+   "sha256": "4c13a7d9399b0dedb955e281600c36b316a188d314b6d9a978746d96971d6891"
+  },
+  {
+   "path": "frontend/src/lib/integrations.ts",
+   "bytes": 1843,
+   "sha256": "d750bf78f2457abc7f59179b6352c115f6c12757afe207a28132d9149a6a7037"
+  },
+  {
+   "path": "frontend/src/lib/picking.ts",
+   "bytes": 13820,
+   "sha256": "28645f4d71a048eabf303ec423e733575156d1b838da9a2b6a381f9044928b03"
+  },
+  {
+   "path": "frontend/src/lib/store.tsx",
+   "bytes": 4503,
+   "sha256": "9b3f156be0c432276a0aaf82151424ceff714da87016677a16ef550cdca75de5"
+  },
+  {
+   "path": "metadata/dataset_manifest.json",
+   "bytes": 614244,
+   "sha256": "61c6fb0b80af6e5924154410a2b373612e65b2c9f991dd5d904bfb9a1c71c6a0"
+  },
+  {
+   "path": "metadata/scan_report.json",
+   "bytes": 559200,
+   "sha256": "659fa0821115303657800ec2041bbeea2c01f6c15ea279ba474cad4a9b5ecef9"
+  },
+  {
+   "path": "metadata/validated_manifest.json",
+   "bytes": 614244,
+   "sha256": "61c6fb0b80af6e5924154410a2b373612e65b2c9f991dd5d904bfb9a1c71c6a0"
+  },
+  {
+   "path": "metadata/validation_stats.json",
+   "bytes": 282,
+   "sha256": "505e4401dd5583acdf4d0025f0f05c647d20415aad86011dcf1d983e26e1a45f"
+  },
+  {
+   "path": "ml/__init__.py",
+   "bytes": 24,
+   "sha256": "2f0b657e43b8fc1cf2acb48a2d7aadb73ebefe83f25f3ef03d3c4c46617b37f9"
+  },
+  {
+   "path": "ml/dataset.py",
+   "bytes": 1193,
+   "sha256": "6f01691e6d8bac2a022466efd30e8ec8af860dbafb0470eb6bddc80367945d70"
+  },
+  {
+   "path": "ml/graph_analysis.py",
+   "bytes": 9642,
+   "sha256": "ada88fc853d660eb89281f97a063335936d835c03498eb1c7d429c4106d1f32b"
+  },
+  {
+   "path": "ml/graph_builder.py",
+   "bytes": 5092,
+   "sha256": "bfae4f670d037575a72a1dc17074d0844e299b9340e5c977fc160c9d9876386b"
+  },
+  {
+   "path": "ml/inference.py",
+   "bytes": 23225,
+   "sha256": "cbcb15b31ed7e0697f414173215dd28df8e992112c64228bf18eddb31cc8c0a7"
+  },
+  {
+   "path": "ml/meshes.py",
+   "bytes": 1485,
+   "sha256": "861586acd88187c22ef22ededf5ac4c99f9ae6c1e7ab04c89b1adacb33fc314d"
+  },
+  {
+   "path": "ml/pipeline.py",
+   "bytes": 7787,
+   "sha256": "02d4a5291fbdda41cc71bbb2391ea7f052f2a6a7c204e9bba9601e525d1823bb"
+  },
+  {
+   "path": "ml/preprocessing.py",
+   "bytes": 2954,
+   "sha256": "f6aaae997f613cc66a45dda9e392d36bcc3a967f4f5e106dcac16e1591b4f217"
+  },
+  {
+   "path": "ml/refinement.py",
+   "bytes": 3002,
+   "sha256": "498d2c4598382d33abb69403152b0e0f23c6513d71667f5b601f1bfa9acc70b5"
+  },
+  {
+   "path": "ml/refinement_compare.py",
+   "bytes": 5513,
+   "sha256": "89b4a1fed4f1a02ab1498707a87e8958deafb2bd7a58c2112f3286a525f7c94a"
+  },
+  {
+   "path": "ml/report.py",
+   "bytes": 7539,
+   "sha256": "5e191a66a03d1c657d56744facfdfe9101f85dbab9990a0d61663e3710516601"
+  },
+  {
+   "path": "ml/report_full.py",
+   "bytes": 25529,
+   "sha256": "fdfbd764fce1feb388a3ac597ea3151e2362d2efff59040263db82a72583343d"
+  },
+  {
+   "path": "ml/spatial_graph.py",
+   "bytes": 17475,
+   "sha256": "bf2ef8b3eef8288f2aa25fd0ce7672363e836421fd07c1b899a7843356ca671a"
+  },
+  {
+   "path": "ml/train.py",
+   "bytes": 5580,
+   "sha256": "93fb384869e5d34d3cf388cbfa0f3e4bb05665188bd4d45f4fb778c689700bc6"
+  },
+  {
+   "path": "models/baseline_checkpoints/best_metric_model.pth",
+   "bytes": 19271607,
+   "sha256": "2decff1363f7861e19b8476cd09dcc15b58d1a4c7eabd681c3f3fffb2f48504d"
+  },
+  {
+   "path": "models/baseline_checkpoints/best_metric_model_epoch13_backup.pth",
+   "bytes": 19271607,
+   "sha256": "548de16feaa139f32367737809619c34bf3cb19b07bbec642434ad3d2521d57c"
+  },
+  {
+   "path": "models/baseline_checkpoints/final_epoch_model.pth",
+   "bytes": 19271607,
+   "sha256": "868a2d28b61dc8ed24e94ed3f87ef69554777a311f197af0c3acc86dc6bf5775"
+  },
+  {
+   "path": "models/smoke_test_checkpoints/best_metric_model.pth",
+   "bytes": 19271192,
+   "sha256": "6678e8083e103ad6c77884530b1ac2ff1b49372cdae58e5f5a6621b0de8120f2"
+  },
+  {
+   "path": "pitch/NeuroScope3D_Feature_Status.md",
+   "bytes": 7543,
+   "sha256": "466eb82e33939a98b185cc5c59ce3773ceb65a334e453c7412f3e141194e888c"
+  },
+  {
+   "path": "pitch/NeuroScope3D_Pitch_Cheat_Sheet.md",
+   "bytes": 4508,
+   "sha256": "586db705acbfff2a9e80a8e47e1839ab224afde9159198324df33638ba0d5077"
+  },
+  {
+   "path": "pitch/NeuroScope3D_Pitching_Guide.md",
+   "bytes": 29661,
+   "sha256": "1a2249c00a7fba567d404c319ca96628f4d2b5846ca33c016f95f9983104c275"
+  },
+  {
+   "path": "pitch/NeuroScope3D_Pitching_QA.md",
+   "bytes": 18455,
+   "sha256": "3dae40c36eaa37c5a994761b8f936d41021b19559af9fd088a6bfaf52d64b023"
+  },
+  {
+   "path": "results/baseline_metrics.json",
+   "bytes": 632,
+   "sha256": "ced68ef976b2606982a45e06ed9cae308d9e20c936e0975a03015c755e723265"
+  },
+  {
+   "path": "results/heldout_eval.json",
+   "bytes": 72207,
+   "sha256": "4c3255129dc428373753877251a191eceba969c1209d28e1ca94700aa24e4cd1"
+  },
+  {
+   "path": "results/judging_tests.json",
+   "bytes": 9349,
+   "sha256": "659037f2b2bc9ea2e2abb12e1ab38912413e3eb551c802895ba218950839f483"
+  },
+  {
+   "path": "results/old_uploads_deletion_log.json",
+   "bytes": 89997,
+   "sha256": "9a6c466bef1c96a2acc51838ab5041d33822f32de995237cd6cad0656e0df651"
+  },
+  {
+   "path": "results/old_uploads_deletion_log.md",
+   "bytes": 13163,
+   "sha256": "8aae3f5a3b1cb94e2776fe52ba0b548e2678e7fec70051e2958249a37b2201c1"
+  },
+  {
+   "path": "results/old_uploads_dry_run.json",
+   "bytes": 86944,
+   "sha256": "5a99d6f4e5de69f273ff89b70084c124e0f8c8d99253c2b1c7b4a0cfc2584506"
+  },
+  {
+   "path": "results/old_uploads_dry_run.md",
+   "bytes": 13164,
+   "sha256": "69eb6a51589a8ac3e3fe79e46851e59e222a517051fdcdb63bc6723f06c95795"
+  },
+  {
+   "path": "results/refinement_eval_summary.json",
+   "bytes": 47654,
+   "sha256": "4e75d7da685cb55cd072a652d2b153e4a6bea1611f43b0801658d6d29307f832"
+  },
+  {
+   "path": "results/sample_run_BraTS-GLI-00360-000/mesh_ET.gii",
+   "bytes": 265631,
+   "sha256": "394036cbe57599e36f230d4cfab3b37f65b2370a5fa63733fd8ab077f7240f72"
+  },
+  {
+   "path": "results/sample_run_BraTS-GLI-00360-000/mesh_TC.gii",
+   "bytes": 218039,
+   "sha256": "73f950e22298f0ea9cfa4a588a87542844e652099a9ddffcffeb9adc1c8a7eb5"
+  },
+  {
+   "path": "results/sample_run_BraTS-GLI-00360-000/mesh_WT.gii",
+   "bytes": 423883,
+   "sha256": "5a6cf54a8e80f474d3b8caab535e5b7f85288ed44c717712937695d50eaca940"
+  },
+  {
+   "path": "results/sample_run_BraTS-GLI-00360-000/mesh_brain.gii",
+   "bytes": 480299,
+   "sha256": "74dfd062cb580369dcc984183b19e155292beee4687cf3a3cecda65578bf07c5"
+  },
+  {
+   "path": "results/sample_run_BraTS-GLI-00360-000/report.pdf",
+   "bytes": 110659,
+   "sha256": "23df89982e16023616e51bde6c40d6eff073a2b8937b93ca30e7bfc9e40c77eb"
+  },
+  {
+   "path": "results/sample_run_BraTS-GLI-00360-000/result.json",
+   "bytes": 12868,
+   "sha256": "e0194fd13c08c072eb4df7866d4aab4a71ddeb632c750893dd35efc5773685ea"
+  },
+  {
+   "path": "results/sample_run_BraTS-GLI-00360-000/seg.nii.gz",
+   "bytes": 65083,
+   "sha256": "0156aeab7d788255d0f3376c1bf8c5f8ce4ff20f38ff9e985c6e2965117310d2"
+  },
+  {
+   "path": "results/sample_run_BraTS-GLI-00360-000/seg_refined.nii.gz",
+   "bytes": 65059,
+   "sha256": "71f8741780a6704bdd0a6c496dc6ec18253b217edfbbe356a75e5fe8ddd932c8"
+  },
+  {
+   "path": "scripts/01_scan_raw.py",
+   "bytes": 2128,
+   "sha256": "d2f325c0d1c1f464c21cdf558cc7dc5e9e5364df476de749d8b9b0eb87640fbd"
+  },
+  {
+   "path": "scripts/02_build_manifest.py",
+   "bytes": 1916,
+   "sha256": "3e6a4a05956f304ac7a9f92251fc2db606ff518ad189ac7d7883ef1aa1f383e8"
+  },
+  {
+   "path": "scripts/03_validate_pairs.py",
+   "bytes": 5388,
+   "sha256": "056fdcbad9f890f669df8b5c3aaa10f40e7b0ca3b53baab47f10046e02ef8df1"
+  },
+  {
+   "path": "scripts/04_make_subject_split.py",
+   "bytes": 1722,
+   "sha256": "dcd1e2b9044c294b5da6e87fd17703fccc4d4688128f777d2e5ba9db3a8dd11e"
+  },
+  {
+   "path": "scripts/05_extract_graphs.py",
+   "bytes": 3388,
+   "sha256": "83415a1501fb3d40cadd83451ab2e1f9cfc8802d29358e898f6f81366a5fa2d6"
+  },
+  {
+   "path": "scripts/06_smoke_test.py",
+   "bytes": 1104,
+   "sha256": "db350da10e7a4acd3aed4850f6b9f1963a22d7203088177321f8289080baee8b"
+  },
+  {
+   "path": "scripts/07_train_baseline.py",
+   "bytes": 1072,
+   "sha256": "5f41fc0ebab3927b6016dc663f8bd4061748c584f1bf4cdec37b7e847df1604d"
+  },
+  {
+   "path": "scripts/08_validate_target_topology.py",
+   "bytes": 2039,
+   "sha256": "eb99d157eebb85b8a74215addabc461b4ea4a18b271b024ec80e5e428afbaa1c"
+  },
+  {
+   "path": "scripts/09_resume_baseline_gpu.py",
+   "bytes": 8837,
+   "sha256": "2b0be4567069d4be7a5960119a9e3b2b577e28b34316940b7868f6919414ef61"
+  },
+  {
+   "path": "scripts/09_train_baseline_gpu.py",
+   "bytes": 1122,
+   "sha256": "59293525b232a4bd810eef2bdd443dcd8dc027ece00fa52bda80d49efef911a3"
+  },
+  {
+   "path": "scripts/10_run_experiment.py",
+   "bytes": 5259,
+   "sha256": "4ac6012bd9a8819401016b103199ef638558b28544d67e22a665924de2775163"
+  },
+  {
+   "path": "scripts/12_test_api_endpoint.py",
+   "bytes": 1897,
+   "sha256": "087c89753cb7a3e5c78cbb0c521dba55ce0a3340463d115f8cab0ce76071216b"
+  },
+  {
+   "path": "scripts/start_integrations.ps1",
+   "bytes": 3086,
+   "sha256": "23f328fa09e3c43bdaba9193f1519529583a266cc5e4f0c9c923ce9c9e52ec73"
+  },
+  {
+   "path": "tests/conftest.py",
+   "bytes": 2405,
+   "sha256": "79c4d700b8046d4feaf8a2eabbed0c40e271d348d940f31494956a0339500d9b"
+  },
+  {
+   "path": "tests/test_judging.py",
+   "bytes": 15125,
+   "sha256": "ac4507daa8934cdbd56d883700047f09dbe7d5e8a838cb3a71a5c82af129fdf2"
+  },
+  {
+   "path": "tests/test_pipeline.py",
+   "bytes": 7073,
+   "sha256": "ed73bdd2dd06308033cd1344405da77a1e2367826b7f9f279a5dfeae835f042c"
+  },
+  {
+   "path": "tests/test_report_full.py",
+   "bytes": 2563,
+   "sha256": "717224301b992014469d213535f9ca3f4db8495593c2e50f7b475c6c1c27c904"
+  },
+  {
+   "path": "tests/test_spatial_graph.py",
+   "bytes": 12955,
+   "sha256": "f7f1afa396e636bb0a20292d7778c60f9db20505b127ac3ed28dce22cc7c4c37"
+  },
+  {
+   "path": "tests/test_ui_backend.py",
+   "bytes": 8201,
+   "sha256": "205732e93cb79ca8332d9a11b31b7beda7a5c4a38a6354a5942253a729d440c1"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/.gitignore",
+   "bytes": 334,
+   "sha256": "74366d54bcd8375f43e80ebe6c1963c27bfa139cb2f384a5a4ee113a9a462e81"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/.prettierignore",
+   "bytes": 92,
+   "sha256": "52c7c767ff0615eec4eb64cc71265877f7f423eb597d665b5e439f337c661a5a"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/.prettierrc",
+   "bytes": 90,
+   "sha256": "1ed88d3b99eced8dc3b6f58f26645466dd1ceaca6c5a9b818531c941ac28e55b"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/AGENTS.md",
+   "bytes": 482,
+   "sha256": "f325419bab6d88476b5146b2506591ff3371d5edc06347cc352dc0221be7c7de"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/README.md",
+   "bytes": 872,
+   "sha256": "a4b53082e43f5f45d7aef88a07ca7d4d0fa78087b277ce3350482377d9a97866"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/components.json",
+   "bytes": 443,
+   "sha256": "37c484818824d2521eee3367e7aa2c2abbd19635d8103d19734b6e24603d0292"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/eslint.config.js",
+   "bytes": 1250,
+   "sha256": "3266245a1ff610a0b37dbb8b8c77b93a125e0d8758b9838cfd04b2e0a1397d56"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/package-lock.json",
+   "bytes": 262265,
+   "sha256": "62116e2cb928c0320fd670f9dfd928c54f42aa344e618c3660ea36cf386261c2"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/package.json",
+   "bytes": 1761,
+   "sha256": "8c9773d44c083b8348e53d8f061f0849313dcaf11de5f868f5b3f39e8a99a9ff"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/tsconfig.json",
+   "bytes": 882,
+   "sha256": "e86f30fcb44f4fe5aaa1138e6f432f0fc3c094d4d7ad36bcabfaf1db8ca96a0e"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/vite.config.ts",
+   "bytes": 820,
+   "sha256": "694f17daf64d3bf3481ee838ce69c26c593c60c0ed45a19209754fe5a742bcf0"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/vitest.config.ts",
+   "bytes": 396,
+   "sha256": "0158325852b8c6c2c4c9e2ae02196430b432a7f40772eb546e227ce16b9da97b"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/.lovable/project.json",
+   "bytes": 124,
+   "sha256": "bd1338b45e8ec628b669a08db3b6149f06d9862e9c6349cd6b0189be506900e4"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/public/favicon.ico",
+   "bytes": 20373,
+   "sha256": "dd821076a9b03adc2173c93956226aea3d92482d7578fc4339c5d3a2e9c24586"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/public/robots.txt",
+   "bytes": 160,
+   "sha256": "a3d27b3ca5ce32341fa9f96f01169b521b1657c05d1860c45d1e53a6258e9e8b"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/public/models/brain-model.glb",
+   "bytes": 3317952,
+   "sha256": "e5ea6af6c62191e4f5245038657ffc412b57581c96c80c63f1454c94306a9b6c"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/src/routeTree.gen.ts",
+   "bytes": 1797,
+   "sha256": "fe513400857214ac5d86672722817dc91b9e425e373c65219feae049a882bf0b"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/src/router.tsx",
+   "bytes": 394,
+   "sha256": "72b68964d3f55ba4f7dcf2a04aad9d97d7c61fabad13aec1d298f1e39ee59fcc"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/src/server.ts",
+   "bytes": 2048,
+   "sha256": "f0ee683067afee145f81a63a3af76b3d3767e2a1f61f0e82582f8da184ad3ef6"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/src/start.ts",
+   "bytes": 944,
+   "sha256": "d79d142c6c5d057acc7a140197f464ef29a2c55bb422aafe700f82b418894e74"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/src/styles.css",
+   "bytes": 5522,
+   "sha256": "32329576e5f67ac94f5254b9fc1d79bae55531c227e54c99b1d5be6f991e791c"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/src/types.ts",
+   "bytes": 165,
+   "sha256": "8180547bf43ea557eba34ee28db9c20b9e7bd4f7c391b6a717a7a5e86141f280"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/src/assets/brain-wireframe-preview.jpg",
+   "bytes": 107674,
+   "sha256": "5803fb8240eb8ec839347eac198bdfbebbd70220b79a30b53fa1d9a324483701"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/src/assets/mri-grid.jpg",
+   "bytes": 143508,
+   "sha256": "3da8af97dd87158164094503cfa873bbda28d2b1d95dab65082486bdb4af8bd9"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/src/assets/mri-layers.jpg",
+   "bytes": 118106,
+   "sha256": "242d74fc5f81624788e465d177f51cd7172b9f4245bee809367ae39880513234"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/src/components/brain/BrainCanvas.tsx",
+   "bytes": 13474,
+   "sha256": "2a89c31dd62b31143d452a658336bb0a45172eb9869f4d7569ae8b6304cda43c"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/src/components/brain/BrainModel.tsx",
+   "bytes": 7334,
+   "sha256": "c95c5f71aa8846173b586798e0990d8b751cb0fa55a51c1c459b2e3cc0f3d72b"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/src/components/brain/NeuralOrbitRings.tsx",
+   "bytes": 4533,
+   "sha256": "22c38e52b44042869339f6cc7fae3fdc25b610e9cc0b60c54b10e226ec9af38c"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/src/components/brain/NeuralParticles.tsx",
+   "bytes": 1972,
+   "sha256": "1bade90de470c1d3f08b5e51ccbf64f4112076c37871bb1520053516e788dce1"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/src/components/brain/ProceduralBrainFallback.tsx",
+   "bytes": 4234,
+   "sha256": "ed36151fd5710932c4de22d15745493e5b15265e3bc6ca3573fa2cca9b999042"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/src/components/brain/TumorMarker.tsx",
+   "bytes": 5694,
+   "sha256": "facf73910ce6dfdbc54d99d29fa4a83ea89f609c5df1b19655e52058276b636f"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/src/components/site/CurvedDivider.tsx",
+   "bytes": 1377,
+   "sha256": "3c7c396abeed56550188732722f93aea2420e5bcb777e46b4bdc373b05552324"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/src/components/site/FeaturesSection.tsx",
+   "bytes": 9004,
+   "sha256": "6ee591fdb309d8e15f8c0719be7d560dc0b24d778cee847008e4ec0dfc323871"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/src/components/site/Footer.tsx",
+   "bytes": 4018,
+   "sha256": "9001c4c2eeecbcd9fe07a69b628e3e56a1514b7fd2872ee8f56694fb617cc041"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/src/components/site/HeroSection.tsx",
+   "bytes": 3915,
+   "sha256": "30f50559c47616be8e24aabb807e2f0f86484782309cd9a0c9794046fad1d12d"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/src/components/site/Navbar.tsx",
+   "bytes": 2609,
+   "sha256": "4713342c749ae1505d5a2d8f880f91fcff09c0b8d704e4a9b5f2747aa34055fb"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/src/components/site/NoveltySection.tsx",
+   "bytes": 25385,
+   "sha256": "a4510f7f9dc6401a1231069935a98e115e2c0402eb51142afdd83c30574107c4"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/src/components/site/Particles.tsx",
+   "bytes": 730,
+   "sha256": "c2b211f4621fa841c9d247eaa6e3e75cca5a8a01b484bb36c15ab0c1e1ea2863"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/src/components/site/ProcessSection.tsx",
+   "bytes": 10245,
+   "sha256": "4c2f707937e9a4e3508aeac2d9ccd03b9a1ec6ec1d4f373694598c9229ded1bb"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/src/components/site/SectionLabel.tsx",
+   "bytes": 392,
+   "sha256": "8a02a645215a8a57cb14c01728690b0f6500417c4e732416345fa418aaf1c4d2"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/src/components/site/ThreeCardCarousel.tsx",
+   "bytes": 4306,
+   "sha256": "789c7a03b1f95ed198b7afd81276cdbaf35ef2de29ca32dc66434981a600fe9f"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/src/components/site/useReveal.ts",
+   "bytes": 1062,
+   "sha256": "05a1f23d1a7e758ec31f2ab40071f7ef9d974945fd34c44fd1eb8961411c3c1e"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/src/components/ui/polaroid-line-carousel.tsx",
+   "bytes": 15656,
+   "sha256": "8b3fa437810dda91cb29a163ffad5eabe24c613fdf5b44337baa0ed190ab2778"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/src/lib/error-capture.ts",
+   "bytes": 2898,
+   "sha256": "d6fa7756cbc4c399f4e891b174c2dce8160e2354972c2ae68413dfd1db843088"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/src/lib/error-page.ts",
+   "bytes": 1371,
+   "sha256": "635915886f5d44a18b6add2a53959dbe2e8ba1bb3f7e597fc714650e74157bb6"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/src/lib/lovable-error-reporting.ts",
+   "bytes": 2219,
+   "sha256": "0a2e8b5f3ffd2dd682ab78be1a9b0998b73284a6525080e4960f85827cd608d3"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/src/lib/utils.ts",
+   "bytes": 169,
+   "sha256": "d1f1e0d62cb8d8d1e04c26e14de842d8a151f75812d81b046c65b5d1fe8e4b27"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/src/routes/README.md",
+   "bytes": 1235,
+   "sha256": "edbd5d3cd5a427882c60b7b7dcdd12c7031f2f8ac0c085d20d2f6abec719e95d"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/src/routes/__root.tsx",
+   "bytes": 4308,
+   "sha256": "6ec067a4db202fd9663c6c8c57b1e65d84d57bb46ff1ac33ca07677269db17e7"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/src/routes/index.tsx",
+   "bytes": 1294,
+   "sha256": "2b3319c57a34a228534d60b8f1ebe6454b9cd49707711d6033a599c0ee841db6"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/src/test/app-routing.test.tsx",
+   "bytes": 698,
+   "sha256": "c817058668430273e00a43620a835f562b8cfe1234ee361c057958c06470cee3"
+  },
+  {
+   "path": "modules/NeuroBrain Landing page/src/test/setup.ts",
+   "bytes": 446,
+   "sha256": "049fd55d8c3bf8742482f5684ecf15407eadd752bad5e86907032112dc05a558"
+  },
+  {
+   "path": "modules/location/.env.example",
+   "bytes": 1163,
+   "sha256": "6b65abdb63a5dfdcef55b6fa81f24bdf3a613ea90b142c9308fdd5602edc363a"
+  },
+  {
+   "path": "modules/location/.gitignore",
+   "bytes": 350,
+   "sha256": "2ceb76625cf5ee5c3ee44fd1c7629c335117dd6edb6a83bf1ba47adff1bd85ea"
+  },
+  {
+   "path": "modules/location/.oxlintrc.json",
+   "bytes": 245,
+   "sha256": "b4d344818a1e1bf43997e4744a9153c8eef770c98b58229cd86363dabb85ded4"
+  },
+  {
+   "path": "modules/location/ANTIGRAVITY_LOCATION_MODULE_HANDOFF.txt",
+   "bytes": 10949,
+   "sha256": "650f69da352466d7bb708252bd00610936a1301656de7f22ebefc30d19b0f536"
+  },
+  {
+   "path": "modules/location/GOOGLE_LIVE_INTEGRATION_REPORT.md",
+   "bytes": 13137,
+   "sha256": "356e6f82babbc0ff5edd6b98e6e20ea1890ac3166a7efa8fbf8796123b923088"
+  },
+  {
+   "path": "modules/location/INTEGRATION_GUIDE.md",
+   "bytes": 4595,
+   "sha256": "3a0a83469b86b869379812469a8c0a2285a30b9f202b56f7d99b5fa143490d19"
+  },
+  {
+   "path": "modules/location/OPENSTREETMAP_INTEGRATION_REPORT.md",
+   "bytes": 12940,
+   "sha256": "ef9c9180563957f5c0360349fe13109b12c95a63eb08f178322c2be4c644a32c"
+  },
+  {
+   "path": "modules/location/README.md",
+   "bytes": 6257,
+   "sha256": "8b5099bf3ec630cedfc29c24b6370a51b31d32a554eb806f3b00962bb25b46a8"
+  },
+  {
+   "path": "modules/location/TEST_REPORT.md",
+   "bytes": 6269,
+   "sha256": "1bbd6f1ac8d087320a0a5c843a3581758d0b57f2d3035e5e313e03e7170ceba6"
+  },
+  {
+   "path": "modules/location/index.html",
+   "bytes": 677,
+   "sha256": "facf2fa699fdf0af8ee6d19490e4b8b0064a97183df42fd7b30de74d232502f6"
+  },
+  {
+   "path": "modules/location/package-lock.json",
+   "bytes": 155786,
+   "sha256": "8d3853ccaa38613b2c0140568f325b2fc1924bea4f319a679710e981dc7d5e29"
+  },
+  {
+   "path": "modules/location/package.json",
+   "bytes": 1179,
+   "sha256": "5e825b96fb58a2fc743ece0303346873cc4bfa3b415adb3a2c7b8d0cd7854766"
+  },
+  {
+   "path": "modules/location/tsconfig.app.json",
+   "bytes": 704,
+   "sha256": "4a60a5085e3af3b52df2e5425ae19e4d2ecce0734fb63d8ccadcee7de31331b3"
+  },
+  {
+   "path": "modules/location/tsconfig.json",
+   "bytes": 119,
+   "sha256": "770b4140bbb581e2dfd9ea9946ffc9c75a1d86ba7d2db5f77c83e37cbdf9d808"
+  },
+  {
+   "path": "modules/location/tsconfig.node.json",
+   "bytes": 558,
+   "sha256": "d366cc0827139db39c61815f22491bbfda56c654354a42ad7795143d314e45e8"
+  },
+  {
+   "path": "modules/location/vite.config.ts",
+   "bytes": 472,
+   "sha256": "aa7c2228e28a8ac4531ac65d3cabf2bde0e3c69b61c3da1c096cde295c1533da"
+  },
+  {
+   "path": "modules/location/public/favicon.svg",
+   "bytes": 9522,
+   "sha256": "61bc9a161de58248288e6905425d7180f0624c2865007b97d763fdac12043a66"
+  },
+  {
+   "path": "modules/location/public/icons.svg",
+   "bytes": 5031,
+   "sha256": "b45fa506195cfcdef406ba9f0c77b36ddc1a7c224040926ec70abc2fdea7b93a"
+  },
+  {
+   "path": "modules/location/server/index.ts",
+   "bytes": 15391,
+   "sha256": "bbb0f5255e622f2d84f83367dbccdac4c87444fdc347a66e1caf2c66544819ac"
+  },
+  {
+   "path": "modules/location/src/App.css",
+   "bytes": 2891,
+   "sha256": "6e25a776d3e8102da5bacb3cb99f4a5fc662a2e01e6143140671a556d28c3d5c"
+  },
+  {
+   "path": "modules/location/src/App.tsx",
+   "bytes": 4758,
+   "sha256": "e7b9ac6ecdcc2c676f4ce497cb2c020de461eef0f3eb72c3e55ab6bb1db44257"
+  },
+  {
+   "path": "modules/location/src/index.css",
+   "bytes": 3284,
+   "sha256": "f33c2ce45f4b708738c2eb6a981ea81050f5a67fb63cae3c83f8b8508ec015ee"
+  },
+  {
+   "path": "modules/location/src/index.ts",
+   "bytes": 1266,
+   "sha256": "7f19082c1769fb37ed5e05d2f41e8205b8330a62dccc680ab147be0c4acff417"
+  },
+  {
+   "path": "modules/location/src/main.tsx",
+   "bytes": 322,
+   "sha256": "99842a9c63a67f7f3ffd57badb20d35b0561e0787bba36325f900582f6c30dba"
+  },
+  {
+   "path": "modules/location/src/assets/hero.png",
+   "bytes": 13057,
+   "sha256": "881ffbcaafc212e49addad08846a5b82761355fa20624253af3477ba33262c5c"
+  },
+  {
+   "path": "modules/location/src/assets/react.svg",
+   "bytes": 4126,
+   "sha256": "35ef61ed53b323ae94a16a8ec659b3d0af3880698791133f23b084085ab1c2e5"
+  },
+  {
+   "path": "modules/location/src/assets/vite.svg",
+   "bytes": 8709,
+   "sha256": "5be21acd42eb7b896e517f4e0f0f11eb5c5d9e54fbbcebe9453f033008fcca6f"
+  },
+  {
+   "path": "modules/location/src/components/DisclaimerBanner.tsx",
+   "bytes": 1765,
+   "sha256": "29898c057f74428bd66fe5347b8c50a76bd96d2a63ee9f80ba482467272684b4"
+  },
+  {
+   "path": "modules/location/src/components/FindNearbyNeurologistsButton.tsx",
+   "bytes": 2188,
+   "sha256": "be348e3d3f61b08f59d7a7f439544ed46c7acac7fcbc1810d9b4874d4b0c6f17"
+  },
+  {
+   "path": "modules/location/src/components/GoogleMapView.tsx",
+   "bytes": 186,
+   "sha256": "89509c9ca9dfb45a7caa425cbc0a3a61caf12b2c11a8276121ea5a27a2a1f1ba"
+  },
+  {
+   "path": "modules/location/src/components/NearbyNeurologistsModule.tsx",
+   "bytes": 14361,
+   "sha256": "86c5cf731b2ded1b701c8c087b5c2572200fb86f6de596d4bc835c06606c48ab"
+  },
+  {
+   "path": "modules/location/src/components/NeurologistCard.tsx",
+   "bytes": 8796,
+   "sha256": "4e64769793cce06c4ecaa274dbe5facfb3c9202cdc3db020be8c80072ce0d93f"
+  },
+  {
+   "path": "modules/location/src/components/NeurologistDetails.tsx",
+   "bytes": 21341,
+   "sha256": "281788cc6ecf8fe39391f03b4cdbab9bd38388988990d3543cdee412f830f404"
+  },
+  {
+   "path": "modules/location/src/components/OpenStreetMapView.tsx",
+   "bytes": 14769,
+   "sha256": "e71467c704c9072db5f340cc21eca797890dfc252e92579a7be237ace0c1a294"
+  },
+  {
+   "path": "modules/location/src/components/RadiusSelector.tsx",
+   "bytes": 2491,
+   "sha256": "a281f8844bea40d95a812d636401ba0bccfd1b5f961ffe70bec10b8354874a6e"
+  },
+  {
+   "path": "modules/location/src/components/SearchHeader.tsx",
+   "bytes": 15925,
+   "sha256": "fec5609c457ba540a753fe82da981d0e04875f924476e24ec4cc5fac98012559"
+  },
+  {
+   "path": "modules/location/src/services/distanceService.ts",
+   "bytes": 4532,
+   "sha256": "dac8ad9988ad3f27e4f14ea039520dbe326f2c3f23c91da5e71be9f5bb0f9ed9"
+  },
+  {
+   "path": "modules/location/src/services/geolocationService.ts",
+   "bytes": 2137,
+   "sha256": "8efb72cd554f4c1726489de71d9992c2809aa899666d4f6e5e8c179659b7cccf"
+  },
+  {
+   "path": "modules/location/src/services/placesService.ts",
+   "bytes": 13108,
+   "sha256": "72336feae120790bfb7a6fc22eb0d92b3e7511530112b34a60745ac0a728dd20"
+  },
+  {
+   "path": "modules/location/src/test/components.test.tsx",
+   "bytes": 8106,
+   "sha256": "ab5728432e2e66d760df55500e9791941597e3f83d8633cb41f210c283d12d55"
+  },
+  {
+   "path": "modules/location/src/test/distanceService.test.ts",
+   "bytes": 4262,
+   "sha256": "9f61126915ec40246f421f38a1a3be0137237855bed6315d99805f186a42a9d0"
+  },
+  {
+   "path": "modules/location/src/test/moduleIntegration.test.tsx",
+   "bytes": 5562,
+   "sha256": "d44103f409f87d6155d04e98a93c2197733b241d3120c017490d6283279bc2cd"
+  },
+  {
+   "path": "modules/location/src/test/openStreetMapRequirements.test.ts",
+   "bytes": 15795,
+   "sha256": "b56c05f16f73d599ad0bb3e3edecd74102329f3308e42ac07ea76746de14b0d6"
+  },
+  {
+   "path": "modules/location/src/test/placesService.test.ts",
+   "bytes": 6423,
+   "sha256": "7254159db767f7e2cac826f4ee51eb2389f9430cf1c8c99eada8c392a2c26db2"
+  },
+  {
+   "path": "modules/location/src/test/securityAndIntegrity.test.ts",
+   "bytes": 2032,
+   "sha256": "e050e5c8c48798e634de41ca29e4b70cb534e4c09bca457754c7e6fdf3d4e9c4"
+  },
+  {
+   "path": "modules/location/src/test/setup.ts",
+   "bytes": 35,
+   "sha256": "27b9e0f69d156c680ff63560e58a12c01a4abec1bdb4756534c93e13c1f278ea"
+  },
+  {
+   "path": "modules/location/src/test/fixtures/mockNeurologists.ts",
+   "bytes": 3190,
+   "sha256": "f33f00842601e9d645245eb7747437cfb7bdc725c8486ef043019ee4b9d08462"
+  },
+  {
+   "path": "modules/location/src/types/neurologist.ts",
+   "bytes": 2464,
+   "sha256": "aad59dd7da35df9ec722c1e5a9affb3384b5910346898773c0861a75a5b03771"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/.env.example",
+   "bytes": 321,
+   "sha256": "29b43e05b5d5fc0e82990a305a62656434792209e1608b37bdc9ab2f553ba26a"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/.gitignore",
+   "bytes": 392,
+   "sha256": "399704575ff022552e81552a7328533d4c83f211e647a39249bedd751809b5d8"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/.prettierignore",
+   "bytes": 100,
+   "sha256": "a0ab34b9cd9654dc9e1c96d95d129fe6748eb530bfaf271761098a08d429470a"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/.prettierrc",
+   "bytes": 96,
+   "sha256": "5d5a35a48e29a64d5238282be6e588318229f3b897ef088c369a76dee283f5d4"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/AGENTS.md",
+   "bytes": 490,
+   "sha256": "f5b162a27132a2e9fc8a316e52fc98fcd407a0b6077221f92cdc991c417807bc"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/README.md",
+   "bytes": 899,
+   "sha256": "7081f44b3aa6fe6570ce88fb02203c2c352306903cc309f93cc1aa37bf221beb"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/bun.lock",
+   "bytes": 226634,
+   "sha256": "c6e21dfbb9399bc58b81e74e27157731741b3aa115d980259dc5636177da6da9"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/bunfig.toml",
+   "bytes": 414,
+   "sha256": "a0f4c6e485b6643a2f170b01b77ce627e0ce5ce75782b7f71806d704790f3b9e"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/components.json",
+   "bytes": 465,
+   "sha256": "4587d143275ee744003e8f9814dcc735c7fb8c56ea198db773fe2c27fdfcb53d"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/eslint.config.js",
+   "bytes": 1290,
+   "sha256": "8dc219908ac50e457ad084979ce5396fe288343a856f6b6be9f56d175baf4825"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/package-lock.json",
+   "bytes": 435034,
+   "sha256": "d84b79c9568e718b475242c8260f98f001c6072fb4fd3670ac93275b80ca39e4"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/package.json",
+   "bytes": 3635,
+   "sha256": "7f63f3709c732388623d8f771bdd9aef8c6ede0809f1ad0d351344567bba0572"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/tsconfig.json",
+   "bytes": 918,
+   "sha256": "4cc7e8babc925c92add0178a664f32022a55ca888dac022b03fc90e93b3766f4"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/vite.config.ts",
+   "bytes": 922,
+   "sha256": "5f6c06a15008a96d5176b1c40c3150825938cc2c05d5871a5376779edaf8a79c"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/vitest.config.ts",
+   "bytes": 412,
+   "sha256": "977508f07e98a5a79cf980f5d9b35e1309e64d36d8709c9767ce35259b26cccb"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/.lovable/project.json",
+   "bytes": 129,
+   "sha256": "d2af55903462beac061c769f19961c281e3dea399d5bcfd72c471810e96bf574"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/public/favicon.ico",
+   "bytes": 20373,
+   "sha256": "dd821076a9b03adc2173c93956226aea3d92482d7578fc4339c5d3a2e9c24586"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/public/robots.txt",
+   "bytes": 174,
+   "sha256": "52710c261d851bc1ad35604017862f2a8444e7a0f02cd7b8b49e3ba92e6d4cea"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/routeTree.gen.ts",
+   "bytes": 3142,
+   "sha256": "6d50dd8f43a8962b2aa65f846d0c163f0616018f9a022181be23d34e2f795598"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/router.tsx",
+   "bytes": 410,
+   "sha256": "7e3481892de4073ba86e9a6c3a52f1cc6c0d8ab8668df1b14a3ce9f7658edc4a"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/server.ts",
+   "bytes": 2109,
+   "sha256": "4200dda605d3af5b6ba95e79022fdd40d3075cb39ee0d8bacd769ec2312baa92"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/start.ts",
+   "bytes": 973,
+   "sha256": "9d3a00e7f89d1596407c269e9df54f163f36ca5edc2e9d2b180af640ccf4622e"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/styles.css",
+   "bytes": 10276,
+   "sha256": "3007a5a841205ccac23d86aa6113622cf7b99d79ccb7e805b245b72d1d6b3960"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/types.ts",
+   "bytes": 142,
+   "sha256": "dcc25a448847ddc71f3bab295f341d86575739a793ca03e66ac206cdbcc380d7"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/assets/ancient-citadel-banner.jpg",
+   "bytes": 790997,
+   "sha256": "7afb35a69911119e22f6483b99407cfa5d70e5fca2d3b79b843d58fe7c435db6"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/assets/brain-gold.jpg",
+   "bytes": 114781,
+   "sha256": "c6de76f9153132ec6b168c8b8290119478f8d24161c5fdff7a2a500d623eaac4"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/assets/brain-graph.jpg",
+   "bytes": 168256,
+   "sha256": "71e74908815446c36fda36623961fefb8efd6ea2c22745e77d03f828e938a5e3"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/assets/brain-segmented.jpg",
+   "bytes": 134138,
+   "sha256": "7cd2455771275dab47d523e9b272b84d652eda37a72be9446270100a79c63f53"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/assets/dusty-mauve-neural-banner.jpg",
+   "bytes": 764951,
+   "sha256": "3a0cd5804095a528790fa986f48fcc0d5edf6f15f227d9a5d3b230941f5165b0"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/assets/mri-compare.jpg",
+   "bytes": 114292,
+   "sha256": "d86a1b245cbd646fcb3d619a860cad3fb9216082280d9cbf03df9a366750a1ab"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/assets/mri-grid.jpg",
+   "bytes": 143508,
+   "sha256": "3da8af97dd87158164094503cfa873bbda28d2b1d95dab65082486bdb4af8bd9"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/assets/mri-layers.jpg",
+   "bytes": 118106,
+   "sha256": "242d74fc5f81624788e465d177f51cd7172b9f4245bee809367ae39880513234"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/brain/BrainCanvas.tsx",
+   "bytes": 6325,
+   "sha256": "6bfbe561c4d3241b1f2226e4dca020a881a1004e309ea0b8d87ab4a27c620187"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/brain/BrainModel.tsx",
+   "bytes": 3521,
+   "sha256": "fe7349f810d7f6105cf7906d0667cd9986b163955baf165ba75234da4ce64218"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/brain/NeuralOrbitRings.tsx",
+   "bytes": 4865,
+   "sha256": "3f8439f01aa3c5d8a42e3c5b9bc86402c7b322e8c1a6fb11356a4764e42b93ee"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/brain/NeuralParticles.tsx",
+   "bytes": 2070,
+   "sha256": "7eba05601b4bd12c6c98609f4fbb1525f3cfb48c7e650b18625ee0c82186db15"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/brain/ProceduralBrainFallback.tsx",
+   "bytes": 9790,
+   "sha256": "3faa7348623a1cf0df9dca0e609e110619b6b963f96593f8eeb12d192984032a"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/brain/TumorMarker.tsx",
+   "bytes": 5503,
+   "sha256": "122531450b2e04225c5cbca0ce28a08225bf54b6b71fddc09a61ce5eaeaf8839"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/neuro/ChatWindow.tsx",
+   "bytes": 12218,
+   "sha256": "cedd45da129950dde3c55583a54523f0798f0e60685e1a1caf168af75e9c58c0"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/neuro/Composer.tsx",
+   "bytes": 5914,
+   "sha256": "4112e64c2f83488901206c9569ead6f1209592820bb74319af11ad0a51787677"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/neuro/Logo.tsx",
+   "bytes": 871,
+   "sha256": "33ea53dcd5ce565b21d40d9d026088bfb71c457b673f4d657b0e5e16c1539ce6"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/neuro/Message.tsx",
+   "bytes": 3201,
+   "sha256": "b951d3584dc30ea8cca738e7d684c40dc4248d2728701c6e22c08dacad563d38"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/neuro/Sidebar.tsx",
+   "bytes": 4427,
+   "sha256": "41aa963f0ff58aa95c0d617d1602543f6c5875eb87deaeb4f986ac865a14f49e"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/site/CurvedDivider.tsx",
+   "bytes": 1332,
+   "sha256": "f52c367fcd422ad29a85b1bb4c905a8cb29d89a79ab1478ef18990f5eae5cff5"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/site/FeaturesSection.tsx",
+   "bytes": 2840,
+   "sha256": "f0df44e6200246ab5ff7d3279bd516c77c8108b9f82e7ab33b1f5c8490eaabf4"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/site/HeroSection.tsx",
+   "bytes": 5866,
+   "sha256": "03acf356fc0b3eb8cb3714c192b3130fe825b6f49438fdaa696e3089483722d6"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/site/Navbar.tsx",
+   "bytes": 3520,
+   "sha256": "5437f110e2688cd90cffac4bbacfdae298f95723bfcd4eb0e04b2c93f2442729"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/site/NoveltySection.tsx",
+   "bytes": 3493,
+   "sha256": "5fc71d19335b1a4da4f976f643ffddd9cb7d7d854dc7c18a236f061e3f1def7f"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/site/Particles.tsx",
+   "bytes": 664,
+   "sha256": "1b32ff107a772155b0550ac2bc71aac4d2bcffc9ff9bb74305e8ba1617490ded"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/site/ProcessSection.tsx",
+   "bytes": 4953,
+   "sha256": "51ed50fd6c99bc1b9fd3adee1120785ef83fc5878c4cd94b0b2f37e17ec63973"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/site/SectionLabel.tsx",
+   "bytes": 383,
+   "sha256": "be9ab6aea68d98e1b832fa84024070300622164b364f8e927aad363c586bd79b"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/site/ThreeCardCarousel.tsx",
+   "bytes": 4031,
+   "sha256": "793ec4599f500bf31993d330d35eef3fff430f4a28e466960f433a7eca48b8f0"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/site/useReveal.ts",
+   "bytes": 1062,
+   "sha256": "05a1f23d1a7e758ec31f2ab40071f7ef9d974945fd34c44fd1eb8961411c3c1e"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/accordion.tsx",
+   "bytes": 2066,
+   "sha256": "0de02bb71ec1739e64a2fc2af0848458f204490719bad8e51c3fbe2bcb31d3a8"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/alert-dialog.tsx",
+   "bytes": 4298,
+   "sha256": "7b92eace677b37b106e83baeebc3be6ef396ed7ebce0b20967990ddb83271549"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/alert.tsx",
+   "bytes": 1638,
+   "sha256": "aef6ee0b3672f312e6906461273d8135f11f0f56e2f9b115d92262b7946dd6f9"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/aspect-ratio.tsx",
+   "bytes": 148,
+   "sha256": "67c60b91df6dc9fc729390742b04c02d40c19f51f7a2d4f79110911a061266bb"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/avatar.tsx",
+   "bytes": 1460,
+   "sha256": "a2077be3cb2702c55b3ff024e28a2d19e426bb5827e366d03a6bf756dbf8221c"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/badge.tsx",
+   "bytes": 1155,
+   "sha256": "c57030b62760166ab4c3a36a220a45c7699d375f10671dbd54d8156fec04fd1c"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/breadcrumb.tsx",
+   "bytes": 2850,
+   "sha256": "d70a97e46e4d0846be2d22b546632e55ab3335a3c82804c0160b45a7abdc760d"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/button.tsx",
+   "bytes": 1943,
+   "sha256": "2c8aae724f8effc35a91f833f9c0e8dee010f5cb0b8698441001dac93e8811bf"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/calendar.tsx",
+   "bytes": 7403,
+   "sha256": "ddb9eac5ba02b90c81e14baf906fa50dd6e8ae0e1367c4df0ff8f77e7a4bb6fe"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/card.tsx",
+   "bytes": 1872,
+   "sha256": "c6e182e038df4994615be337e682910a3835594f12d7bf61ab0909e6518477b2"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/carousel.tsx",
+   "bytes": 6440,
+   "sha256": "bdf6f1be424fa2d49cf82d09b219d6613d6bc83340df1105d88ddc328034ede2"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/chart.tsx",
+   "bytes": 10901,
+   "sha256": "d816f293d915c86968a16100f50df23fc20f9cd0bc6f5a1e8fcadea50a1d58f0"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/checkbox.tsx",
+   "bytes": 1069,
+   "sha256": "d2c880d1a7de1633a5eb6f4d09977f203d737de24fe3d7e8ba959b851fd18145"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/collapsible.tsx",
+   "bytes": 346,
+   "sha256": "0be1d5082be6ce6a06e0f67accb38ef50e981f111187e3954d0a1bca062f52e1"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/command.tsx",
+   "bytes": 5019,
+   "sha256": "5f15a9b4aeec3f848264322c65798e92f9af0cb3777ca075796bdfce56deaf54"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/context-menu.tsx",
+   "bytes": 7546,
+   "sha256": "aa47df69152c464a586878b1f35cc19442c4d3778eb58cc3e1d6fa9ba79df9b4"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/dialog.tsx",
+   "bytes": 3752,
+   "sha256": "a5b691c73830e0eab35b93a0ff08703cf7b1dd42a7acd435f1a4ebb9a2e232e9"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/drawer.tsx",
+   "bytes": 3071,
+   "sha256": "096c508d4ebbe9ed00647588e8077cd65970938b773c0e1d252723b903bd620e"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/dropdown-menu.tsx",
+   "bytes": 7752,
+   "sha256": "15f01555648d666df9e3f6ddc7474e85c815624d765adaf166e66329e69991d4"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/form.tsx",
+   "bytes": 4372,
+   "sha256": "e4da338bd60483f6facadf68cd22eac13bd1ae5f6417d6142f14930a614fc334"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/hover-card.tsx",
+   "bytes": 1273,
+   "sha256": "989e3074c71555f2f3a1e8ba3ff23652309dc44bef9ce17705d241aa1ccf5e2f"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/input-otp.tsx",
+   "bytes": 2305,
+   "sha256": "9fff71c84c444efe593891c0323cac7c4b3b59e58d02e32db1006f19b5f902c3"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/input.tsx",
+   "bytes": 798,
+   "sha256": "4ee1c239851691038ddef07a1cac8f3d348a35ff5816ecc296d20c9803b1c3de"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/label.tsx",
+   "bytes": 737,
+   "sha256": "c33a02e76ac4dfd8e328026ca068ec184aae5b00dc454955865edf5f90f403e0"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/menubar.tsx",
+   "bytes": 8743,
+   "sha256": "522d76827b02db048a67d991bce2975c734f295a062b13c77bc699e1f7154c76"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/navigation-menu.tsx",
+   "bytes": 5272,
+   "sha256": "e9cc8001c5444e4bca8abcaff2f9ed5e27fe40201127f6c170d149462c313362"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/pagination.tsx",
+   "bytes": 2837,
+   "sha256": "4ddeedce9ba3119fd105649f27502cdadd036966323c4cfb6bd6686656e7ddf8"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/popover.tsx",
+   "bytes": 1383,
+   "sha256": "5b57bee5769e87ab533a8326c6a25fc1940b5a8fbe1c5276f25ba89615cc7030"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/progress.tsx",
+   "bytes": 806,
+   "sha256": "61646ebf88d17e251bafd69784b40af978e4a5e8311a5651288b203410a9b107"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/radio-group.tsx",
+   "bytes": 1441,
+   "sha256": "2e71f118a77c7adf6c5cc35923576632d0db62c1db4a4aa2b16acad7a841a43d"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/resizable.tsx",
+   "bytes": 1589,
+   "sha256": "3c3fdec6f7cca80a152bc861a313758bf28703170cdd322ce4ec9da5f0b67a2f"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/scroll-area.tsx",
+   "bytes": 1679,
+   "sha256": "c9f69c09fada3c8653fb4122988a43f6bf49a0b71e8be5ffeeca94e0d87ca266"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/select.tsx",
+   "bytes": 5901,
+   "sha256": "27b85948433560e1d1792037dafac2fa4d0dc38e72977464271ceae1bac60a1d"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/separator.tsx",
+   "bytes": 747,
+   "sha256": "0f833b4b3a11bdb561f10b704902cb1533d2119bb0c2c7b81fbb47955b621224"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/sheet.tsx",
+   "bytes": 4370,
+   "sha256": "b78b82c5e0e83ac972ae96ff489ed1d5c0ae792c77c9cec67d201f0c76d3b098"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/sidebar.tsx",
+   "bytes": 24719,
+   "sha256": "09b6531101dd8ed24570c565e485b66b9749c49d903939c7d2780879a369c1f2"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/skeleton.tsx",
+   "bytes": 246,
+   "sha256": "020954b8c6a47e7584eefee6af278bf8ce482b8152585b70052cf196b6fd79a5"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/slider.tsx",
+   "bytes": 1048,
+   "sha256": "5ee4156c0e9a0bfb12fbbdd80a881e5b957e4e4801e7c9082b5d6f7062a7dbbf"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/sonner.tsx",
+   "bytes": 757,
+   "sha256": "be303e32fe6688cdf44ba42466aed162d4d6341eb279317d1fbeb3b4ae4cbe8b"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/switch.tsx",
+   "bytes": 1183,
+   "sha256": "194d3554933df8573ef1bf84584e1acb9b255f55e73b24b2076c36cca116c5e6"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/table.tsx",
+   "bytes": 2914,
+   "sha256": "14849bacd517394129565a2736f367a2dc218dee044e9dbc4c37ede9ae56e22b"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/tabs.tsx",
+   "bytes": 1987,
+   "sha256": "a33395479355fc3cb0127e8731359830ceb29cb137b4090b65a8a9818c2a093d"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/textarea.tsx",
+   "bytes": 698,
+   "sha256": "5af8d497b7b1c4f77399bf5b9f1861230d9950d0c2c5fe1bdbf8b3bdb6eab1e0"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/toggle-group.tsx",
+   "bytes": 1809,
+   "sha256": "868ca1dc957db5b9eb0b8784c170a5dc39e880234747e127a690bfd6628bcb53"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/toggle.tsx",
+   "bytes": 1576,
+   "sha256": "537f16e684e49fe17451d7cab1b7dbf60a594a4f7698b84277fe374f3aca1f59"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/components/ui/tooltip.tsx",
+   "bytes": 1310,
+   "sha256": "657bfcea60e04adf0d5385ae4aabede6158b718206c4b8a91452a728acb9ad00"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/hooks/use-mobile.tsx",
+   "bytes": 595,
+   "sha256": "f6f7a7643d4607721c57e2b8c4081a8f84aefbb0a240f4b9dd1fc20d8d7a61e6"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/hooks/use-speech.ts",
+   "bytes": 5048,
+   "sha256": "91ed3efe6522e91f78be6312fc9865b5f24c3e69af8bd28c458c15f92141d58b"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/lib/case-context.ts",
+   "bytes": 2930,
+   "sha256": "8a102e71ed026bc2bd595c7d5686a48e8499fde7343e3fa15c5d5e08fbc6b001"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/lib/case-store.ts",
+   "bytes": 1188,
+   "sha256": "6a758c1ace84f651141c0f1baa0c9f9d7a6ab84f802241eeeb86ebd11e5f873e"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/lib/error-capture.ts",
+   "bytes": 2979,
+   "sha256": "a590666534b54955f12909cb9abcfc7793750e3b52408b26518e93cdd8289709"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/lib/error-page.ts",
+   "bytes": 1401,
+   "sha256": "b070f0586e5d17c818700024c9dff021b7e7ffb40cd8e7f7e7bc19ea82efd1b5"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/lib/lovable-error-reporting.ts",
+   "bytes": 2289,
+   "sha256": "29178e7b91760dfdb25a88dc32e7f516ee705cc34314cad5b0cd6cb0ad23c29c"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/lib/threads.ts",
+   "bytes": 2662,
+   "sha256": "4b94722733955700a375eef7b3558a8e6c81eacc95f65bcb2874aac1a3cad8a6"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/lib/utils.ts",
+   "bytes": 175,
+   "sha256": "c0adf27efbfa148d5abcf99e860f8e3e6c8fc77a1f99e023c08ef4f12e6ece29"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/lib/ai/gateway.server.ts",
+   "bytes": 946,
+   "sha256": "097a2c0da656638c9b5d4ebda8eb6f6f0479d9129ad731a895081c4df0311a33"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/lib/ai/knowledge.server.ts",
+   "bytes": 6473,
+   "sha256": "0e09536ae2cfe14799d145cfa41200ad10bc1fa76c893f878f6e15b7d1bf4bc3"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/lib/ai/run-id.ts",
+   "bytes": 4177,
+   "sha256": "d10ba3754358e8cae6ffd4b87b63d310ef39b4f032cfceec71cb0d53ed29aedf"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/routes/README.md",
+   "bytes": 856,
+   "sha256": "73feb3fc6b8f1e203baef0a8cc6199530846f459e670943ae2fbb481b0bffb12"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/routes/__root.tsx",
+   "bytes": 5079,
+   "sha256": "55e269208fb7cd40e86a5576350a28ef464d3d9e42f142e01338b63cff4c88ae"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/routes/chat.$threadId.tsx",
+   "bytes": 1109,
+   "sha256": "c2f9617dc54a40c8a198c9821135364bc8fa27f2073b11861b08f7a6101276e5"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/routes/index.tsx",
+   "bytes": 2773,
+   "sha256": "dc0ba99466a72751a2363ebeec42a5a2e5be5b7464c5c374c6d1d8038754f1b5"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/routes/api/chat.ts",
+   "bytes": 6462,
+   "sha256": "c68dfee7b78ca39e6ccaedb96abbcc7419a02842910634fc55a38be51947fc55"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/test/app-routing.test.tsx",
+   "bytes": 715,
+   "sha256": "67cd32c9cab9dd324023ab1887169d85919acd9d8ba59b199f6e5ea8e8acdb4e"
+  },
+  {
+   "path": "modules/screenshot-perfect-project-39/src/test/setup.ts",
+   "bytes": 466,
+   "sha256": "d839196ba3e383c5070303d0e714c9ef677d39352c72c842f7ac3cb119176195"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/.gitignore",
+   "bytes": 366,
+   "sha256": "a6902b86db87a44457dccfc2b070621e3220a84ac932be586c1483a4a43735b0"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/.prettierignore",
+   "bytes": 100,
+   "sha256": "a0ab34b9cd9654dc9e1c96d95d129fe6748eb530bfaf271761098a08d429470a"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/.prettierrc",
+   "bytes": 96,
+   "sha256": "5d5a35a48e29a64d5238282be6e588318229f3b897ef088c369a76dee283f5d4"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/AGENTS.md",
+   "bytes": 490,
+   "sha256": "f5b162a27132a2e9fc8a316e52fc98fcd407a0b6077221f92cdc991c417807bc"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/README.md",
+   "bytes": 900,
+   "sha256": "50bdd3097063ab6d18200972c42581ae19a91fd1dfcd98913ca89dceaeff3b1d"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/bun.lock",
+   "bytes": 193114,
+   "sha256": "052c3148709b04d661d51a0f0e52e87067de1340e4fa77073a14ec1a0972cc60"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/bunfig.toml",
+   "bytes": 414,
+   "sha256": "a0f4c6e485b6643a2f170b01b77ce627e0ce5ce75782b7f71806d704790f3b9e"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/components.json",
+   "bytes": 465,
+   "sha256": "4587d143275ee744003e8f9814dcc735c7fb8c56ea198db773fe2c27fdfcb53d"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/eslint.config.js",
+   "bytes": 1290,
+   "sha256": "8dc219908ac50e457ad084979ce5396fe288343a856f6b6be9f56d175baf4825"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/package-lock.json",
+   "bytes": 365218,
+   "sha256": "a3a486fc4d2e8f35282fc2dfe69e2797dc8cfe1bd840de362c16c42e4ff3f6a3"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/package.json",
+   "bytes": 3407,
+   "sha256": "99a9a3a0e541bea955d91c4d22f215bd44a0bb697bd1c42bf5695c701d912cc3"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/tsconfig.json",
+   "bytes": 921,
+   "sha256": "f09b0be70f1ec04b0f1ae8bd75b409917e0d7d70d340ef705c3f9709ffabdf89"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/vite.config.ts",
+   "bytes": 835,
+   "sha256": "a1c369f516f02aacb4bde1be0856bd97d46a5192a6cfb2f1ae7ceb82e7fee9ab"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/vitest.config.ts",
+   "bytes": 412,
+   "sha256": "977508f07e98a5a79cf980f5d9b35e1309e64d36d8709c9767ce35259b26cccb"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/.lovable/project.json",
+   "bytes": 129,
+   "sha256": "d2af55903462beac061c769f19961c281e3dea399d5bcfd72c471810e96bf574"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/backend/README.md",
+   "bytes": 2965,
+   "sha256": "6276eb1f26f0eded145a769e7a07ea9557717322e388f7bcb4d8024870e650d2"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/backend/requirements.txt",
+   "bytes": 214,
+   "sha256": "adf23f38d818263b0e19e33ab07b64971af3601f30ac86987dd0a45a140ebe6e"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/backend/run_backend.py",
+   "bytes": 675,
+   "sha256": "e06c856fedf78360008c2a215f7bae915d51af8c3e0f623db2d6f6665eee07ca"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/backend/app/changemap.py",
+   "bytes": 3576,
+   "sha256": "e40df48b208587ac0f5d49b0285009615471bbb795a763c51cb72ba6d02a1e65"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/backend/app/config.py",
+   "bytes": 4741,
+   "sha256": "a2b7adaaac8901800b4a8a4f2f8158876e4dc6350eb06ff4c1755659166765a0"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/backend/app/inference.py",
+   "bytes": 8841,
+   "sha256": "e96a1a111f96271446ac40fcd1acb7f1dbb37bbe3b1be13d742281961d2b7b08"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/backend/app/main.py",
+   "bytes": 20696,
+   "sha256": "ec228aaf2b569a7f75a7ccff8d2313a6da613f107a742c58b0cef11e4a0b89d8"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/backend/app/models_info.py",
+   "bytes": 2462,
+   "sha256": "cec05e867cf4343c61b947e402cc957616da0e70c626896dac499652adfca60b"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/backend/app/registration.py",
+   "bytes": 7490,
+   "sha256": "9f1214f261e8398121f40ea15ca14d0a0e71d31e6611dcd464d27c30c5e4520a"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/backend/app/report.py",
+   "bytes": 10482,
+   "sha256": "c244efd426af33a365fe1bc1b31ec557e5cb3d6b539a4618ce6250d3bbf36145"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/backend/app/validation.py",
+   "bytes": 8636,
+   "sha256": "0f1eceb576e7e2fb2f6bbca727a298a9d38e3bf1dee4bc8efeff731c1f4865d1"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/backend/app/volumes.py",
+   "bytes": 18092,
+   "sha256": "de5f1f9f64cfb3c0ced9fc5278d49deb0cb489dc96625c54923d5cdde464ff36"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/backend/models/brats_mri_segmentation/LICENSE",
+   "bytes": 11357,
+   "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/backend/models/brats_mri_segmentation/configs/metadata.json",
+   "bytes": 4625,
+   "sha256": "65322a60a2a3cd49ae773a20f6b3a1bfc25baa906e5bfe784f5fb4557503dc96"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/backend/models/brats_mri_segmentation/models/model.pt",
+   "bytes": 18840620,
+   "sha256": "860ccb3f1c21c99d0410ad8a1ac4ef6b8fab60cec0a503b0ba42675741a750ae"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/backend/tests/test_api.py",
+   "bytes": 4361,
+   "sha256": "d568030501e0f64dadfad1725ae7afd4cc7a8c4bec5714bbd005ee4b2b4e8fdc"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/backend/tests/test_inference.py",
+   "bytes": 1602,
+   "sha256": "cb537e7cb8d38418b877560427d1f3f543944445dde2beb97f247bfc6059c811"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/backend/tests/test_registration.py",
+   "bytes": 2452,
+   "sha256": "22d432fe2760f4e125af2fab1eea73ade9f3ed7423e1aa580c2f8d510808c7e0"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/backend/tests/test_validation.py",
+   "bytes": 4104,
+   "sha256": "6c8694f10025c52b00211b6c7545772702c8ea528fea6f3bdc7c18c7fc0adf30"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/backend/tests/test_volumes.py",
+   "bytes": 6330,
+   "sha256": "e34d7b1ef3a3efe289974d18cce542f24a4d0c9a2a8eb6be9b5ec4c793b62ea7"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/public/favicon.ico",
+   "bytes": 20373,
+   "sha256": "dd821076a9b03adc2173c93956226aea3d92482d7578fc4339c5d3a2e9c24586"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/public/robots.txt",
+   "bytes": 174,
+   "sha256": "52710c261d851bc1ad35604017862f2a8444e7a0f02cd7b8b49e3ba92e6d4cea"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/public/sample_scans/demo_brats_case_001_predicted_seg.nii.gz",
+   "bytes": 2946,
+   "sha256": "c0bd84a9a591414aea53ca102fd5bce58a8781c47154ec75181a0cdd455d8e1c"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/public/sample_scans/flair.nii.gz",
+   "bytes": 211579,
+   "sha256": "dd5aa8572a085d882ad30b47c2e61d30ff408489d1e405cfd92aadd062aea80b"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/public/sample_scans/t1.nii.gz",
+   "bytes": 210365,
+   "sha256": "54de00e5b751c70372f39c2a2cc84f7ab35fca4c88e901e861bc16fd8ea2d366"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/public/sample_scans/t1gd.nii.gz",
+   "bytes": 210497,
+   "sha256": "4fa59282df5a0870da4dc368086cf037ea631f7a51385a9cf52cee8bd61cfbed"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/public/sample_scans/t2.nii.gz",
+   "bytes": 210749,
+   "sha256": "e899c87c8aba5d2eef149f1c7b4b5f73a5dd63f47368a7026e42d5d09173f302"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/routeTree.gen.ts",
+   "bytes": 3674,
+   "sha256": "07a1935ee316a53f8789b8ed5144590e02fcff352b97414741bf631f0956c4ea"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/router.tsx",
+   "bytes": 410,
+   "sha256": "7e3481892de4073ba86e9a6c3a52f1cc6c0d8ab8668df1b14a3ce9f7658edc4a"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/server.ts",
+   "bytes": 2109,
+   "sha256": "4200dda605d3af5b6ba95e79022fdd40d3075cb39ee0d8bacd769ec2312baa92"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/start.ts",
+   "bytes": 973,
+   "sha256": "9d3a00e7f89d1596407c269e9df54f163f36ca5edc2e9d2b180af640ccf4622e"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/styles.css",
+   "bytes": 6249,
+   "sha256": "3b4db9b8b95963c255e45df4b5d333f7371d1ae39640188bd937bc1cf5403957"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/neuro/BackendStatus.tsx",
+   "bytes": 2849,
+   "sha256": "5a386762854035a1fe1788d58c23aac902052f440c1bee996b29cd2adcbb1dbe"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/neuro/BeforeAfterGraph.tsx",
+   "bytes": 14985,
+   "sha256": "8c7c9a91def2933a619166160fec90f82b2903e8d7f787d67a556a3613453ae1"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/neuro/LongitudinalAssessmentCard.tsx",
+   "bytes": 8273,
+   "sha256": "5cd9859989376719b89a75777748098255af4265d2991386dea2fc602c9aa397"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/neuro/Shell.tsx",
+   "bytes": 3362,
+   "sha256": "5d45598f2a0c6638a1c1994685ad3858f8cdcd300779c7f9d7cb6b1b829a5183"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/neuro/SlicePane.tsx",
+   "bytes": 5494,
+   "sha256": "c7355056ddfbae18bc6efe42e218d40e75469497b35fb52415c2d8edbfee4860"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/neuro/StudyPanel.tsx",
+   "bytes": 14042,
+   "sha256": "dc87575d1a83b0b298b0e66882114794b7f770cceb3f25252fbcd88448ff1f32"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/neuro/Volume3D.tsx",
+   "bytes": 5064,
+   "sha256": "7b17483dc047bbc9d1248bb022d4b5a21e5031e74bdf9fc3df832ea5300a1474"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/neuro/VolumeTable.tsx",
+   "bytes": 6674,
+   "sha256": "5ce384db7c8f7c91d45cdfdf23fb45a85544c3abdd9cff1d454ca055fff85696"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/neuro/viewer-utils.ts",
+   "bytes": 3420,
+   "sha256": "4b82cddfdc0204a4680f5c86b3e898e1cacd98e63e671f7873c29fbed2820c43"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/accordion.tsx",
+   "bytes": 2066,
+   "sha256": "0de02bb71ec1739e64a2fc2af0848458f204490719bad8e51c3fbe2bcb31d3a8"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/alert-dialog.tsx",
+   "bytes": 4298,
+   "sha256": "7b92eace677b37b106e83baeebc3be6ef396ed7ebce0b20967990ddb83271549"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/alert.tsx",
+   "bytes": 1638,
+   "sha256": "aef6ee0b3672f312e6906461273d8135f11f0f56e2f9b115d92262b7946dd6f9"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/aspect-ratio.tsx",
+   "bytes": 148,
+   "sha256": "67c60b91df6dc9fc729390742b04c02d40c19f51f7a2d4f79110911a061266bb"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/avatar.tsx",
+   "bytes": 1460,
+   "sha256": "a2077be3cb2702c55b3ff024e28a2d19e426bb5827e366d03a6bf756dbf8221c"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/badge.tsx",
+   "bytes": 1155,
+   "sha256": "c57030b62760166ab4c3a36a220a45c7699d375f10671dbd54d8156fec04fd1c"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/breadcrumb.tsx",
+   "bytes": 2850,
+   "sha256": "d70a97e46e4d0846be2d22b546632e55ab3335a3c82804c0160b45a7abdc760d"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/button.tsx",
+   "bytes": 1943,
+   "sha256": "2c8aae724f8effc35a91f833f9c0e8dee010f5cb0b8698441001dac93e8811bf"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/calendar.tsx",
+   "bytes": 7403,
+   "sha256": "ddb9eac5ba02b90c81e14baf906fa50dd6e8ae0e1367c4df0ff8f77e7a4bb6fe"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/card.tsx",
+   "bytes": 1872,
+   "sha256": "c6e182e038df4994615be337e682910a3835594f12d7bf61ab0909e6518477b2"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/carousel.tsx",
+   "bytes": 6440,
+   "sha256": "bdf6f1be424fa2d49cf82d09b219d6613d6bc83340df1105d88ddc328034ede2"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/chart.tsx",
+   "bytes": 10901,
+   "sha256": "d816f293d915c86968a16100f50df23fc20f9cd0bc6f5a1e8fcadea50a1d58f0"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/checkbox.tsx",
+   "bytes": 1069,
+   "sha256": "d2c880d1a7de1633a5eb6f4d09977f203d737de24fe3d7e8ba959b851fd18145"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/collapsible.tsx",
+   "bytes": 346,
+   "sha256": "0be1d5082be6ce6a06e0f67accb38ef50e981f111187e3954d0a1bca062f52e1"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/command.tsx",
+   "bytes": 5019,
+   "sha256": "5f15a9b4aeec3f848264322c65798e92f9af0cb3777ca075796bdfce56deaf54"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/context-menu.tsx",
+   "bytes": 7546,
+   "sha256": "aa47df69152c464a586878b1f35cc19442c4d3778eb58cc3e1d6fa9ba79df9b4"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/dialog.tsx",
+   "bytes": 3752,
+   "sha256": "a5b691c73830e0eab35b93a0ff08703cf7b1dd42a7acd435f1a4ebb9a2e232e9"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/drawer.tsx",
+   "bytes": 3071,
+   "sha256": "096c508d4ebbe9ed00647588e8077cd65970938b773c0e1d252723b903bd620e"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/dropdown-menu.tsx",
+   "bytes": 7752,
+   "sha256": "15f01555648d666df9e3f6ddc7474e85c815624d765adaf166e66329e69991d4"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/form.tsx",
+   "bytes": 4372,
+   "sha256": "e4da338bd60483f6facadf68cd22eac13bd1ae5f6417d6142f14930a614fc334"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/hover-card.tsx",
+   "bytes": 1273,
+   "sha256": "989e3074c71555f2f3a1e8ba3ff23652309dc44bef9ce17705d241aa1ccf5e2f"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/input-otp.tsx",
+   "bytes": 2305,
+   "sha256": "9fff71c84c444efe593891c0323cac7c4b3b59e58d02e32db1006f19b5f902c3"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/input.tsx",
+   "bytes": 798,
+   "sha256": "4ee1c239851691038ddef07a1cac8f3d348a35ff5816ecc296d20c9803b1c3de"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/label.tsx",
+   "bytes": 737,
+   "sha256": "c33a02e76ac4dfd8e328026ca068ec184aae5b00dc454955865edf5f90f403e0"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/menubar.tsx",
+   "bytes": 8743,
+   "sha256": "522d76827b02db048a67d991bce2975c734f295a062b13c77bc699e1f7154c76"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/navigation-menu.tsx",
+   "bytes": 5272,
+   "sha256": "e9cc8001c5444e4bca8abcaff2f9ed5e27fe40201127f6c170d149462c313362"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/pagination.tsx",
+   "bytes": 2837,
+   "sha256": "4ddeedce9ba3119fd105649f27502cdadd036966323c4cfb6bd6686656e7ddf8"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/popover.tsx",
+   "bytes": 1383,
+   "sha256": "5b57bee5769e87ab533a8326c6a25fc1940b5a8fbe1c5276f25ba89615cc7030"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/progress.tsx",
+   "bytes": 806,
+   "sha256": "61646ebf88d17e251bafd69784b40af978e4a5e8311a5651288b203410a9b107"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/radio-group.tsx",
+   "bytes": 1441,
+   "sha256": "2e71f118a77c7adf6c5cc35923576632d0db62c1db4a4aa2b16acad7a841a43d"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/resizable.tsx",
+   "bytes": 1589,
+   "sha256": "3c3fdec6f7cca80a152bc861a313758bf28703170cdd322ce4ec9da5f0b67a2f"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/scroll-area.tsx",
+   "bytes": 1679,
+   "sha256": "c9f69c09fada3c8653fb4122988a43f6bf49a0b71e8be5ffeeca94e0d87ca266"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/select.tsx",
+   "bytes": 5901,
+   "sha256": "27b85948433560e1d1792037dafac2fa4d0dc38e72977464271ceae1bac60a1d"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/separator.tsx",
+   "bytes": 747,
+   "sha256": "0f833b4b3a11bdb561f10b704902cb1533d2119bb0c2c7b81fbb47955b621224"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/sheet.tsx",
+   "bytes": 4370,
+   "sha256": "b78b82c5e0e83ac972ae96ff489ed1d5c0ae792c77c9cec67d201f0c76d3b098"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/sidebar.tsx",
+   "bytes": 24719,
+   "sha256": "09b6531101dd8ed24570c565e485b66b9749c49d903939c7d2780879a369c1f2"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/skeleton.tsx",
+   "bytes": 246,
+   "sha256": "020954b8c6a47e7584eefee6af278bf8ce482b8152585b70052cf196b6fd79a5"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/slider.tsx",
+   "bytes": 1048,
+   "sha256": "5ee4156c0e9a0bfb12fbbdd80a881e5b957e4e4801e7c9082b5d6f7062a7dbbf"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/sonner.tsx",
+   "bytes": 757,
+   "sha256": "be303e32fe6688cdf44ba42466aed162d4d6341eb279317d1fbeb3b4ae4cbe8b"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/switch.tsx",
+   "bytes": 1183,
+   "sha256": "194d3554933df8573ef1bf84584e1acb9b255f55e73b24b2076c36cca116c5e6"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/table.tsx",
+   "bytes": 2914,
+   "sha256": "14849bacd517394129565a2736f367a2dc218dee044e9dbc4c37ede9ae56e22b"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/tabs.tsx",
+   "bytes": 1987,
+   "sha256": "a33395479355fc3cb0127e8731359830ceb29cb137b4090b65a8a9818c2a093d"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/textarea.tsx",
+   "bytes": 698,
+   "sha256": "5af8d497b7b1c4f77399bf5b9f1861230d9950d0c2c5fe1bdbf8b3bdb6eab1e0"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/toggle-group.tsx",
+   "bytes": 1809,
+   "sha256": "868ca1dc957db5b9eb0b8784c170a5dc39e880234747e127a690bfd6628bcb53"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/toggle.tsx",
+   "bytes": 1576,
+   "sha256": "537f16e684e49fe17451d7cab1b7dbf60a594a4f7698b84277fe374f3aca1f59"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/components/ui/tooltip.tsx",
+   "bytes": 1310,
+   "sha256": "657bfcea60e04adf0d5385ae4aabede6158b718206c4b8a91452a728acb9ad00"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/hooks/use-backend-health.ts",
+   "bytes": 309,
+   "sha256": "5c41243f550a2f4a69cafabd3fcad0fcfee13a39a7adbb9403cd81672399bc66"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/hooks/use-mobile.tsx",
+   "bytes": 595,
+   "sha256": "f6f7a7643d4607721c57e2b8c4081a8f84aefbb0a240f4b9dd1fc20d8d7a61e6"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/lib/error-capture.ts",
+   "bytes": 2979,
+   "sha256": "a590666534b54955f12909cb9abcfc7793750e3b52408b26518e93cdd8289709"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/lib/error-page.ts",
+   "bytes": 1401,
+   "sha256": "b070f0586e5d17c818700024c9dff021b7e7ffb40cd8e7f7e7bc19ea82efd1b5"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/lib/lovable-error-reporting.ts",
+   "bytes": 2289,
+   "sha256": "29178e7b91760dfdb25a88dc32e7f516ee705cc34314cad5b0cd6cb0ad23c29c"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/lib/utils.ts",
+   "bytes": 175,
+   "sha256": "c0adf27efbfa148d5abcf99e860f8e3e6c8fc77a1f99e023c08ef4f12e6ece29"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/lib/neuro/api.ts",
+   "bytes": 4643,
+   "sha256": "ac983508c222e2f1ecfd19ffc83586d0985903553e73f6452230df8c14be21a1"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/lib/neuro/changemap.ts",
+   "bytes": 2308,
+   "sha256": "2d60d48951179472095d3f3f48ad0c010fa477b1cb17c6de678fec1f4a59a141"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/lib/neuro/history.ts",
+   "bytes": 892,
+   "sha256": "ce687e0f8c2ebcb9a9c05eb6068031e36b9e1156b9707bd142acfb2464ee0444"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/lib/neuro/nifti-validate.ts",
+   "bytes": 7680,
+   "sha256": "de43940a5087c2a065ca86ea46ae20890ac5ba90dc547546c64a7163cd9057d0"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/lib/neuro/report.ts",
+   "bytes": 4978,
+   "sha256": "84bf285947bf68ddc233fdd19fafcf720b0303d743dd29f364a52e5ac94d0ef8"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/lib/neuro/types.ts",
+   "bytes": 6375,
+   "sha256": "5ec1bb6c1371606db640d2b50f690942d745e39e67a9fb1136812a08aa944f47"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/lib/neuro/volumes.ts",
+   "bytes": 16011,
+   "sha256": "5d74b0741c79c377bf37dd11ea2939d17fe78f66e547ccc41c43cc4fdfdf74b1"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/routes/README.md",
+   "bytes": 856,
+   "sha256": "73feb3fc6b8f1e203baef0a8cc6199530846f459e670943ae2fbb481b0bffb12"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/routes/__root.tsx",
+   "bytes": 4615,
+   "sha256": "7a9fd8dfed81deb61147229f4111f108c67f56ddf7b4cb23ec5894a3b3d5257a"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/routes/comparisons.$id.tsx",
+   "bytes": 16162,
+   "sha256": "5e43157bfcafa9ac72395f715ae4c98f8e7ef0d18809463c1e76e8f67e56e03d"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/routes/index.tsx",
+   "bytes": 10011,
+   "sha256": "c077e0e043ce5210531d6b2a5b539140ada5d576914ccdb5971b2e6a7dad95f0"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/routes/new.tsx",
+   "bytes": 10181,
+   "sha256": "319401167be05e19d77089a6983536862f8a2adbde0ac21372d4111990dad561"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/routes/timeline.tsx",
+   "bytes": 4153,
+   "sha256": "6b6ed80342701ae8b6da03f31a6286be84de43dc2a27753438d4f81e5b4274d8"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/test/app-routing.test.tsx",
+   "bytes": 715,
+   "sha256": "67cd32c9cab9dd324023ab1887169d85919acd9d8ba59b199f6e5ea8e8acdb4e"
+  },
+  {
+   "path": "modules/tumor-tracker-nifti/src/test/setup.ts",
+   "bytes": 466,
+   "sha256": "d839196ba3e383c5070303d0e714c9ef677d39352c72c842f7ac3cb119176195"
+  },
+  {
+   "path": "modules/_integration_patches/landing_HeroSection.patch",
+   "bytes": 1180,
+   "sha256": "27f5c224fdfddaed2afed918d6748d8595270838819adc42d16956f88653bfef"
+  }
+ ]
+}

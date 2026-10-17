@@ -1,0 +1,203 @@
+================================================================================
+ANTIGRAVITY LOCATION MODULE HANDOFF REPORT
+Project: NeuroScope 3D - Nearby Neurologists Finder Module
+Role: Antigravity Senior Full-Stack Agent -> Claude Code Integration Agent
+Date: October 2026
+================================================================================
+
+1. WHAT HAS BEEN IMPLEMENTED
+--------------------------------------------------------------------------------
+A complete, standalone, production-grade Nearby Neurologists Finder module 
+tailored for NeuroScope 3D (a brain tumour research and 3D visualization platform).
+
+Core Capabilities:
+- Entry Point Button: "Find Nearby Neurologists" (FindNearbyNeurologistsButton) 
+  styled to match NeuroScope 3D medical-tech aesthetics.
+- Geolocation & Search: Explicit "Use My Current Location" button (requests browser
+  GPS coordinates only upon user click) with graceful permission-denial fallback, 
+  plus manual address/city/ZIP geocoding search.
+- Search Radius Selector: 5 km, 10 km (default), and 25 km with clear visual indicator.
+- Google Rating Ranking: Results automatically sorted by highest Google rating first,
+  with reviewCount tie-breaking. Unrated results are clearly distinguished and 
+  placed after rated listings.
+- Specialty & Category Integrity: Differentiates Neurologists (physicians), 
+  Neurology Clinics, Hospitals/Medical Centers, Diagnostic Centers, and Neurosurgeons.
+  Never conflates surgical neurosurgeons with medical neurologists.
+- Strict Medical Ethics & Fee Rules: Never fabricates qualifications, degrees, or
+  experience. Consultation fees display "Consultation fee not publicly available." 
+  unless an official verified fee schedule is published.
+- Dedicated Two-Column Provider Details: Left column contains verified doctor/clinic 
+  information and notices; right column displays an interactive Google Map with 
+  markers, route calculation, and a "Get Directions" navigation button.
+- Dual Mode Support: Seamless switching between Live Google Places API and a 
+  curated Demo Data Mode for local UI testing without Google API quotas.
+- Backend Express Proxy: Optional proxy (server/index.ts) to keep API secrets server-side
+  and bypass browser CORS constraints when querying Google Places Web Services.
+
+
+2. ENTRY COMPONENTS AND ROUTES
+--------------------------------------------------------------------------------
+Primary Reusable Exports (available from 'src/index.ts'):
+- FindNearbyNeurologistsButton: Entry CTA button to place in Navbar, Hero, or Reports.
+- NearbyNeurologistsModule: Main discovery module with search, radius, filters, & cards.
+- NeurologistDetails: Two-column detail view with interactive map.
+- NeurologistCard: Individual doctor/clinic result card.
+- GoogleMapView: Interactive map view with provider marker, user origin, & route.
+- RadiusSelector: Accessible 5 km / 10 km / 25 km radius picker.
+- DisclaimerBanner: Medical and demo data alert notices.
+
+Registered Demo Routes in App.tsx:
+- Route "/"                     -> Host Showcase page demonstrating button & module.
+- Route "/nearby-neurologists"  -> Dedicated full-page route for directory search.
+- Route "/nearby-neurologists/:providerId" -> Dedicated route for individual doctor details.
+
+
+3. FOLDER STRUCTURE
+--------------------------------------------------------------------------------
+location/
+├── .env.example                     # Environment variables template
+├── ANTIGRAVITY_LOCATION_MODULE_HANDOFF.txt # This handoff document
+├── INTEGRATION_GUIDE.md             # Integration guide for Claude Code
+├── README.md                        # Setup and developer documentation
+├── TEST_REPORT.md                   # Automated test execution report
+├── package.json                     # Dependencies and scripts
+├── vite.config.ts                   # Vite, Tailwind CSS v4, and Vitest configuration
+├── tsconfig.json                    # TypeScript project references
+├── tsconfig.app.json                # TypeScript app build configuration
+├── server/
+│   └── index.ts                     # Optional Express proxy for Google Places API
+└── src/
+    ├── index.ts                     # Public entry point exporting all components
+    ├── App.tsx                      # Standalone host showcase & routing
+    ├── main.tsx                     # React DOM root with BrowserRouter
+    ├── index.css                    # Tailwind CSS base styles
+    ├── components/
+    │   ├── DisclaimerBanner.tsx     # Medical and demo notices
+    │   ├── FindNearbyNeurologistsButton.tsx # Entry CTA button
+    │   ├── GoogleMapView.tsx        # Interactive Google Map & fallback canvas
+    │   ├── NearbyNeurologistsModule.tsx # Master search & results container
+    │   ├── NeurologistCard.tsx      # Specialist card component
+    │   ├── NeurologistDetails.tsx   # Two-column detail layout
+    │   ├── RadiusSelector.tsx       # Radius picker component
+    │   └── SearchHeader.tsx         # Search bar, location action, & filters
+    ├── data/
+    │   └── mockNeurologists.ts      # Curated reference demo dataset
+    ├── services/
+    │   ├── distanceService.ts       # Haversine formula, sorting, directions URL
+    │   ├── geolocationService.ts    # Browser Geolocation API wrapper
+    │   └── placesService.ts         # Google Places & Geocoding integration
+    ├── test/
+    │   ├── components.test.tsx      # React component unit tests
+    │   ├── distanceService.test.ts  # Distance, sorting, & directions URL tests
+    │   ├── moduleIntegration.test.tsx # Module workflow integration tests
+    │   ├── placesService.test.ts    # Category classification & query tests
+    │   ├── securityAndIntegrity.test.ts # Security & fee compliance tests
+    │   └── setup.ts                 # Vitest DOM environment setup
+    └── types/
+        └── neurologist.ts           # TypeScript interfaces & types
+
+
+4. DEPENDENCIES ADDED
+--------------------------------------------------------------------------------
+Production Dependencies:
+- react (^19.2.8)
+- react-dom (^19.2.8)
+- react-router-dom (^7.x)
+- lucide-react (^1.x)
+- express (^4.x)
+- cors (^2.x)
+- dotenv (^16.x)
+
+Development Dependencies:
+- tailwindcss (^4.x)
+- @tailwindcss/vite (^4.x)
+- vitest (^5.0.5)
+- jsdom (^26.x)
+- @testing-library/react (^16.x)
+- @testing-library/jest-dom (^6.x)
+- @types/google.maps
+- tsx (^4.x)
+
+
+5. REQUIRED ENVIRONMENT VARIABLES
+--------------------------------------------------------------------------------
+In client-side environment (.env or .env.local):
+- VITE_GOOGLE_MAPS_API_KEY=your_google_maps_api_key_here
+  (or NEXT_PUBLIC_GOOGLE_MAPS_API_KEY if integrating into Next.js)
+
+In server-side environment (if using backend proxy):
+- GOOGLE_MAPS_API_KEY=your_google_maps_api_key_here
+- PORT=5001
+
+
+6. REQUIRED GOOGLE CLOUD APIS AND SETUP
+--------------------------------------------------------------------------------
+1. Enable the following APIs in Google Cloud Console:
+   - Maps JavaScript API
+   - Places API (or Places API New)
+   - Geocoding API
+   - Directions API
+2. Billing must be enabled on the Google Cloud project.
+3. Configure API key restrictions:
+   - Client key: HTTP referrer restrictions (e.g., https://your-domain.com/*)
+   - Server key: IP address restrictions.
+
+
+7. BACKEND / API ENDPOINTS
+--------------------------------------------------------------------------------
+Implemented in server/index.ts:
+- GET /api/health                   -> Health status and API key check
+- GET /api/geocode?address=...       -> Google Geocoding API proxy
+- GET /api/places/nearby?lat=...&lng=...&radius=... -> Google Places Nearby Search
+- GET /api/places/details?placeId=... -> Google Places Details
+
+
+8. INTEGRATION INSTRUCTIONS FOR CLAUDE CODE
+--------------------------------------------------------------------------------
+Step 1: Copy the 'src/' and 'server/' folders or relevant files into the host 
+        NeuroScope 3D repository under e.g. 'src/modules/location/'.
+Step 2: Ensure 'lucide-react' is installed in the host project package.json.
+Step 3: Connect FindNearbyNeurologistsButton to the NeuroScope 3D landing page 
+        or MRI analysis report header:
+        <FindNearbyNeurologistsButton onClick={() => navigate('/nearby-neurologists')} />
+Step 4: Register route in the host app router:
+        <Route path="/nearby-neurologists" element={<NearbyNeurologistsModule />} />
+Step 5: If the host application is Next.js, adapt server/index.ts route logic into 
+        app/api/places/... route handlers.
+Step 6: Supply VITE_GOOGLE_MAPS_API_KEY (or NEXT_PUBLIC_GOOGLE_MAPS_API_KEY) in .env.
+
+
+9. TESTS EXECUTED AND THEIR RESULTS
+--------------------------------------------------------------------------------
+All 25 automated tests across 5 test suites passed (100% success rate):
+- distanceService.test.ts: 5 tests PASSED (Haversine distance, rating sort, tie-breaking, directions URL)
+- placesService.test.ts: 4 tests PASSED (Category inference, error on missing API key, radius filter)
+- securityAndIntegrity.test.ts: 4 tests PASSED (Zero hardcoded secrets, fee integrity, category distinction)
+- components.test.tsx: 9 tests PASSED (Cards, details view, fee disclaimer, radius radio selector, banners)
+- moduleIntegration.test.tsx: 3 tests PASSED (Search page render, filter pills, card-to-details navigation)
+
+Build verification:
+- 'npm run build' (tsc -b && vite build) completed with 0 errors.
+
+Dev server verification:
+- 'npx vite --port 5173' booted successfully in 309 ms.
+
+
+10. KNOWN LIMITATIONS
+--------------------------------------------------------------------------------
+- Live Google API calls require active Google Cloud billing credentials; without a key,
+  the module defaults to Demo Data Mode.
+- Google Places Web Service enforces CORS on direct browser fetch; using the provided 
+  Express proxy or Next.js route handlers is required for server-side place queries.
+- Headless browser automation via Playwright was prevented due to upstream Azure Edge CDN 
+  driver 404; DOM and component interaction testing was verified via jsdom and Vitest.
+
+
+11. OUTSTANDING TASKS & NEXT STEPS FOR CLAUDE CODE
+--------------------------------------------------------------------------------
+1. Review INTEGRATION_GUIDE.md in this repository.
+2. Embed <FindNearbyNeurologistsButton /> into NeuroScope 3D's navigation bar or hero.
+3. Configure the host application route to render <NearbyNeurologistsModule />.
+4. Add the Google Maps API key to the host project's deployment environment.
+5. Perform end-to-end user acceptance testing within the integrated NeuroScope 3D environment.
+================================================================================

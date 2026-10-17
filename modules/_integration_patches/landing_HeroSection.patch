@@ -1,0 +1,13 @@
+--- src/components/site/HeroSection.tsx.orig	2026-10-17 06:55:26.757875600 +0530
++++ src/components/site/HeroSection.tsx	2026-10-17 06:55:42.146683200 +0530
+@@ -36,7 +36,9 @@
+             <button
+               type="button"
+               onClick={() => {
+-                // TODO: Connect to the segmentation backend running on the other laptop.
++                // NeuroScope 3D integration: open the segmentation workspace (same origin by default;
++                // set VITE_WORKSPACE_URL at build time when the workspace is served from another origin).
++                window.location.assign(import.meta.env.VITE_WORKSPACE_URL || "/upload");
+               }}
+               className="inline-flex items-center justify-center rounded-xl border border-rose/40 bg-cola-deep/80 px-6 py-2.5 text-sm font-medium tracking-wide text-[#F4E2C4] shadow-sm backdrop-blur-sm transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-rose hover:bg-rose/15 hover:text-[#FFF1D6] hover:shadow-[0_0_24px_rgba(232,93,117,0.3)] focus-visible:outline-2 focus-visible:outline-rose focus-visible:outline-offset-2 active:translate-y-0 motion-reduce:transform-none"
+             >

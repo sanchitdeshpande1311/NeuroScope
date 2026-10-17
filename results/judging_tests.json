@@ -1,0 +1,288 @@
+{
+  "test_02_volume_cube": {
+    "WT_ml": 16.0,
+    "TC_ml": 0.0,
+    "ET_ml": 0.0,
+    "expected": "WT 16.0 +/-1%, TC 0, ET 0"
+  },
+  "test_03_anisotropic": {
+    "case": "BraTS-GLI-00360-000",
+    "axial_axis": 2,
+    "wt_original_ml": 86.769,
+    "wt_every_second_slice_ml": 87.71600000000001,
+    "rel_diff": 0.010914036118890419,
+    "target": "<0.10"
+  },
+  "test_04_orientation_same_anatomy": {
+    "case": "BraTS-GLI-00360-000",
+    "lr_axis": 0,
+    "axcodes_original": "LPS",
+    "axcodes_flipped": "RPS",
+    "side_original": "L",
+    "side_flipped": "L",
+    "dx_mm": [
+      -16.365299049036594,
+      -16.365299049036565
+    ],
+    "wt_ml": [
+      86.769,
+      86.769
+    ],
+    "rel_diff": 0.0,
+    "dice_after_unflip": 1.0,
+    "target": "same side, |dV| <= 2%"
+  },
+  "test_05_orientation_mirrored_anatomy": {
+    "case": "BraTS-GLI-00360-000",
+    "side_original": "L",
+    "side_mirrored": "R",
+    "dx_mm": [
+      -16.365299049036594,
+      16.50709501999333
+    ],
+    "wt_ml": [
+      86.769,
+      87.286
+    ],
+    "target": "tumour moves to opposite side"
+  },
+  "test_07_invalid_non_nifti": {
+    "http_status": 422,
+    "code": "not_gzip",
+    "message": "File is named .nii.gz but is not gzip-compressed NIfTI data.",
+    "run_dirs_left": 0,
+    "passed": true,
+    "note": ""
+  },
+  "test_07_invalid_corrupt_gzip": {
+    "http_status": 422,
+    "code": "corrupt_gzip",
+    "message": "Corrupt or truncated gzip stream (EOFError).",
+    "run_dirs_left": 0,
+    "passed": true,
+    "note": ""
+  },
+  "test_07_invalid_three_sequences": {
+    "http_status": 422,
+    "code": "missing_modality",
+    "message": "Missing required sequence(s): FLAIR. All four (T1, T1Gd, T2, FLAIR) are required.",
+    "run_dirs_left": 0,
+    "passed": true,
+    "note": ""
+  },
+  "test_07_invalid_mismatched_shapes": {
+    "http_status": 422,
+    "code": "shape_mismatch",
+    "message": "Shape mismatch: FLAIR is (64, 64, 40) but T1Gd is (64, 64, 48). Sequences must be co-registered on one voxel grid.",
+    "run_dirs_left": 0,
+    "passed": true,
+    "note": ""
+  },
+  "test_07_invalid_image_2d": {
+    "http_status": 422,
+    "code": "not_3d",
+    "message": "Volume shape (64, 64, 1) is effectively 2D (an axis has < 8 voxels).",
+    "run_dirs_left": 0,
+    "passed": true,
+    "note": ""
+  },
+  "test_07_invalid_all_zero": {
+    "http_status": 422,
+    "code": "all_zero",
+    "message": "Volume is entirely zero.",
+    "run_dirs_left": 0,
+    "passed": true,
+    "note": ""
+  },
+  "test_07_invalid_nan": {
+    "http_status": 422,
+    "code": "non_finite",
+    "message": "Volume contains NaN or infinite values.",
+    "run_dirs_left": 0,
+    "passed": true,
+    "note": ""
+  },
+  "test_07_invalid_over_1gb": {
+    "http_status": 413,
+    "code": "file_too_large",
+    "message": "T1: file exceeds the 1 GB limit.",
+    "run_dirs_left": 0,
+    "passed": true,
+    "note": "limit lowered to 50 kB to exercise the 1 GB code path"
+  },
+  "test_08_reproducibility": {
+    "case": "BraTS-GLI-00360-000",
+    "dice": {
+      "WT": 1.0,
+      "TC": 1.0,
+      "ET": 1.0
+    },
+    "identical": true,
+    "target": ">=0.99"
+  },
+  "test_09_blind_case": {
+    "case": "BraTS-GLI-01666-000",
+    "seconds": 12.395592700006091,
+    "shape_ok": true,
+    "affine_ok": true,
+    "labels": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "dtype": "uint8",
+    "volumes_ml": {
+      "WT": 114.82600000000001,
+      "TC": 44.980000000000004,
+      "ET": 6.025
+    },
+    "dice_vs_expert": {
+      "WT": 0.8938827961623804,
+      "TC": 0.6431412098262707,
+      "ET": 0.0
+    },
+    "sensitivity_vs_expert": {
+      "WT": 0.8250040516847642,
+      "TC": 0.5621361806872235,
+      "ET": NaN
+    },
+    "note": "Blind w.r.t. development: not in train/val, not in the 30 evaluation cases or other tests. Expert mask read only after prediction."
+  },
+  "test_10a_not_skull_stripped": {
+    "case": "BraTS-GLI-00360-000",
+    "status": "refuse",
+    "issues": [
+      {
+        "level": "refuse",
+        "code": "not_skull_stripped",
+        "message": "The volumes have no zero-valued background around the head. The model was trained only on skull-stripped, co-registered BraTS-style data; this input appears not skull-stripped."
+      },
+      {
+        "level": "refuse",
+        "code": "not_brain_like",
+        "message": "Input does not resemble the skull-stripped brain MRI the model was trained on: foreground_volume_ml=8.93e+03 (reference 1.12e+03..2.19e+03); extent_mm_min=155 (reference 119..149); extent_mm_mid=240 (reference 130..156); extent_mm_max=240 (reference 147..220); ellipsoid_fill=1.91 (reference 0.699..1.03)"
+      }
+    ],
+    "note": "Synthetic non-skull-stripped volume derived from a real case."
+  },
+  "test_10b_not_brain_box_phantom": {
+    "status": "refuse",
+    "issues": [
+      {
+        "level": "refuse",
+        "code": "not_brain_like",
+        "message": "Input does not resemble the skull-stripped brain MRI the model was trained on: foreground_volume_ml=2.4e+03 (reference 1.12e+03..2.19e+03); extent_mm_min=60 (reference 119..149); extent_mm_mid=200 (reference 130..156); ellipsoid_fill=1.91 (reference 0.699..1.03); corr_t1_t2=1 (reference -1.11..0.876); corr_t2_flair=1 (reference -0.733..0.977)"
+      }
+    ],
+    "features": {
+      "foreground_fraction": 0.26881720430107525,
+      "foreground_volume_ml": 2400.0,
+      "extent_mm_min": 60.0,
+      "extent_mm_mid": 200.0,
+      "extent_mm_max": 200.0,
+      "outer_zero_fraction": 1.0,
+      "ellipsoid_fill": 1.9098593171027443,
+      "corr_t1_t2": 1.0000401735305786,
+      "corr_t2_flair": 1.0000451803207397,
+      "corr_t1_t1gd": 1.0000393390655518
+    },
+    "note": "Synthetic non-brain input."
+  },
+  "test_10b_not_brain_small_sphere": {
+    "status": "refuse",
+    "issues": [
+      {
+        "level": "refuse",
+        "code": "not_brain_like",
+        "message": "Input does not resemble the skull-stripped brain MRI the model was trained on: foreground_volume_ml=65.1 (reference 1.12e+03..2.19e+03); extent_mm_min=49 (reference 119..149); extent_mm_mid=49 (reference 130..156); extent_mm_max=49 (reference 147..220); ellipsoid_fill=1.06 (reference 0.699..1.03)"
+      }
+    ],
+    "features": {
+      "foreground_fraction": 0.007293570788530466,
+      "foreground_volume_ml": 65.117,
+      "extent_mm_min": 49.0,
+      "extent_mm_mid": 49.0,
+      "extent_mm_max": 49.0,
+      "outer_zero_fraction": 1.0,
+      "ellipsoid_fill": 1.0570791859835562,
+      "corr_t1_t2": 0.0,
+      "corr_t2_flair": 0.0,
+      "corr_t1_t1gd": 0.0
+    },
+    "note": "Synthetic non-brain input."
+  },
+  "test_10b_not_brain_random_noise_block": {
+    "status": "refuse",
+    "issues": [
+      {
+        "level": "refuse",
+        "code": "not_brain_like",
+        "message": "Input does not resemble the skull-stripped brain MRI the model was trained on: foreground_volume_ml=2.59e+03 (reference 1.12e+03..2.19e+03); extent_mm_mid=120 (reference 130..156); ellipsoid_fill=1.91 (reference 0.699..1.03); corr_t1_t2=1 (reference -1.11..0.876); corr_t2_flair=1 (reference -0.733..0.977)"
+      }
+    ],
+    "features": {
+      "foreground_fraction": 0.2903225806451613,
+      "foreground_volume_ml": 2592.0,
+      "extent_mm_min": 120.0,
+      "extent_mm_mid": 120.0,
+      "extent_mm_max": 180.0,
+      "outer_zero_fraction": 1.0,
+      "ellipsoid_fill": 1.909859317102744,
+      "corr_t1_t2": 1.0000348091125488,
+      "corr_t2_flair": 1.0000370740890503,
+      "corr_t1_t1gd": 1.0000368356704712
+    },
+    "note": "Synthetic non-brain input."
+  },
+  "test_10c_real_brain_accepted": {
+    "case": "BraTS-GLI-00360-000",
+    "status": "ok",
+    "issues": []
+  },
+  "test_06_linked_views": {
+    "method": "Manual browser test (Claude browser pane, Next dev + FastAPI). Real held-out case BraTS-GLI-00402-000 with synthetic marker: rod along k through voxel (170,150) + 3x3x3 cube at (170,150,100), processed by the real /api/predict. Click positions located with NiiVue frac2canvasPosWithTile, then real mouse clicks; readout read from the DOM.",
+    "expected_voxel": [
+      170,
+      150,
+      100
+    ],
+    "expected_world_mm": [
+      -170.0,
+      89.0,
+      100.0
+    ],
+    "axial_click_readout": {
+      "voxel": [
+        170,
+        150,
+        77
+      ],
+      "world_mm": [
+        -169.6,
+        89.4,
+        77.0
+      ],
+      "t1c_value": 4215
+    },
+    "coronal_click_readout": {
+      "voxel": [
+        170,
+        150,
+        101
+      ],
+      "world_mm": [
+        -169.6,
+        89.4,
+        100.5
+      ],
+      "t1c_value": 7025
+    },
+    "max_voxel_error": 1,
+    "views_linked": "axial, coronal, sagittal and 3D crosshair all moved to the marker (screenshot check)",
+    "orientation": "marker displayed on the L side, posterior, superior; matches affine-derived expectation L/P/S",
+    "console_errors": 0,
+    "passed": true,
+    "observation": "The model labelled the synthetic bright marker cube as enhancing tumour (seg=4) - expected behaviour for an artificial T1Gd hyperintensity; the marker case is a viewer test only."
+  }
+}

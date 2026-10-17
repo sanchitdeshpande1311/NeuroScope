@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-google-sans: "Google Sans", "Google Sans Flex", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --color-cherry-deep: #54252D;
+  --color-cherry-dark: #35171D;
+  --color-cherry-burgundy: #713842;
+  --color-vanilla-cream: #FFF3E7;
+  --color-vanilla-soft: #F7E4D9;
+  --color-vanilla-panel: #FFF9F4;
+  --color-muted-rose: #DCA9A4;
+  --color-border-warm: #E8D4CC;
+  --color-secondary-text: #65464A;
+}
+
+/* Google Sans Typography System for View Details Panel */
+.font-google-sans {
+  font-family: "Google Sans", "Google Sans Flex", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.details-panel {
+  font-family: "Google Sans", "Google Sans Flex", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #35171D;
+}
+
+.details-panel__title {
+  font-family: "Google Sans", "Google Sans Flex", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+
+.details-panel__subtitle,
+.details-panel__editorial-subtitle {
+  font-family: "Google Sans", "Google Sans Flex", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.details-panel__section-label {
+  font-family: "Google Sans", "Google Sans Flex", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  text-transform: none;
+}
+
+.details-panel__value {
+  font-family: "Google Sans", "Google Sans Flex", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: #35171D;
+}
+
+.details-panel__note,
+.details-panel__italic-note {
+  font-family: "Google Sans", "Google Sans Flex", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: #65464A;
+}
+
+:root {
+  --cherry-deep: #54252D;
+  --cherry-dark: #35171D;
+  --cherry-burgundy: #713842;
+  --vanilla-cream: #FFF3E7;
+  --vanilla-soft: #F7E4D9;
+  --muted-rose: #DCA9A4;
+  --secondary-text: #76575A;
+}
+
+body {
+  background-color: #FFF3E7;
+  color: #35171D;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: #54252D;
+  color: #FFF3E7;
+}
+
+/* Leaflet map custom controls styled in Cherry Cola + Vanilla Cream */
+.leaflet-control-zoom a {
+  background-color: #FFF3E7 !important;
+  color: #54252D !important;
+  border-color: #DCA9A4 !important;
+}
+.leaflet-control-zoom a:hover {
+  background-color: #F7E4D9 !important;
+  color: #35171D !important;
+}
+.leaflet-popup-content-wrapper {
+  background: #FFF3E7 !important;
+  color: #35171D !important;
+  border: 1px solid #DCA9A4 !important;
+  border-radius: 1rem !important;
+  box-shadow: 0 10px 25px -5px rgba(84, 37, 45, 0.15) !important;
+}
+.leaflet-popup-tip {
+  background: #FFF3E7 !important;
+}

@@ -1,0 +1,133 @@
+CLAUDE PROGRESS HANDOFF - NeuroScope 3D
+Checkpoint 9 - 2026-10-17 local. Four modules integrated (landing, Locate, AI assistant, Tracker). Details: INTEGRATION_REPORT.md
+- Modules: working copies in C:\Users\hp\NeuroScope3D_modules (outside OneDrive); originals = the 4 ZIPs on the Desktop
+  (SHA-256 in C:\Users\hp\NeuroScope3D_Backup_Before_Integration_2026-10-17_06-41\original_zips\SHA256SUMS.txt; never modify).
+- Start all: start.ps1 (calls scripts\start_integrations.ps1). Ports: landing 3101, chatbot 3102, tracker web 3103,
+  tracker API 8008, locate web 3104, locate API 5001, workspace 3000, backend 8000. Website = http://localhost:3000 (landing).
+- Upload moved to /upload; "/" = landing via next.config.ts rewrite (NEUROSCOPE_LANDING_ORIGIN; "off" disables).
+- Backups: pre-integration ...\backup_20261017_064127 (380/380); post-integration C:\Users\hp\NeuroScope3D_backups\backup_20261017_072051 (405/405).
+- Verified: 51 backend tests, tsc/eslint/build, module tests (53+1+1+1 vitest, 14 pytest), browser end-to-end (see report §6).
+- Open: no public deployment; chatbot without LOVABLE_API_KEY forwards chats to the module's Lovable cloud app; Tracker
+  "Load Sample Studies" demo is broken inside the module (not patched).
+Checkpoint 8 - 2026-10-17 local. Targeted UI refinement round complete. Details: UI_UX_IMPLEMENTATION_REPORT.md sections 11-14
+(checkpoint 7: premium UI/UX transformation, same report sections 1-10)
+(earlier rounds: GRAPH_ANALYSIS_IMPLEMENTATION_REPORT.txt, FINAL_IMPLEMENTATION_REPORT.txt)
+
+A. PROJECT / WEBSITE
+- Root: C:\Users\hp\OneDrive\Desktop\DM PROJECT BRAIN TUMUR (OneDrive; big recursive `find` is very slow - avoid).
+- Website verified: http://localhost:3000 (opens directly on Upload). Backend http://127.0.0.1:8000 (/api/health ok, GPU).
+  Both run as preview servers of this Claude session (.claude/launch.json) and stop when it ends.
+  Owner start: powershell -ExecutionPolicy Bypass -File .\start.ps1 (keep terminal open; Ctrl+C stops both). Not public.
+
+B. BACKUPS (do not modify)
+- C:\Users\hp\NeuroScope3D_backups\backup_20261017_031531  (pre-refinement round, 355/355 SHA-256 verified)
+- C:\Users\hp\NeuroScope3D_backups\backup_20261017_021218  (pre-premium-UI round, 330/330 SHA-256 verified)
+- C:\Users\hp\NeuroScope3D_backups\backup_20261016_230552  (pre-graph-round, 316/316 SHA-256 verified)
+- C:\Users\hp\NeuroScope3D_backups\backup_20261016_220130  (pre-UI-round, 266/266 SHA-256 verified, includes checkpoints)
+- C:\Users\hp\NeuroScope3D_backups\backup_20261016_204349  (original, 256/256 verified)
+- C:\Users\hp\NeuroScope3D_backups\graphs_v2_20261016
+- Excluded: venv, node_modules, .next, backend/runs, data/raw (13 GB, untouched), .git/objects.
+
+C000. COMPLETED IN THE REFINEMENT ROUND (2026-10-17, later)
+- Cherry Cola #4A202B via --cherry/--cherry-rgb; type scale 13/14/15/16/18.5/25/40 px; panel clamp(350px,27vw,480px);
+  card weights .card/.card.feature/.card.flat; grouped Results actions; WT/TC/ET split tile; hero composition bar.
+- Header = brand + Generate Report (case id removed from header only). Nav moved onto PanelDock at bottom-left of the
+  cream panel (fixed position); 5 items (Refinement hidden from nav + Results; route/API/data/report kept).
+- Stage toolbar (--bar-h 50px), viewer inset, multiplanarPadPixels 10, view frames + names from nv.screenSlices,
+  crosshair [0.42,0.84,1,0.62] width 0.6 mm unit, fontMinPx 15.
+- Show Definitions: store.definitions (memory only, OFF by default); DefinitionsToggle last in every Layers menu;
+  frontend/src/lib/picking.ts (2D: canvasPos2frac/frac2mm/mm2vox label value; 3D: ray from calculateMvpMatrix, NOTE
+  reversed ortho depth (ndc z=+1 is camera); mesh triangles, connectome spheres/tubes from layer JSON (NiiVue keeps no
+  CPU tris for connectomes), tck lines with 4 px tolerance; priority graph > line > tumour > brain). Timer throttle
+  (rAF does not fire when the preview pane is hidden). Use clientX - rect (offsetX wrong under emulation).
+- Report: trimmed wording, disclaimer once (footer neutral), no removed-voxel figure; 5 pages for c9e61b4e.
+- Verified: 51 tests, tsc/eslint/build clean, browser 1440/960/375. Not re-run: new end-to-end upload.
+- Figma MCP needs authorisation; 21st.dev MCP not loaded (needs API key). Neither used.
+
+C00. COMPLETED IN THE PREMIUM UI/UX ROUND (2026-10-17)
+- Design system: frontend/src/app/globals.css (Cherry Cola #582B36 header, Vanilla Cream #F6EBDD panel, #070708 stage,
+  semantic colours, radii, motion, reduced-motion) + frontend/src/components/ui.tsx (Switch, Slider, Select, Segmented,
+  StatusPill, Tip, InfoTip). No new dependencies.
+- Shell (AppShell.tsx): header + Generate Report (POST /api/runs/{id}/report with graphSel, toast with Open link);
+  circular-plus fan nav at stage bottom-left (Upload, Results, Full-screen 3D Viewer, Graph Analysis, Refinement Before &
+  After, Expert Comparison); mobile dock < 900 px. Intro page removed; / = Upload; /upload redirects.
+- Upload: 4 sequence cards + optional expert card, server validation on choose, Start Segmentation -> Results.
+- runs/[id]/layout.tsx: ONE persistent NiiVueViewer per case configured via useViewerConfig (RunContext.tsx);
+  opens at largest WT centroid; X-ray 0.35. LayersMenu.tsx: CaseLayers (2D labels / 3D surface / masks) + Readout.
+- Graph page: exactly 3 cards (Path settings / Graph overview / Tumour components) + graph Layers (Visibility/Opacity/View).
+- Refinement: two linked viewers + change table, no expert metrics. Expert: table + Model/Expert switches / empty state.
+- Backend: ml/report_full.py (7-section branded PDF), POST /api/runs/{id}/report (422 on invalid graph selection),
+  report_full.pdf in SERVED_FILES; ml/spatial_graph.py zero-length path fix. ViewerControls.tsx deleted (unused).
+- Tests: tests/test_report_full.py (new), zero-length path test. Suite 51 passed in 87 s; tsc/eslint/next build OK.
+- Browser (pane, 960x640 + 375x812): real upload -> Results in 10.7 s (run c9e61b4e..., 00419 + expert); every Layers
+  control checked against renderer state; graph overlays = API (2,127 / 12,395); report 7 sections 378 KB.
+- Figma / 21st.dev NOT available; DesignSync not used; no Figma file. Screenshots only in the conversation.
+- NOTE: section C below lists ViewerControls.tsx from an earlier round; it no longer exists.
+
+C0. COMPLETED IN THE GRAPH ROUND
+- ml/spatial_graph.py: brain-wide block lattice (default 4 mm) from seg.nii.gz + T1Gd/FLAIR brain mask; 26-neighbour
+  edges with affine-based lengths; Mode A (length) / Mode B (experimental tumour-preferring alpha); validate/stats;
+  Dijkstra with predecessors; component representative = its vertex nearest the centroid. Expert mask never read.
+- backend: /api/runs/{id}/spatial-graph, /spatial-graph/path, /spatial-graph/lattice (cache keyed by source-file SHA-256).
+- frontend graph page rewritten (layers, opacity, view, reset, src/dst, modes, spacing, panels A-E, collapsible voxel
+  geodesic extent); viewer: tract (.tck) layers, hide3DVolume (the opaque volume rendering hid all graph meshes before),
+  brainOpacity setting.
+- tests/test_spatial_graph.py (14). Demo run f3fb557348ee4dd6a38f908ddfe944c0 (BraTS-GLI-00419-000, 2 components;
+  auto-deleted within 24 h - recreate with POST /api/predict if needed).
+- Suite 49 passed; build OK; browser: every graph control changes rendered pixels; drawn = API; 0 console errors.
+- Known limits: single non-tumour class; Mode B arbitrary; not human-reviewed visually; no T4.
+
+C. COMPLETED IN THE UI ROUND
+- Multi-page Next.js UI: / , /upload , /runs/[id] , /viewer , /graph , /refinement , /expert , /report
+  (frontend/src/app/**, components/{AppShell,RunContext,ViewerControls,NiiVueViewer}.tsx, lib/{api.ts,store.tsx}, globals.css).
+- Backend endpoints: /api/validate-file, /api/validate-set, /api/runs/{id} (JSON+files), /api/runs/{id}/refinement,
+  /api/runs/{id}/graph, /api/runs/{id}/graph/path, /api/evidence/refinement. File cache private 1h; PDF inline.
+- ml/refinement_compare.py (new), ml/graph_analysis.GeodesicPathEngine (new), ml/inference.describe_volume/check_set (new).
+- execution/summarize_refinement_eval.py -> results/refinement_eval_summary.json; held-out eval re-run (identical).
+- tests/test_ui_backend.py (6 tests). Docs updated (README, ARCHITECTURE, MODEL_CARD, TEST_RESULTS, COMMIT_PLAN).
+- Viewer bugs fixed: setMeshProperty full-refresh storm (3-5.6 s -> ~0.1 s per change), layer names need .nii.gz,
+  per-instance canvas, nv.cleanup() + deferred loseContext (15,500 GL errors -> 0), full-screen layout shift (3-voxel
+  click error -> 1), explicit crosshair link on refinement page (NiiVue broadcastTo needs focus).
+
+D. PARTIAL / E. NOT DONE
+- Organiser 40-case subset + baseline: MISSING (command ready: execution/evaluate_dataset.py).
+- T4 timing NOT TESTED. Real >1 GB upload NOT TESTED. Real non-brain/non-skull-stripped NOT TESTED.
+- No git commit (owner decisions pending in docs/COMMIT_PLAN.md). Visual polish not human-reviewed; wide (1440 px)
+  layouts not screenshot-verified; fonts use the system stack (no Inter download).
+
+F. TESTS (latest)
+- pytest: 51 passed in 86 s (latest, 2026-10-17 refinement round). tsc OK, eslint OK (0 warnings), next build OK.
+- Browser U1-U22 PASS (docs/TEST_RESULTS.md). Test 6 in full-screen viewer: max error 1 voxel.
+- Held-out 30: Dice WT .8746 TC .8333 ET .8098; Sens .9209/.9043/.8532. Refinement dDice WT +0.0008 (7/0/23), TC/ET 0.
+
+G. BLOCKERS / ISSUES
+- Eligibility + BraTS2021/2023 patient overlap (docs/ORGANISER_QUESTIONS.md, not sent). Weights licence undecided.
+- ET false positives on low-enhancement tumours. Sanity checks heuristic.
+- frontend/ nested .git; 34 old generated masks in backend/results await owner decision.
+
+H. MODEL (unchanged): MONAI UNet 4->3, models/baseline_checkpoints/best_metric_model.pth sha256 2decff1363f7861e...;
+   input t1n,t1c,t2w,t2f; sigmoid TC,WT,ET; RAS+1mm+nonzero z-score; thr 0.5; labels 4=ET,1=TC\ET,2=WT\TC on original grid.
+
+I. DATA: data/raw BraTS 2023 GLI. Held-out list configs/heldout_cases.json (first 30 = eval set; idx 40-44 fixtures; last = blind).
+   Live dev runs in backend/runs (auto-deleted <24 h): 5d16ca0f... (00360 + expert), e7164f1e... (00402, no expert), 7103cb2a... (marker).
+
+J. COMMANDS
+- venv\Scripts\python -m pytest tests -q -p no:cacheprovider -W ignore
+- cd frontend && npx tsc --noEmit -p . && npx eslint src && npx next build   (run `npx next typegen` if route types are stale)
+- venv\Scripts\python execution\evaluate_heldout.py --n 30 ; venv\Scripts\python execution\summarize_refinement_eval.py
+- venv\Scripts\python execution\evaluate_dataset.py --data-dir <organiser folder> --baseline-json <file>
+
+K. FILES: all uncommitted; see FINAL_IMPLEMENTATION_REPORT.txt section 2 and UI_UX_IMPLEMENTATION_REPORT.md section 3.
+
+L. NEXT FIVE ACTIONS
+1. Owner sends docs/ORGANISER_QUESTIONS.md; when the subset arrives run execution/evaluate_dataset.py.
+2. Owner decides COMMIT_PLAN items -> create commits.
+3. Measure T4 timing.
+4. Owner decides on 34 old masks in backend/results.
+5. Human visual review of the redesigned pages on a wide monitor; optional ET small-volume rule study on dev cases.
+
+M. JUDGING STATUS: T1 dev PASS / baseline NOT TESTED; T2-T5, T7, T8 PASS; T6 PASS (browser, 1 voxel); T9 validity PASS (ET FP);
+   T10 PASS synthetic; T4 timing NOT TESTED; eligibility UNRESOLVED.
+
+N. DO NOT: draw graph meshes in NiiVue 3D without hide3DVolume or X-ray (the opaque volume hides them); modify backups; overwrite models/*.pth, data/raw, data/splits, metadata, configs/*.json; tune on blind/hidden cases;
+   cite results/baseline_metrics.json; use NiiVue setMeshProperty in hot paths; delete the 34 masks without owner OK.

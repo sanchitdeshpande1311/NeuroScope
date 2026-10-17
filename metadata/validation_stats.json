@@ -1,0 +1,15 @@
+{
+    "total_subjects": 1251,
+    "valid_subjects": 1251,
+    "invalid_subjects": 0,
+    "missing_files": 0,
+    "unreadable_files": 0,
+    "shape_mismatches": 0,
+    "affine_issues": 0,
+    "unique_labels": [
+        0.0,
+        1.0,
+        2.0,
+        3.0
+    ]
+}

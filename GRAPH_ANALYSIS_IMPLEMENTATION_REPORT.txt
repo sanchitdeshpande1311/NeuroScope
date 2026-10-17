@@ -1,0 +1,215 @@
+NEUROSCOPE 3D - GRAPH ANALYSIS IMPLEMENTATION REPORT
+Date: 2026-10-16 (~23:55 local). Project: C:\Users\hp\OneDrive\Desktop\DM PROJECT BRAIN TUMUR
+Research and teaching use only. The graph analysis is descriptive spatial connectivity analysis. It does NOT
+predict tumour growth, invasion or spread.
+
+=====================================================================
+1. WHAT WAS WRONG WITH THE PREVIOUS GRAPH PAGE (audit)
+=====================================================================
+- The orange "nodes" were only one centroid per connected component of WT/TC/ET.
+- The only edges were "contained in" links between components (ET→TC→WT), not spatial adjacency. Hence
+  "scattered dots with a few disconnected-looking edges".
+- The blue path was a voxel-level Dijkstra restricted to predicted-WT voxels, starting from the tumour core.
+  It could never cross the non-tumour tissue between separate tumour components.
+- Main visual cause: NiiVue's 3D tile volume-renders the T1Gd as an OPAQUE brain, so graph meshes inside the
+  brain were hidden. Only meshes near the surface showed.
+- Data source was correct: the graph was built from the current run's prediction. No stale, stored or expert
+  data was used.
+
+=====================================================================
+2. WHAT WAS BUILT
+=====================================================================
+A. ml/spatial_graph.py (new) - brain-wide lattice graph G = (V, E, W) from the CURRENT prediction + MRI brain mask
+- Brain domain: non-zero voxels of the run's T1Gd OR FLAIR (skull-stripped inputs), holes filled. Tissue
+  classes come only from seg.nii.gz (the model prediction). The expert mask is never read.
+- Vertices:
+  - Blocks of s_a = max(1, round(target_mm / spacing_a)) voxels (target 4 mm by default; 3 or 6 mm
+    selectable). A block is kept if ≥ 50 % of it is brain or it contains predicted tumour.
+  - Each vertex has: id; block-centre voxel coordinates; world mm (affine applied once); class = majority
+    predicted label (0 non-tumour brain / 1 NCR/NET / 2 edema / 4 enhancing); label fractions; WT component;
+    graph component; degree.
+- Tumour components: 26-connected voxel-level WT components with volume, centroid and per-label volumes.
+  Representative vertex = the component's vertex nearest its centroid.
+- Edges: 26-neighbour block adjacency only (stored once, 13 half-offsets). No edges bridge gaps.
+  - Length = ‖A[:3,:3]·(Δblock ⊙ s)‖ mm (anisotropy-aware).
+  - Cost, Mode A = length.
+  - Cost, Mode B (EXPERIMENTAL, hypothetical): length × (w_u + w_v)/2, w = 1 for tumour vertices and α
+    (1-100) for non-tumour vertices. It encodes only a user-chosen preference for staying inside the
+    predicted tumour; it is not a biological model.
+- validate(): vertex references, self-loops, duplicates, finite positive lengths, finite non-negative costs,
+  finite coordinates.
+- stats(): V, E, connected components, largest component, isolated vertices, degree min/mean/max, vertices
+  per class, method, block size, lattice spacing (mm), distinct edge lengths, build time.
+- resolve(): v<id> | c<id> (component representative) | mm:x,y,z (nearest vertex + snap distance).
+- shortest_path(): scipy.sparse.csgraph.dijkstra (non-negative costs) with predecessors. It returns:
+  - the exact vertex sequence, points_mm, points_vox and vertex classes;
+  - total cost plus the check cost_from_steps;
+  - physical length and straight-line distance;
+  - length per tissue class (each edge split half/half between its endpoint classes);
+  - vertex and edge counts, and compute time;
+  - "reachable: false" with the reason when the endpoints are in different graph components.
+- render_subgraph(): tumour vertices, their 26-neighbour shell, and all real edges with at least one tumour
+  endpoint (documented rule; no invented connections). lattice_arrays(): the full graph.
+
+B. backend/main.py (modified)
+- GET /api/runs/{id}/spatial-graph?target_mm= : provenance, stats, checks, components, drawn subgraph,
+  default path between the two largest components, cost-mode descriptions, explanation text.
+- GET /api/runs/{id}/spatial-graph/path?src=&dst=&mode=&alpha=&target_mm=
+- GET /api/runs/{id}/spatial-graph/lattice?target_mm=  (full graph for the optional whole-brain layer)
+- In-memory cache per (run, spacing), reused only if the SHA-256 of seg.nii.gz, t1c.nii.gz and t2f.nii.gz is
+  unchanged; otherwise rebuilt. Evicted when a run is deleted. GraphBuildError → HTTP 422 graph_error.
+- The earlier /api/runs/{id}/graph (voxel-level geodesic extent) is unchanged.
+
+C. frontend/src/components/NiiVueViewer.tsx (modified)
+- Overlay layers can now be tract ("lines") meshes. segmentsToTck() encodes 2-point segments as an MRtrix
+  .tck buffer in the layout NiiVue's reader needs (leading NaN, NaN separators, Inf terminator, padding).
+  It is loaded with NVMesh.loadFromUrl({buffer}) using fixed colour; radius > 0 gives thin cylinders so
+  per-layer opacity works.
+- Overlay sync is serialised (promise chain), so rapid toggles cannot duplicate layers.
+- New hide3DVolume prop: in 3D-only mode the opaque volume rendering is hidden; in 4-panel mode the slices
+  stay and occluded meshes use NiiVue's X-ray pass (0.35).
+- Brain-surface opacity is now a setting (brainOpacity).
+
+D. frontend/src/app/runs/[id]/graph/page.tsx (rewritten), lib/store.tsx (brainOpacity), globals.css (graph styles)
+- Layers (each verified to change the image):
+  - vertices (per class: grey non-tumour, red NCR/NET, green edema, gold enhancing);
+  - tumour edges (white) and boundary edges (light blue, off by default);
+  - tumour surfaces and brain surface;
+  - shortest path (blue inside tumour, orange where it touches non-tumour) and the non-tumour path segments;
+  - cyan source and magenta destination;
+  - whole-brain lattice (all 284,916 edges as 1-px lines; opacity fixed by NiiVue).
+- Opacity sliders: brain, tumour, edges, path. View: 3D only / 3D + slices. Reset (camera + selections + layers).
+- Selection:
+  - source and destination from the component list or "Use crosshair" (nearest vertex);
+  - Mode A / Mode B with α;
+  - lattice spacing 3/4/6 mm;
+  - component highlight (its vertices in azure; the crosshair moves to its centroid).
+- Panels:
+  - A. Graph overview (V, E, components, isolated, degree, per-class counts, spacing, edge lengths, build
+    time, integrity checks, method, drawn-subset rule).
+  - B. Tumour components (id, mL, centroid, distance to source, path exists?).
+  - C. Shortest-path result (source, destination, length, cost, vertices/edges, time, length per tissue with
+    bar, "why this path").
+  - D. Algorithm (the required explanation text).
+  - E. Provenance (run, segmentation, seg.nii.gz SHA-256, brain domain, coordinates, cache).
+- The earlier voxel-level geodesic extent is kept as a collapsible section.
+
+E. Tests: tests/test_spatial_graph.py (new, 14 tests).
+F. Docs: ARCHITECTURE.md §7 (construction, coordinates, costs, Dijkstra, rendering, caching, endpoints),
+   README.md, docs/TEST_RESULTS.md (graph section), CLAUDE_PROGRESS_HANDOFF.txt, this report.
+
+=====================================================================
+3. FILE-BY-FILE CHANGES
+=====================================================================
+NEW
+- ml/spatial_graph.py
+- tests/test_spatial_graph.py
+- GRAPH_ANALYSIS_IMPLEMENTATION_REPORT.txt
+MODIFIED
+- backend/main.py: 3 spatial-graph endpoints, cache, provenance, eviction on delete.
+- frontend/src/components/NiiVueViewer.tsx: tract layers, segmentsToTck, serial overlay sync, hide3DVolume,
+  brainOpacity.
+- frontend/src/app/runs/[id]/graph/page.tsx: rewritten as described above.
+- frontend/src/lib/store.tsx: brainOpacity setting (default 0.15).
+- frontend/src/app/globals.css: graph panel styles.
+- ARCHITECTURE.md, README.md, docs/TEST_RESULTS.md, CLAUDE_PROGRESS_HANDOFF.txt
+UNCHANGED
+- Model, inference, labels, NIfTI output, volumes, reports, other pages.
+- ml/graph_analysis.py and its endpoint.
+DELETED
+- Nothing.
+DERIVED DATA
+- Graphs are computed in memory per request. No graph files are written, and no stale graph files are used.
+- data/processed/graphs* are untouched and unused.
+
+=====================================================================
+4. TEST RESULTS (actual)
+=====================================================================
+- Full suite: venv\Scripts\python -m pytest tests -q -p no:cacheprovider -W ignore → 49 passed in 71.6 s
+  (35 earlier + 14 new).
+- Frontend: npx tsc --noEmit OK; npx eslint src OK; npx next build OK.
+- Spec tests 1-16:
+  - 1-13 and 16: PASS (automated, synthetic volumes with known geometry). Highlights:
+    - known paths 5 mm, 3√3, 2√2+2;
+    - two-route analytic 15+2√2 mm, plus networkx agreement;
+    - anisotropic lengths {1, √2, 2.5, √7.25, √8.25};
+    - flipped/offset affine round-trip;
+    - vertices inside the brain-surface mesh;
+    - rebuild on segmentation change; bytes of seg.nii.gz unchanged.
+  - 14 (controls): PASS (browser). Every control changed rendered pixels (179-33,686 px) and restored exactly.
+  - 15 (3D ↔ slice coordinates): PASS (browser). Same mm in the readout; voxel = rounded API voxel.
+- Drawn = computed: PASS.
+  - 2,127/2,127 vertices and 12,395/12,395 edges drawn = API.
+  - Path nodes = API points (0 mm deviation) for the default and crosshair paths.
+- Console errors: 0. Backend errors: none.
+- Full details: docs/TEST_RESULTS.md, "Spatial graph analysis".
+
+=====================================================================
+5. DEMONSTRATION CASE (spatially separated predicted components)
+=====================================================================
+- Run f3fb557348ee4dd6a38f908ddfe944c0: BraTS-GLI-00419-000, held-out development case, processed through
+  /api/predict, no expert mask.
+- The prediction has components of 24.0 mL (id 18) and 19.3 mL (id 21).
+- Default Mode A path between their centroid-nearest vertices (4 mm lattice):
+  - 45.76 mm (straight line 41.8 mm);
+  - by tissue: non-tumour brain 24.5, NCR/NET 3.5, edema 17.8 mm.
+- Mode B (α=5): 58.63 mm, with more of the route inside predicted tumour.
+- At 3 / 4 / 6 mm spacing the path is 49.8 / 45.8 / 49.8 mm.
+- The original prediction is never modified, and path tissue is never relabelled as tumour.
+
+=====================================================================
+6. PERFORMANCE (measured; RTX 3050 laptop, graph on CPU, browser on AMD Radeon 740M iGPU)
+=====================================================================
+- Graph build: 1.0-1.3 s (6/4/3 mm; 6,588 / 22,196 / 52,521 vertices; 76,820 / 268,440 / 646,711 edges).
+- /spatial-graph: 1.9-2.1 s first call (including the default path), 0.2-0.4 s cached.
+- Dijkstra path: 3 ms (6 mm), 11-13 ms (4 mm), 25 ms (3 mm).
+- Whole-brain lattice layer: 1.1 s to draw 284,916 edges.
+- Graph page fully drawn: 7.9-12.8 s (pane partly hidden; includes the first build).
+- T4 not measured.
+
+=====================================================================
+7. LIMITATIONS (honest)
+=====================================================================
+- Non-tumour brain is a single class. The project has no grey/white/CSF segmentation, so the path cannot
+  report finer tissue types.
+- Vertex classes are block majorities. Components smaller than a block do not become tumour-class vertices,
+  but each still gets a representative vertex.
+- Mode B weights are arbitrary user preferences, not biology. No growth or spread simulation is implemented
+  (by design).
+- A path describes connectivity of this graph only. It depends on the lattice spacing (±4 mm between
+  spacings in the demo) and on prediction errors.
+- The whole-brain lattice is drawn as 1-px lines (opacity fixed); dense views can clutter.
+- Browser checks were scripted (DOM, renderer state and canvas pixels) in the Claude browser pane, mostly
+  while the pane was hidden or narrow. Visual polish has not been reviewed by a human.
+- Graph-page load is slow-ish (8-13 s) on this iGPU because many mesh layers are created.
+
+=====================================================================
+8. BACKUP, GIT, WEBSITE
+=====================================================================
+- Backup before this work: C:\Users\hp\NeuroScope3D_backups\backup_20261016_230552 (316/316 SHA-256
+  verified). Earlier backups untouched.
+- Git: branch master, NO commits; all work uncommitted. No commit was created.
+- Website (verified just now; this computer only):
+  - Frontend http://localhost:3000 (port 3000, HTTP 200; graph page HTTP 200).
+  - Backend http://127.0.0.1:8000 (/api/health ok, model on GPU; /spatial-graph HTTP 200).
+  - Both run as preview servers of this Claude session.
+  - To run them yourself: powershell -ExecutionPolicy Bypass -File .\start.ps1 (keep the terminal open;
+    Ctrl+C stops both).
+  - Not publicly accessible.
+
+=====================================================================
+9. ACCEPTANCE CRITERIA
+=====================================================================
+- Graph generated from the current prediction with a documented method ......... PASS
+- Vertices and edges are genuine spatial structure ............................. PASS
+- Graph aligned with the 3D brain and tumour surfaces ........................... PASS (tests + visual check)
+- Dijkstra runs on the actual graph; valid path ................................ PASS (analytic + networkx)
+- Displayed path = computed path ............................................... PASS (0 mm deviation)
+- Disconnected components / unreachable handled honestly ...................... PASS (unit tests; the demo graph has 1 component)
+- Path between separated components without claiming spread ................... PASS
+- Every graph control has a verified visible effect ........................... PASS (pixel-difference test)
+- Statistics and metrics from actual data ..................................... PASS
+- Existing features intact .................................................... PASS (49/49 tests, build, other pages untouched)
+- Automated + browser checks executed and recorded ............................ PASS
+Not verified: human visual review; T4 timing; real cases whose graph contains several connected components
+(only synthetic ones).

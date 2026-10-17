@@ -1,0 +1,40 @@
+.tmp/
+.env
+.env.*
+credentials.json
+token.json
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Virtual environments / dependencies
+venv/
+.venv/
+**/node_modules/
+frontend/.next/
+**/.output/
+**/dist/
+modules/_pydeps/
+
+# Datasets and processed data (never commit MRI data)
+data/raw/
+data/processed/
+data/external/
+
+# MRI uploads, run outputs, generated reports
+backend/temp/
+backend/results/
+backend/runs/
+*.nii
+*.nii.gz
+results/**/*.pdf
+tests/fixtures_generated/
+
+# Large model weights (track provenance in docs/MODEL_CARD.md instead)
+models/**/*.pth
+models/**/*.pt
+models/**/*.ts
+models/external/
+
+# Backups / manifests of local machine state
+BACKUP_MANIFEST.json

@@ -1,0 +1,406 @@
+NEUROSCOPE 3D - FINAL IMPLEMENTATION REPORT
+Date: 2026-10-16 (local time ~22:50).
+Project: C:\Users\hp\OneDrive\Desktop\DM PROJECT BRAIN TUMUR
+Research and teaching use only. Not a medical device.
+
+=====================================================================
+1. SUMMARY OF CHANGES
+=====================================================================
+This round made the existing app a multi-page website and added two backend features: a numerical
+before/after refinement comparison, and interactive Dijkstra paths. The backend architecture, model,
+preprocessing, inference and output format were kept.
+
+ADDED
+- Separate pages: Home, Upload & validation, Results, Full-screen 3D viewer, Graph analysis,
+  Refinement before/after, Expert comparison, Report.
+- Upload: four independent sequence slots (T1, T1Gd, T2, FLAIR) plus an optional expert-mask slot.
+  - Each file is validated by the server as soon as it is chosen.
+  - The set is then checked for a shared grid, with messages that name the incompatible sequences.
+- Backend endpoints:
+  - /api/validate-file, /api/validate-set
+  - /api/runs/{id} (metadata + file list)
+  - /api/runs/{id}/refinement
+  - /api/runs/{id}/graph, /api/runs/{id}/graph/path
+  - /api/evidence/refinement
+- ml/refinement_compare.py: explicit before/after numbers.
+  - Always: removed/added voxels, volumes, connected components.
+  - With an expert mask only: TP/FP/FN, Dice, sensitivity, miss rate, FP share, % changes, and a
+    rule-based verdict.
+- ml/graph_analysis.GeodesicPathEngine: multi-source Dijkstra over the WT voxel graph that keeps
+  predecessors, so each displayed path is exactly the computed one.
+- Held-out evidence summary for the refinement: results/refinement_eval_summary.json.
+- tests/test_ui_backend.py: 6 tests, including Dijkstra checked against an independent networkx computation.
+
+FIXED (all found during this round's browser testing)
+- NiiVue setMeshProperty forces a full volume refresh on every call, 8 times per control change.
+  - A display change took 3.1-5.6 s → now median 107 ms, max 207 ms.
+  - Viewer load 11.9 s → 4.0 s (hidden-pane measurements).
+- Volume layer names without a file extension broke NiiVue loading.
+- WebGL context released on a canvas that React then reused → shader-link failure. Each viewer now
+  creates its own canvas.
+- Disposed viewers kept drawing on released contexts (≈15,500 "blur/sobel shader" console errors).
+  Now nv.cleanup() runs, and the context is released only after any in-flight load settles. 0 errors
+  in the final check.
+- Full-screen viewer: the page was 4 px taller than the window and the readout wrapped, so the canvas
+  shifted after the first click and the second click landed 3 voxels off. Fixed with an exact-fit
+  layout and a fixed-height readout; the crosshair error is now ≤ 1 voxel.
+- NiiVue's built-in two-viewer sync needs canvas focus and did not fire. The refinement page now links
+  its two viewers explicitly in world mm.
+- Run files were served with no-store, so every page re-downloaded the MRI. Now "private,
+  max-age=3600" (run files never change; well inside the 24 h retention). The PDF is served inline so
+  it can be embedded.
+
+REMOVED / REPLACED
+- The single crowded page (frontend/src/app/page.tsx) was replaced by the Home page. Its functions moved
+  to the new pages. The old file is in the backups.
+
+UNCHANGED, ON PURPOSE
+- Model (MONAI UNet 4->3) and checkpoint (best_metric_model.pth, sha256 2decff1363f7861e...).
+- Preprocessing: RAS, 1 mm, non-zero z-score.
+- Threshold 0.5; TC/WT/ET → labels 1/2/4 mapping; resampling back to the original grid; output NIfTI
+  geometry; volume formula.
+- Refinement rule: WT components < 10 mm^3 removed. Not tuned.
+- Primary output remains the unrefined prediction.
+- Retention logic: hardened earlier; unchanged this round.
+
+=====================================================================
+2. FILE-BY-FILE CHANGES (this round)
+=====================================================================
+Backend / ML
+- backend/main.py (modified)
+  - New endpoints: validate-file, validate-set, runs/{id} (now JSON with file list),
+    runs/{id}/refinement, runs/{id}/graph, runs/{id}/graph/path, evidence/refinement.
+  - In-memory LRU cache of Dijkstra engines (4 runs), evicted on delete.
+  - refinement.json added to the served-file allow-list.
+  - File cache header changed; PDF served inline.
+- ml/refinement_compare.py (new): prediction_change(), expert_change(). Documents the definitions,
+  empty-mask conventions and the verdict rule.
+- ml/graph_analysis.py (modified): added GeodesicPathEngine (dijkstra with return_predecessors;
+  path_to, nearest_node, summary, destinations). The existing functions are unchanged.
+- ml/inference.py (modified): added describe_volume() (per-file validation + geometry) and check_set()
+  (cross-sequence rules identical to validate_case). Existing validation is unchanged.
+- execution/summarize_refinement_eval.py (new) → results/refinement_eval_summary.json.
+- execution/backup_project.py (modified): also excludes backend/runs (transient user uploads).
+- results/heldout_eval.json (regenerated with current code; identical metrics),
+  results/refinement_eval_summary.json (new), results/judging_tests.json (rewritten by the tests).
+
+Frontend (frontend/src)
+- lib/api.ts (new): API client; cached run/refinement/graph fetches; file-name slot hints; recent runs
+  in localStorage.
+- lib/store.tsx (new): app-wide context for the upload slots and viewer settings; per-run crosshair in
+  a ref.
+- components/AppShell.tsx (new): disclaimer bar, top navigation, footer (full-bleed for the viewer
+  page).
+- components/RunContext.tsx (new).
+- components/ViewerControls.tsx (new): grouped label/opacity/surface/mask controls + readout.
+- components/NiiVueViewer.tsx (rewritten): own canvas per instance; refined + expert loaded once as
+  separate layers; diffed minimal updates; connectome overlays (graph, path); crosshair restore;
+  cleanup(); deferred context release; performance probes (window.__ns3dPerf; window.__nv in dev only).
+- app/layout.tsx (modified): StoreProvider + AppShell.
+- app/page.tsx (replaced): Home page; legacy /?run=<id> links redirect.
+- app/upload/page.tsx (new).
+- app/runs/[id]/layout.tsx (new): loads the run once, run tabs, invalid/expired handling.
+- app/runs/[id]/page.tsx (new): Results.
+- app/runs/[id]/viewer/page.tsx (new).
+- app/runs/[id]/graph/page.tsx (new).
+- app/runs/[id]/refinement/page.tsx (new).
+- app/runs/[id]/expert/page.tsx (new).
+- app/runs/[id]/report/page.tsx (new).
+- app/globals.css (rewritten): one clean dark theme; old stylesheet is in the backup.
+- frontend/public/__testdata__/ was created temporarily for the browser upload test and deleted afterwards.
+
+Tests / docs
+- tests/test_ui_backend.py (new, 6 tests).
+- docs/TEST_RESULTS.md, ARCHITECTURE.md, README.md, docs/MODEL_CARD.md, docs/COMMIT_PLAN.md updated.
+- CLAUDE_PROGRESS_HANDOFF.txt updated. FINAL_IMPLEMENTATION_REPORT.txt (this file).
+
+=====================================================================
+3. WEBSITE UI/UX
+=====================================================================
+- Shell: a disclaimer bar on every page, a top bar (Home, New analysis), and run tabs on run pages
+  (Results, Full-screen 3D viewer, Graph analysis, Refinement before/after, Expert comparison, Report).
+- Home: short description; "Start new analysis"; reopen a run by ID or link; recent runs from this
+  browser only (the server has no listing endpoint).
+- Upload & validation:
+  - Five cards: T1, T1Gd, T2, FLAIR, Expert (optional). Each has a picker or drop zone, file name and
+    size, status badge (Empty / Validating / Valid / Error), specific error message, Replace and Remove.
+  - A file-name hint warns if, e.g., a "flair" file is in the T1 slot. Nothing is reordered silently.
+  - The "Set check" card lists missing sequences and incompatible pairs. "Run segmentation" is enabled
+    only when the four are valid and compatible (and the expert mask, if given, is valid).
+  - Upload progress, then a processing timer. On success it navigates to the Results page.
+- Results: volume cards with the formula; buttons to the full-screen viewer, graph analysis, refinement
+  comparison and expert comparison; PDF + NIfTI downloads; run information; delete-now. A standard
+  4-panel linked viewer with grouped controls and a readout.
+- Full-screen viewer: the viewer fills the window under a slim bar (Back to results, readout, hide
+  controls, browser full screen). Collapsible side panel with all controls.
+- Graph analysis: large 3D render (or 3D + slices); region surfaces; component graph and Dijkstra path
+  overlays, each with its own toggle; destination selector; "path to current crosshair"; metrics and
+  an honest explanation.
+- Refinement before/after: two linked viewers (before / after) → change table → expert metrics or
+  "cannot be measured" explanation → held-out evidence.
+- Expert comparison: metrics, volume differences, prediction and expert layer toggles; if there is no
+  mask, an explanation of how to supply one.
+- Report: embedded PDF, downloads, provenance (model, weights hash, licences, preprocessing, inference,
+  refinement, code version, device, timestamp, input SHA-256), limitations.
+
+=====================================================================
+4. AI AND INFERENCE PIPELINE
+=====================================================================
+No changes this round. Re-verified by the 35-test suite:
+- Channel order t1n, t1c, t2w, t2f.
+- Training-parity preprocessing: Orientation RAS, Spacing 1 mm bilinear, NormalizeIntensity
+  (non-zero, per channel).
+- Sliding window 128^3, fp32, deterministic.
+- Sigmoid TC/WT/ET resampled to the original grid through both affines, then threshold 0.5.
+- Labels: 4 = ET, 1 = TC\ET, 2 = WT\TC (hierarchy enforced upward).
+- uint8 NIfTI with the original affine, reopened and checked.
+- volume_mL = count × sx × sy × sz / 1000, with spacing from the header.
+The 30-case held-out evaluation was re-run on the current code: WT 0.8746, TC 0.8333, ET 0.8098 Dice
+(identical to before).
+
+=====================================================================
+5. MATHEMATICAL REFINEMENT
+=====================================================================
+- Rule: remove WT connected components (26-connectivity) smaller than 10 mm^3 (seg_refined.nii.gz).
+  Comparison only; never the primary output.
+- Always shown, per region: before/after voxels and mL; Δ mL; Δ %; removed voxels; added voxels;
+  % of before removed; components before → after; list of removed components (voxels, mm^3, centroid mm).
+- With a validated expert mask (same run, same grid), for WT/TC/ET and before/after:
+  - TP = pred ∧ ref, FP = pred ∧ ¬ref, FN = ¬pred ∧ ref.
+  - Dice = 2TP/(2TP+FP+FN); 1.0 when both masks are empty.
+  - Sensitivity = TP/(TP+FN); undefined when the expert region is empty.
+  - Miss rate = FN/(TP+FN).
+  - FP share = FP/(TP+FP). A background-denominator FP rate is deliberately not used.
+  - % change of FP/FN uses the before count as the denominator; n/a when it is 0.
+  - Volume error vs the expert, in mL.
+  - Verdict per region: ΔDice > +0.001 improved, < −0.001 worse, else no meaningful change.
+  - Overall verdict: Improved agreement / Worse agreement / Mixed result / No meaningful change.
+    Computed, never hard-coded.
+- Without an expert mask: only removed/added voxels, volume changes and components. The page states
+  that removed voxels are not confirmed false positives, that a smaller volume is not automatically
+  more accurate, and how to supply an expert mask.
+- Evidence (30 patient-disjoint held-out cases, current code):
+  - Mean ΔDice: WT +0.00079, TC 0, ET 0.
+  - WT cases improved / worse / unchanged: 7 / 0 / 23.
+  - WT voxel totals: FP 366,666 → 361,502 (−1.41 %); FN 274,042 → 274,069 (+0.01 %).
+  - Overhead: 0.136 s per case.
+  - Conclusion: NO MEANINGFUL CHANGE.
+  - A unit test shows the rule can also delete real tumour (FN 0 → 2).
+- Example run (5d16…, BraTS-GLI-00360-000 with expert mask): 9 WT voxels removed; FP 12,438 → 12,430;
+  FN 4,063 → 4,064; Dice 0.9001 → 0.9001; verdict "No meaningful change".
+
+=====================================================================
+6. GRAPH ANALYSIS AND DIJKSTRA
+=====================================================================
+- Component graph: nodes are the 26-connected components of WT, TC and ET (volume in mL, world-mm
+  centroid). Edges mean "contained in" (ET → TC → WT). It is drawn as a NiiVue connectome at the real
+  centroids.
+- Dijkstra:
+  - Graph: WT voxels, 26-neighbourhood, edge weight = physical distance between voxel centres in mm
+    (uses the NIfTI spacing, so it is anisotropy-aware).
+  - scipy.sparse.csgraph.dijkstra, multi-source from all TC voxels, min_only, return_predecessors.
+  - Reported: geodesic extent max / p95 / mean, unreachable WT voxels, node and edge counts.
+  - Destinations: the farthest reachable voxel overall and per WT component (actual Dijkstra maxima),
+    or the WT voxel nearest the current crosshair.
+  - The path is the predecessor chain from the target back to its nearest TC voxel, drawn through the
+    exact voxel centres. Both length_mm (Dijkstra distance) and the sum of segment lengths are shown,
+    and they match.
+  - Verified against networkx multi-source Dijkstra (unit test with anisotropic spacing and a wall).
+- Limitations:
+  - Descriptive only: shortest paths through the predicted mask. It does NOT predict tumour growth or
+    invasion.
+  - Quality depends on the predicted mask.
+  - WT voxels in components without TC are unreachable.
+  - Graph build ≈ 4 s on first open (then cached; path queries ≈ 15 ms).
+- Offline graph files: data/processed/graphs_v2 (deterministic, correct channel names). Deprecated
+  graphs/ kept. Neither is used by inference.
+
+=====================================================================
+7. INTERACTIVE CONTROLS - BEHAVIOUR AND TEST RESULTS
+=====================================================================
+All checked in the browser against the renderer's actual state (details in docs/TEST_RESULTS.md, U1-U22).
+- Upload validation: immediate, independent, replaceable; set check names the pair. PASS.
+- Overlay opacity → prediction layer 0.5 → 0.9. PASS.
+- Mesh opacity → WT/TC/ET 0.6 → 0.25. PASS.
+- Label visibility (NCR/NET, edema, ET) independent. PASS.
+- Surface visibility (WT, TC, ET, brain) independent. PASS.
+- Refined toggle swaps the real refined layer. PASS. Expert overlay 0 ↔ 0.6. PASS.
+- Volumes unchanged by any display change. PASS.
+- Linked crosshair, full-screen (Test 6 marker): max error 1 voxel; 3D crosshair enabled. PASS.
+- Navigation: metadata fetched once, files from browser cache, no inference re-run, crosshair and
+  settings kept, back/forward OK, invalid/expired IDs handled. PASS.
+- Console: 0 errors after the fixes; backend error log empty. PASS.
+
+=====================================================================
+8. BACKEND, SECURITY AND RETENTION
+=====================================================================
+- New endpoints: see section 2.
+- validate-file writes only to a system temp directory that is deleted before the response, and never
+  creates run folders (tested).
+- Errors are JSON with stable codes; no paths in messages.
+- Run IDs are uuid4 hex (unguessable).
+- There is no endpoint that lists runs; files are served only from an allow-list.
+- Retention: unchanged and tested. The sweeper runs at startup and every 15 min, and removes only
+  32-hex run folders older than 23 h plus legacy upload-copy file patterns.
+- Earlier this session, 68 obsolete legacy upload copies (202,143,576 bytes) were removed after a
+  dry run. 34 old generated masks were kept for the owner's decision.
+- Browser cache: run files are cached privately for 1 h on the viewer's machine.
+
+=====================================================================
+9. TESTS AND VERIFICATION (actual results)
+=====================================================================
+Automated (pytest), command:
+  venv\Scripts\python -m pytest tests -q -p no:cacheprovider -W ignore
+  Result: 35 passed in 94.23 s.
+- tests/test_judging.py (real MRI + synthetic):
+  - T2 cube 16.000 mL.
+  - T3 anisotropic 1.1 %.
+  - T4 same anatomy: same side, 0 %.
+  - T5 mirrored: L → R.
+  - T7 eight failure cases: all refused, no residue; >1 GB is a lowered-limit LOGIC test.
+  - T8 reproducible: bit-identical.
+  - T9 blind case: valid output; ET false positive noted.
+  - T10 synthetic non-skull-stripped / non-brain: refused.
+- tests/test_pipeline.py: labels, resampling, geometry, affine mismatch, API end-to-end, retention,
+  retention scope.
+- tests/test_ui_backend.py (new): per-file validation, expert labels, set check (shape / affine /
+  missing), refinement known-answer, refinement endpoint with and without an expert, Dijkstra vs networkx.
+Held-out evaluation (real MRI, development data): execution\evaluate_heldout.py --n 30 → Dice WT 0.8746,
+  TC 0.8333, ET 0.8098; sensitivity WT 0.9209, TC 0.9043, ET 0.8532. Organiser baseline: NOT AVAILABLE.
+Frontend: npx tsc --noEmit OK; npx eslint src OK; npx next build OK (routes /, /upload, /runs/[id] and
+  the viewer, graph, refinement, expert and report sub-routes).
+Browser tests (manual, scripted in the Claude browser pane): U1-U22 PASS, see docs/TEST_RESULTS.md.
+  Mostly DOM/renderer-state checks because the pane was often hidden; one screenshot of the Results page.
+Live HTTP: all 8 page routes HTTP 200; /api/health OK.
+NOT TESTED: hidden judging cases; organiser baseline; T4 timing; real >1 GB upload; real
+non-skull-stripped / non-brain scans; screen-reader accessibility; Firefox/Safari.
+
+=====================================================================
+10. PERFORMANCE
+=====================================================================
+Hardware: RTX 3050 6GB Laptop GPU (inference); AMD Radeon 740M iGPU (browser WebGL); Windows 11; the
+Chromium-based Claude browser pane. Images 240×240×155, 1 mm.
+- Browser upload → Results page (BraTS-GLI-00360-000 + expert): 9.2 s. API-only runs: 7.4-9.3 s.
+- Backend stages (typical): validation 0.7, preprocessing 0.2, inference 1.2-1.6, resampling 1.2,
+  graph 1.6, meshes 1.3, report 0.1 s.
+- Viewer load (4 volumes + 4 meshes): 11.9 s → 4.0 s after fixes (pane hidden; may be faster when visible).
+- Display change: 3.1-5.6 s → median 107 ms / max 207 ms.
+- Graph page first build ≈ 4.4 s (backend), then path queries ≈ 15 ms. Refinement comparison ≈ 3.2 s
+  first time, then cached.
+- T4 PERFORMANCE WAS NOT MEASURED.
+
+=====================================================================
+11. BACKUP AND GIT
+=====================================================================
+- New backup before this round: C:\Users\hp\NeuroScope3D_backups\backup_20261016_220130.
+  266/266 files SHA-256 verified; includes model checkpoints.
+  Excluded: venv, frontend/node_modules, frontend/.next, backend/runs (transient uploads), data/raw
+  (13 GB original dataset, untouched), .git/objects.
+- Earlier backups kept and not modified: backup_20261016_204349 (re-verified earlier: 256/256) and
+  graphs_v2_20261016.
+- Git: branch master, NO COMMITS EXIST, everything untracked. frontend/ is a nested git repository
+  (its working tree shows the modified and new files). No commit was created this round.
+  Commit plan: docs/COMMIT_PLAN.md (needs owner decisions: frontend/.git, skill-creator, sample outputs).
+
+=====================================================================
+12. DOCUMENTATION AND DELIVERABLES
+=====================================================================
+README.md (pages, start-up, tests); ARCHITECTURE.md (endpoints, pages, state, viewer); docs/MODEL_CARD.md
+(refinement evidence); docs/DATA_AND_LICENCES.md (unchanged: no new data or models used);
+docs/TEST_RESULTS.md (U1-U22 + evidence); docs/COMMIT_PLAN.md; docs/ORGANISER_QUESTIONS.md (not sent);
+sample report results/sample_run_BraTS-GLI-00360-000/report.pdf; start.ps1; CLAUDE_PROGRESS_HANDOFF.txt;
+this report.
+
+=====================================================================
+13. KNOWN LIMITATIONS AND RISKS
+=====================================================================
+- Model eligibility UNRESOLVED: trained on BraTS 2023 GLI training data, whose patients overlap the
+  BraTS 2021 training collection. The hidden cases may overlap. No public pre-hackathon release of these
+  weights is documented, and the weights licence has not been decided.
+- Missing organiser resources: the 40-case BraTS 2021 development subset and the baseline values (and
+  any official scorer). No official baseline compliance can be claimed.
+- ET false positives / over-prediction on low- or no-enhancement tumours (blind case 6 mL; 2
+  development cases). Not fixed.
+- Input sanity checks are heuristic and were tested on synthetic inputs only.
+- Refinement has no meaningful benefit (kept as a research comparison only).
+- Browser verification ran mostly with the pane hidden; one visual screenshot. Visual polish was not
+  reviewed by a human.
+- The comparison page loads the background MRI twice (two viewers). Accepted for a side-by-side view.
+- Browser cache keeps run files for up to 1 h on the viewer's machine.
+- The dev-only window.__nv / __ns3dPerf handles exist only in development builds.
+- The servers were started by this Claude session (preview); they stop when the session ends.
+- skill-creator/ is unrelated tooling in the project folder.
+
+=====================================================================
+14. HOW TO RUN THE WEBSITE
+=====================================================================
+- Verified URL (this computer only): http://localhost:3000
+  - Frontend: Next.js dev server, port 3000 (listening, PID 6900). All 8 page routes return HTTP 200.
+  - Backend: FastAPI on http://127.0.0.1:8000 (PID 13620). /api/health → ok, model loaded, GPU available.
+  - The frontend ↔ backend link is verified: browser upload → results worked.
+- Start it yourself (from the project root):
+    powershell -ExecutionPolicy Bypass -File .\start.ps1
+  Keep that terminal open: it runs the backend in the background and `npm run dev` in the foreground.
+  Ctrl+C stops the frontend, and the script then stops the backend.
+  Ports 3000 and 8000 must be free: stop this session's preview servers first, or just use them.
+- Public access: NOT configured. localhost is reachable only from this computer. Deployment or
+  tunnelling is a separate task.
+
+=====================================================================
+15. FINAL ACCEPTANCE CHECKLIST
+=====================================================================
+Hackathon requirements
+- Four-sequence NIfTI input with validation .......................... PASS (API + UI)
+- Genuine per-case inference, labels 1/2/4, original grid/affine ...... PASS
+- T1 held-out accuracy (≥10 cases) .................................... PASS on 30 dev cases; baseline comparison NOT TESTED
+- T2 volume cube ...................................................... PASS
+- T3 anisotropic ...................................................... PASS (1.1 %)
+- T4 orientation, same anatomy ........................................ PASS
+- T5 mirrored anatomy ................................................. PASS
+- T6 linked views (≤2 voxels) ......................................... PASS (1 voxel, browser)
+- T7 eight invalid inputs ............................................. PASS (>1 GB = logic test)
+- T8 reproducibility .................................................. PASS (identical)
+- T9 blind case ....................................................... PASS validity; ET false positive
+- T10 input sanity .................................................... PASS (synthetic only)
+- Volume calculation .................................................. PASS
+- PDF report with provenance .......................................... PASS
+- Privacy / retention (<24 h, scoped deletion) ......................... PASS
+- Upload-to-report < 2 min on T4 ....................................... NOT TESTED (9.2 s on RTX 3050)
+- Model eligibility ................................................... UNRESOLVED
+New UI/UX
+- Multi-page UI ....................................................... PASS
+- Four upload slots + immediate validation ............................ PASS
+- Working viewer controls (opacity, labels, meshes, refined, expert) .. PASS
+- Full-screen viewer .................................................. PASS
+- Graph analysis with Dijkstra paths .................................. PASS
+- Refinement before/after comparison .................................. PASS
+- Expert-mask error metrics only with a valid mask ..................... PASS
+- Navigation without re-inference / refetch ............................ PASS
+- Disclaimer on every page ............................................. PASS
+- Console errors (after fixes) ......................................... PASS
+- Production build ..................................................... PASS
+- Documentation updated ................................................ PASS
+- Backup ............................................................... PASS
+
+=====================================================================
+16. NEXT STEPS (priority order)
+=====================================================================
+1. OWNER/ORGANISER: send docs/ORGANISER_QUESTIONS.md (eligibility, overlap, 40-case subset, baseline).
+2. When the subset arrives: venv\Scripts\python execution\evaluate_dataset.py --data-dir <folder>
+   --baseline-json <organiser values>.
+3. OWNER: decide the docs/COMMIT_PLAN.md items (frontend/.git, skill-creator, sample outputs), then commit.
+4. Measure the T4 timing (e.g. Colab T4) with execution/run_inference.py.
+5. OWNER: decide whether to delete the 34 old generated masks in backend/results.
+6. Optional: study an ET small-volume rule on a separate development subset (never the blind or hidden
+   cases); human visual review of the pages.
+
+=====================================================================
+FINAL SAFETY CHECK
+=====================================================================
+- Backups preserved and not modified: backup_20261016_204349, backup_20261016_220130, graphs_v2_20261016.
+- No unrelated files deleted. The only deletion this round was the temporary test files I created in
+  frontend/public/__testdata__.
+- Model checkpoints, data/raw, data/splits, metadata and configs are untouched.
+- Existing functionality is still available: CLI, API, PDF, NIfTI, all tests.
+- The handoff file is updated.
+- The local URL http://localhost:3000 was verified (HTTP 200 on all pages; backend health OK).

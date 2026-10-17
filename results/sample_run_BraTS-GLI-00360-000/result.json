@@ -1,0 +1,542 @@
+{
+  "run_id": "3949d032c13744f6b9fdde703ad657dc",
+  "timestamp_utc": "2026-10-16 15:26:10",
+  "status": "complete",
+  "wording": "Suspected tumour region predicted by the model; volumes are estimates.",
+  "shape": [
+    240,
+    240,
+    155
+  ],
+  "voxel_spacing_mm": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "affine": [
+    [
+      -1.0,
+      0.0,
+      0.0,
+      -0.0
+    ],
+    [
+      0.0,
+      -1.0,
+      0.0,
+      239.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "axcodes": [
+    "L",
+    "P",
+    "S"
+  ],
+  "labels": {
+    "0": "background",
+    "1": "NCR/NET",
+    "2": "edema",
+    "4": "enhancing tumour"
+  },
+  "volumes_ml": {
+    "baseline": {
+      "WT": 86.769,
+      "TC": 54.566,
+      "ET": 43.492000000000004,
+      "voxels": {
+        "WT": 86769,
+        "TC": 54566,
+        "ET": 43492
+      },
+      "voxel_volume_ml": 0.001
+    },
+    "refined": {
+      "WT": 86.76,
+      "TC": 54.566,
+      "ET": 43.492000000000004,
+      "voxels": {
+        "WT": 86760,
+        "TC": 54566,
+        "ET": 43492
+      },
+      "voxel_volume_ml": 0.001
+    },
+    "refined_minus_baseline": {
+      "WT": {
+        "abs_ml": -0.009000000000000341,
+        "pct": -0.010372368011617445
+      },
+      "TC": {
+        "abs_ml": 0.0,
+        "pct": 0.0
+      },
+      "ET": {
+        "abs_ml": 0.0,
+        "pct": 0.0
+      }
+    }
+  },
+  "refinement": {
+    "method": "remove WT connected components (26-conn) smaller than 10.0 mm^3",
+    "applied_to_primary_output": false,
+    "voxels_removed": 9,
+    "components_baseline": {
+      "WT": 10,
+      "TC": 6,
+      "ET": 6
+    }
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "WT1",
+        "region": "WT",
+        "volume_ml": 0.008,
+        "centroid_mm": [
+          -69.0,
+          82.5,
+          37.5
+        ]
+      },
+      {
+        "id": "WT2",
+        "region": "WT",
+        "volume_ml": 0.146,
+        "centroid_mm": [
+          -91.6,
+          86.76,
+          72.4
+        ]
+      },
+      {
+        "id": "WT3",
+        "region": "WT",
+        "volume_ml": 0.202,
+        "centroid_mm": [
+          -96.4,
+          113.5,
+          59.32
+        ]
+      },
+      {
+        "id": "WT4",
+        "region": "WT",
+        "volume_ml": 81.513,
+        "centroid_mm": [
+          -136.8,
+          78.82,
+          86.34
+        ]
+      },
+      {
+        "id": "WT5",
+        "region": "WT",
+        "volume_ml": 3.716,
+        "centroid_mm": [
+          -118.32,
+          118.41,
+          76.54
+        ]
+      },
+      {
+        "id": "WT6",
+        "region": "WT",
+        "volume_ml": 0.49,
+        "centroid_mm": [
+          -131.47,
+          170.34,
+          63.73
+        ]
+      },
+      {
+        "id": "WT7",
+        "region": "WT",
+        "volume_ml": 0.078,
+        "centroid_mm": [
+          -135.91,
+          49.17,
+          58.32
+        ]
+      },
+      {
+        "id": "WT8",
+        "region": "WT",
+        "volume_ml": 0.512,
+        "centroid_mm": [
+          -140.65,
+          114.94,
+          58.69
+        ]
+      },
+      {
+        "id": "WT9",
+        "region": "WT",
+        "volume_ml": 0.10300000000000001,
+        "centroid_mm": [
+          -161.91,
+          61.93,
+          54.42
+        ]
+      },
+      {
+        "id": "WT10",
+        "region": "WT",
+        "volume_ml": 0.001,
+        "centroid_mm": [
+          -165.0,
+          73.0,
+          52.0
+        ]
+      },
+      {
+        "id": "TC1",
+        "region": "TC",
+        "volume_ml": 0.044,
+        "centroid_mm": [
+          -96.14,
+          113.57,
+          59.43
+        ]
+      },
+      {
+        "id": "TC2",
+        "region": "TC",
+        "volume_ml": 0.707,
+        "centroid_mm": [
+          -116.92,
+          117.98,
+          74.57
+        ]
+      },
+      {
+        "id": "TC3",
+        "region": "TC",
+        "volume_ml": 53.631,
+        "centroid_mm": [
+          -135.81,
+          80.52,
+          84.3
+        ]
+      },
+      {
+        "id": "TC4",
+        "region": "TC",
+        "volume_ml": 0.004,
+        "centroid_mm": [
+          -121.25,
+          116.5,
+          82.75
+        ]
+      },
+      {
+        "id": "TC5",
+        "region": "TC",
+        "volume_ml": 0.08700000000000001,
+        "centroid_mm": [
+          -131.03,
+          170.4,
+          62.98
+        ]
+      },
+      {
+        "id": "TC6",
+        "region": "TC",
+        "volume_ml": 0.093,
+        "centroid_mm": [
+          -141.23,
+          114.29,
+          58.78
+        ]
+      },
+      {
+        "id": "ET1",
+        "region": "ET",
+        "volume_ml": 0.022,
+        "centroid_mm": [
+          -96.23,
+          113.77,
+          59.36
+        ]
+      },
+      {
+        "id": "ET2",
+        "region": "ET",
+        "volume_ml": 43.407000000000004,
+        "centroid_mm": [
+          -134.64,
+          81.4,
+          84.18
+        ]
+      },
+      {
+        "id": "ET3",
+        "region": "ET",
+        "volume_ml": 0.04,
+        "centroid_mm": [
+          -115.83,
+          121.5,
+          74.9
+        ]
+      },
+      {
+        "id": "ET4",
+        "region": "ET",
+        "volume_ml": 0.007,
+        "centroid_mm": [
+          -131.0,
+          169.86,
+          62.57
+        ]
+      },
+      {
+        "id": "ET5",
+        "region": "ET",
+        "volume_ml": 0.015,
+        "centroid_mm": [
+          -141.4,
+          113.73,
+          58.8
+        ]
+      },
+      {
+        "id": "ET6",
+        "region": "ET",
+        "volume_ml": 0.001,
+        "centroid_mm": [
+          -143.0,
+          79.0,
+          93.0
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "from": "ET1",
+        "to": "TC1",
+        "type": "contained_in"
+      },
+      {
+        "from": "ET2",
+        "to": "TC3",
+        "type": "contained_in"
+      },
+      {
+        "from": "ET3",
+        "to": "TC2",
+        "type": "contained_in"
+      },
+      {
+        "from": "ET4",
+        "to": "TC5",
+        "type": "contained_in"
+      },
+      {
+        "from": "ET5",
+        "to": "TC6",
+        "type": "contained_in"
+      },
+      {
+        "from": "ET6",
+        "to": "TC3",
+        "type": "contained_in"
+      },
+      {
+        "from": "TC1",
+        "to": "WT3",
+        "type": "contained_in"
+      },
+      {
+        "from": "TC2",
+        "to": "WT5",
+        "type": "contained_in"
+      },
+      {
+        "from": "TC3",
+        "to": "WT4",
+        "type": "contained_in"
+      },
+      {
+        "from": "TC4",
+        "to": "WT5",
+        "type": "contained_in"
+      },
+      {
+        "from": "TC5",
+        "to": "WT6",
+        "type": "contained_in"
+      },
+      {
+        "from": "TC6",
+        "to": "WT8",
+        "type": "contained_in"
+      }
+    ],
+    "n_components": {
+      "WT": 10,
+      "TC": 6,
+      "ET": 6
+    }
+  },
+  "geodesic": {
+    "applied": true,
+    "algorithm": "scipy.sparse.csgraph.dijkstra (multi-source, min_only)",
+    "graph_nodes": 86769,
+    "graph_edges": 1052310,
+    "max_mm": 43.75177265095165,
+    "p95_mm": 21.92407448406449,
+    "mean_mm": 2.8084739789493547,
+    "wt_voxels_unreachable_from_tc": 336,
+    "runtime_s": 0.1331583999999566
+  },
+  "input_sanity": {
+    "status": "ok",
+    "issues": [],
+    "features": {
+      "foreground_fraction": 0.15885808691756273,
+      "foreground_volume_ml": 1418.285,
+      "extent_mm_min": 137.0,
+      "extent_mm_mid": 138.0,
+      "extent_mm_max": 165.0,
+      "outer_zero_fraction": 1.0,
+      "ellipsoid_fill": 0.8683229699588925,
+      "corr_t1_t2": -0.6941977143287659,
+      "corr_t2_flair": -0.10679880529642105,
+      "corr_t1_t1gd": 0.3368854820728302
+    }
+  },
+  "input_sha256": {
+    "t1n": "f7e13ff7972337c6d0b19416d5916f6dac2ad16ce3ff5af165b9df4c325b9ad8",
+    "t1c": "1de2dd277701e0bba6554e247f9ff99dea812ce707185f9277f85e44c050675b",
+    "t2w": "3592ef045e43a2b1871787472807a2fb7cea2c46d752b0acaf992791ef38a305",
+    "t2f": "d87fa39b62cf1d05e5ebd186c16054784df93592cb901f6e648e6514cb39e4f0"
+  },
+  "model": {
+    "name": "NeuroScope3D-UNet (MONAI UNet, 4->3, sigmoid TC/WT/ET)",
+    "architecture": "monai.networks.nets.UNet(spatial_dims=3, in_channels=4, out_channels=3, channels=(16,32,64,128,256), strides=(2,2,2,2), num_res_units=2)",
+    "version": "baseline_checkpoints/best_metric_model.pth",
+    "training_data": "BraTS 2023 GLI training data (subset listed in data/splits/train.json), trained by the project team",
+    "weights_licence": "Project-trained weights; no separate licence issued (see docs/MODEL_CARD.md). Training data under BraTS/Synapse data use terms.",
+    "code_licence": "MONAI: Apache-2.0",
+    "preprocessing": "Orientation RAS; resample 1.0 mm isotropic (bilinear); per-channel z-score on non-zero voxels",
+    "inference": "sliding window ROI 128^3, overlap 0.25, gaussian=constant, sw_batch_size 2, fp32, sigmoid, threshold 0.5 on original grid"
+  },
+  "checkpoint_sha256": "2decff1363f7861e19b8476cd09dcc15b58d1a4c7eabd681c3f3fffb2f48504d",
+  "device": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+  "code_version": "no git commit exists; working tree is untracked (see BACKUP_MANIFEST.json)",
+  "meshes": {
+    "brain": {
+      "written": true,
+      "vertices": 26408,
+      "faces": 52812
+    },
+    "WT": {
+      "written": true,
+      "vertices": 24246,
+      "faces": 48464
+    },
+    "TC": {
+      "written": true,
+      "vertices": 12588,
+      "faces": 25148
+    },
+    "ET": {
+      "written": true,
+      "vertices": 15210,
+      "faces": 30408
+    }
+  },
+  "limitations": [
+    "Model trained by the project team on BraTS 2023 GLI training data (adult glioma, pre-operative, skull-stripped, co-registered, 1 mm). Performance on other tumour types, post-operative scans, paediatric data or other acquisition protocols is unknown.",
+    "Development-set Dice/sensitivity (results/heldout_eval.json) are from patient-disjoint BraTS 2023 GLI cases; they are not hidden-case or clinical performance.",
+    "BraTS 2023 GLI training data overlaps the BraTS 2021 training collection; if evaluation cases come from that collection, some may have been seen in training.",
+    "Labels 1/2/4 are derived from nested TC/WT/ET predictions (ET -> 4, TC minus ET -> 1, WT minus TC -> 2).",
+    "Input sanity checks (skull-stripping, brain-likeness) are heuristic reference-range checks, not validated detectors.",
+    "Volumes are estimates from the predicted mask; partial-volume effects and segmentation errors are not reflected in any uncertainty interval."
+  ],
+  "expert_comparison": {
+    "WT": {
+      "dice": 0.9000926357598251,
+      "sensitivity": 0.9481720539837233,
+      "tp_voxels": 74331,
+      "fp_voxels": 12438,
+      "fn_voxels": 4063,
+      "pred_ml": 86.769,
+      "ref_ml": 78.394
+    },
+    "TC": {
+      "dice": 0.9624440881087012,
+      "sensitivity": 0.9854632741238598,
+      "tp_voxels": 51318,
+      "fp_voxels": 3248,
+      "fn_voxels": 757,
+      "pred_ml": 54.566,
+      "ref_ml": 52.075
+    },
+    "ET": {
+      "dice": 0.9456680695252235,
+      "sensitivity": 0.919044415995834,
+      "tp_voxels": 42356,
+      "fp_voxels": 1136,
+      "fn_voxels": 3731,
+      "pred_ml": 43.492000000000004,
+      "ref_ml": 46.087
+    }
+  },
+  "expert_comparison_refined": {
+    "WT": {
+      "dice": 0.900129576032067,
+      "sensitivity": 0.948159297905452,
+      "tp_voxels": 74330,
+      "fp_voxels": 12430,
+      "fn_voxels": 4064,
+      "pred_ml": 86.76,
+      "ref_ml": 78.394
+    },
+    "TC": {
+      "dice": 0.9624440881087012,
+      "sensitivity": 0.9854632741238598,
+      "tp_voxels": 51318,
+      "fp_voxels": 3248,
+      "fn_voxels": 757,
+      "pred_ml": 54.566,
+      "ref_ml": 52.075
+    },
+    "ET": {
+      "dice": 0.9456680695252235,
+      "sensitivity": 0.919044415995834,
+      "tp_voxels": 42356,
+      "fp_voxels": 1136,
+      "fn_voxels": 3731,
+      "pred_ml": 43.492000000000004,
+      "ref_ml": 46.087
+    }
+  },
+  "expert_volumes_ml": {
+    "WT": 78.394,
+    "TC": 52.075,
+    "ET": 46.087
+  },
+  "timings_s": {
+    "validation_s": 0.6621844999990572,
+    "preprocess_s": 0.2090423000008741,
+    "inference_s": 1.1743021000002045,
+    "postprocess_s": 1.1939943000015774,
+    "refinement_s": 0.1054033000000345,
+    "graph_s": 1.6102429000002303,
+    "mesh_s": 1.342703899999833,
+    "report_s": 0.10108750000108557,
+    "total_s": 7.699965000001612
+  }
+}
