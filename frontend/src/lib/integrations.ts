@@ -25,8 +25,22 @@ export const MODULES = {
 } as const;
 export type ModuleKey = keyof typeof MODULES;
 
-export const moduleUrl = (k: ModuleKey, path: string = MODULES[k].entry) =>
-  MODULES[k].url ? `${MODULES[k].url.replace(/\/$/, '')}${path}` : '';
+function getLocalFallback(k: ModuleKey): string {
+  if (typeof window !== 'undefined') {
+    const host = window.location.hostname;
+    if (host === 'localhost' || host === '127.0.0.1') {
+      if (k === 'chatbot') return 'http://localhost:3102';
+      if (k === 'locate') return 'http://localhost:3104';
+      if (k === 'tracker') return 'http://localhost:3103';
+    }
+  }
+  return '';
+}
+
+export const moduleUrl = (k: ModuleKey, path: string = MODULES[k].entry) => {
+  const base = MODULES[k].url || getLocalFallback(k);
+  return base ? `${base.replace(/\/$/, '')}${path}` : '';
+};
 
 /** Is the module's service reachable? (an opaque no-cors request: resolves when anything answers) */
 export async function probe(k: ModuleKey, timeoutMs = 4000): Promise<boolean> {

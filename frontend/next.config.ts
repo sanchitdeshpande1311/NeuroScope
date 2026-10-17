@@ -6,10 +6,11 @@ import type { NextConfig } from "next";
 const dev = process.env.NODE_ENV !== "production";
 const pick = (name: string, devDefault: string) => process.env[name] ?? (dev ? devDefault : "");
 
-// Landing page origin: the public root "/" is served from it (its HTML references /assets/* and /models/*).
-// "off" disables it (start.ps1 -NoIntegrations): "/" then redirects to the workspace.
+// Landing page origin: if an external service is configured (dev default http://localhost:3101),
+// proxy to it. "off" disables it. Otherwise, serve the bundled static landing page (/landing.html).
 const landingSetting = pick("NEUROSCOPE_LANDING_ORIGIN", "http://localhost:3101");
-const landing = landingSetting === "off" ? "" : landingSetting.replace(/\/$/, "");
+const externalLanding = (landingSetting && landingSetting !== "off") ? landingSetting.replace(/\/$/, "") : "";
+const landingDest = externalLanding ? `${externalLanding}/` : (landingSetting === "off" ? "" : "/landing.html");
 
 const nextConfig: NextConfig = {
   // development-only badge would sit on the chatbot launcher (bottom-right) or the navigation (bottom-left)
@@ -20,13 +21,14 @@ const nextConfig: NextConfig = {
     NEXT_PUBLIC_TRACKER_URL: pick("NEXT_PUBLIC_TRACKER_URL", "http://localhost:3103"),
   },
   async rewrites() {
-    if (!landing) return [];   // no landing service configured: "/" redirects to the workspace (src/app/page.tsx)
+    if (!landingDest) return [];
     return {
       beforeFiles: [
-        // old "/?run=<id>" case links still open the case (src/app/page.tsx), not the landing page
-        { source: "/", missing: [{ type: "query", key: "run" }], destination: `${landing}/` },
-        { source: "/assets/:path*", destination: `${landing}/assets/:path*` },
-        { source: "/models/:path*", destination: `${landing}/models/:path*` },
+        { source: "/", missing: [{ type: "query" as const, key: "run" }], destination: landingDest },
+        ...(externalLanding ? [
+          { source: "/assets/:path*", destination: `${externalLanding}/assets/:path*` },
+          { source: "/models/:path*", destination: `${externalLanding}/models/:path*` },
+        ] : []),
       ],
       afterFiles: [],
       fallback: [],
